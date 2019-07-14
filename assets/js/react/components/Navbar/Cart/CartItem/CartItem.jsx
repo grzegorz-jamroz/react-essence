@@ -19,8 +19,8 @@ class CartItem extends Component {
           <div className="cartItem__overlay">
           </div>
           <div className="cartItem__actionsLeft">
-            <div className="cartItemAction__increase">+</div>
             <div className="cartItemAction__decrease">-</div>
+            <div className="cartItemAction__increase">+</div>
           </div>
           <div className="cartItem__actionsRight">
             <div className="cartItemAction__delete">
