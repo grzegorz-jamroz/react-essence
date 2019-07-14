@@ -1,0 +1,19 @@
+@import "../../../../Core/Settings";
+
+.menu {
+  padding: $spacer;
+}
+
+.menu__list {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.menu__item {
+  color: $gray-900;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  padding: $px8;
+}

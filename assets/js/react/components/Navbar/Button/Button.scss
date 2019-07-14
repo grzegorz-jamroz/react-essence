@@ -1,0 +1,13 @@
+@import "../../../../Core/Settings";
+
+.navbarButton {
+  height: $spacer * 4;
+  min-width: $spacer * 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarButton--bRight {
+  border-left: $px1 $gray-200 solid;
+}

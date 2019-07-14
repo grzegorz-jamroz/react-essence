@@ -1,0 +1,24 @@
+@import "../../../../Core/Settings";
+
+.sidebar {
+  @include transition(1s);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  max-width: 20 * $spacer;
+  top: 0;
+  background-color: $white;
+  z-index: 1050;
+  visibility: hidden;
+  padding-top: $spacer * 4;
+}
+
+.sidebar--open {
+  visibility: visible;
+}
+
+.sidebar__offSwitch {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

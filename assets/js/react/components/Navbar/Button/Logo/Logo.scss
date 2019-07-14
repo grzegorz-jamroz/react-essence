@@ -1,0 +1,9 @@
+@import "../../../../../Core/Settings";
+
+.navbarButton__logo {
+  color: $black;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 $spacer;
+  font-family: $font-family-sans-serif;
+}

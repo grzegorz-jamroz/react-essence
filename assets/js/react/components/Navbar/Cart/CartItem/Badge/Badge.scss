@@ -1,0 +1,9 @@
+@import "../../../../../../Core/Settings";
+
+.cartItemBadge {
+  display: inline-block;
+  text-align: center;
+  min-width: $spacer * 2.125;
+  padding: $px5 $px8;
+  font-size: $font-size-base;
+}
