@@ -12,7 +12,7 @@ class CartItem extends Component {
   };
 
   handleIncrement = () => {
-    this.props.increaseCounter();
+    this.props.increaseCartItemsAmount();
     this.setState((state) => ({
       quantity: state.quantity + 1
     }));
@@ -20,7 +20,7 @@ class CartItem extends Component {
   };
 
   handleDecrement = () => {
-    this.props.decreaseCounter();
+    this.props.decreaseCartItemsAmount();
     this.setState((state) => ({
       quantity: state.quantity - 1
     }));

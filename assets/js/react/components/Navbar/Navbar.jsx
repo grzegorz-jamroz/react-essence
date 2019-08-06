@@ -12,7 +12,7 @@ class Navbar extends Component {
   state = {
     menuOpen: false,
     cartOpen: false,
-    cartCounter: 6
+    cartItemsAmount: 6
   };
 
   render() {
@@ -27,7 +27,7 @@ class Navbar extends Component {
             </div>
             <div className="navbar__rightSite">
               <Button handleClick={this.handleCartTogglerClick} border={'bRight'}>
-                <CartToggler open={this.state.cartOpen} cartCounter={this.state.cartCounter} />
+                <CartToggler open={this.state.cartOpen} cartItemsAmount={this.state.cartItemsAmount} />
               </Button>
               <Button handleClick={this.handleMenuTogglerClick} border={'bRight'}>
                 <MenuToggler open={this.state.menuOpen} />
@@ -37,8 +37,9 @@ class Navbar extends Component {
         </div>
         <Menu handleClick={this.handleMenuTogglerClick} open={this.state.menuOpen} />
         <Cart handleClick={this.handleCartTogglerClick}
-              increaseCounter={this.increaseCounter}
-              decreaseCounter={this.decreaseCounter}
+              increaseCartItemsAmount={this.increaseCartItemsAmount}
+              decreaseCartItemsAmount={this.decreaseCartItemsAmount}
+              cartItemsAmount={this.state.cartItemsAmount}
               open={this.state.cartOpen} />
       </React.Fragment>
     );
@@ -60,15 +61,15 @@ class Navbar extends Component {
     }
   };
 
-  increaseCounter = () => {
+  increaseCartItemsAmount = () => {
     this.setState((state) => ({
-      cartCounter: state.cartCounter + 1
+      cartItemsAmount: state.cartItemsAmount + 1
     }));
   };
 
-  decreaseCounter = () => {
+  decreaseCartItemsAmount = () => {
     this.setState((state) => ({
-      cartCounter: state.cartCounter - 1
+      cartItemsAmount: state.cartItemsAmount - 1
     }));
   };
 }

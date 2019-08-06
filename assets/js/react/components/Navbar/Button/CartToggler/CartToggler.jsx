@@ -8,7 +8,7 @@ class CartToggler extends Component {
     return(
       <div className="navbarButton__cartToggler">
         <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
-        <span className="cartToggler__counter">{this.props.cartCounter}</span>
+        <span className="cartToggler__counter">{this.props.cartItemsAmount}</span>
       </div>
     );
   }
