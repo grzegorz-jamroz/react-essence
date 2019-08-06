@@ -42,6 +42,8 @@ class Cart extends Component {
               </div>
               <div className="cart__list">
                 {this.state.cartItems.map(item => <CartItem
+                    increaseCounter={this.props.increaseCounter}
+                    decreaseCounter={this.props.decreaseCounter}
                     thumbnail={require('./../../../../../img/product/' + item.thumbnail)}
                     name={item.name}
                     type={item.type}

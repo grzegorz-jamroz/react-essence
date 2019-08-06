@@ -12,6 +12,7 @@ class Navbar extends Component {
   state = {
     menuOpen: false,
     cartOpen: false,
+    cartCounter: 6
   };
 
   render() {
@@ -26,7 +27,7 @@ class Navbar extends Component {
             </div>
             <div className="navbar__rightSite">
               <Button handleClick={this.handleCartTogglerClick} border={'bRight'}>
-                <CartToggler open={this.state.cartOpen} />
+                <CartToggler open={this.state.cartOpen} cartCounter={this.state.cartCounter} />
               </Button>
               <Button handleClick={this.handleMenuTogglerClick} border={'bRight'}>
                 <MenuToggler open={this.state.menuOpen} />
@@ -35,7 +36,10 @@ class Navbar extends Component {
           </div>
         </div>
         <Menu handleClick={this.handleMenuTogglerClick} open={this.state.menuOpen} />
-        <Cart handleClick={this.handleCartTogglerClick} open={this.state.cartOpen} />
+        <Cart handleClick={this.handleCartTogglerClick}
+              increaseCounter={this.increaseCounter}
+              decreaseCounter={this.decreaseCounter}
+              open={this.state.cartOpen} />
       </React.Fragment>
     );
   }
@@ -54,6 +58,18 @@ class Navbar extends Component {
     } else {
       this.setState({cartOpen: true});
     }
+  };
+
+  increaseCounter = () => {
+    this.setState((state) => ({
+      cartCounter: state.cartCounter + 1
+    }));
+  };
+
+  decreaseCounter = () => {
+    this.setState((state) => ({
+      cartCounter: state.cartCounter - 1
+    }));
   };
 }
 
