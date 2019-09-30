@@ -1,16 +1,20 @@
 {
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
-    "@symfony/webpack-encore": "^0.27.0"
+    "@symfony/webpack-encore": "^0.27.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.7.2",
+    "sass-loader": "^7.1.0"
+  },
+  "scripts": {
+    "format": "prettier --write \"assets/js/**/*.{js, jsx}\""
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "node-sass": "^4.12.0",
-    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-perfect-scrollbar": "^1.5.3",
-    "sass-loader": "^7.1.0"
+    "react-perfect-scrollbar": "^1.5.3"
   }
 }
