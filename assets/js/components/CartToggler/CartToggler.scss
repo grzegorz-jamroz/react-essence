@@ -1,0 +1,22 @@
+@import "../../Core/Settings";
+
+.navbarButton__cartToggler {
+  display: inline-block;
+  position: relative;
+  padding: $px12;
+}
+
+.cartToggler__icon {
+  display: inline-block;
+  cursor: pointer;
+  width: $spacer * 1.5;
+}
+
+.cartToggler__counter {
+  color: $blue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  font-family: $font-family-sans-serif;
+}
