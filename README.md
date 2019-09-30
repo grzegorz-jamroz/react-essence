@@ -31,25 +31,43 @@ I would like to write some react components similar with Essence template.
 
 ## Installation
 
-Install all dependencies:
+**Install all dependencies:**
 
 ```
 yarn install
 ```
 
-Enter to public directory:
+**Create dummy data:**
+
+```
+cd assets/js/mocks/src
+```
+
+Install TypeScript globally if you don't have it yet
+
+```
+npm install -g typescript
+```
+
+than run just
+
+```
+tsc
+```
+
+**Enter to public directory:**
 
 ```
 cd public
 ```
 
-Run php server:
+**Run php server:**
 
 ```
 php -S 127.0.0.1:8000
 ```
 
-Open browser and enter:
+**Open browser and enter:**
 
 ```
 localhost:8000

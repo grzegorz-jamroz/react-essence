@@ -1,0 +1,21 @@
+{
+  "name": "react-essence-mocks",
+  "version": "0.0.1",
+  "private": true,
+  "description": "> TODO: description",
+  "author": "Grzechu",
+  "homepage": "",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "test": "dtslint test"
+  },
+  "devDependencies": {}
+}
