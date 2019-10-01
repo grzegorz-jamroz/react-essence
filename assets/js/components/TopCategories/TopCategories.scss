@@ -1,0 +1,10 @@
+@import "../../Core/Settings";
+
+.topCategories {
+  padding-top: $spacer * 5;
+  padding-bottom: $spacer * 5;
+}
+
+.topCategories__row {
+  justify-content: center;
+}

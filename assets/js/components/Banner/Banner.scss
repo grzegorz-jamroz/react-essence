@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 600px;
+  height: 50vh;
   background-image: url('../../../img/bg-img/bg-1.jpg');
 }
 
@@ -25,4 +25,20 @@
   font-size: $spacer * 3.75;
   color: $black;
   margin-bottom: $spacer * 3.125;
+}
+
+@include media-breakpoint-down(md) {
+  .banner {
+    height: 30vh;
+  }
+
+  .banner__h2 {
+    font-size: $spacer * 1.75;
+    margin-bottom: $spacer * 1.125;
+  }
+
+  .banner__h6 {
+    font-size: $px12;
+    margin-bottom: $px6;
+  }
 }

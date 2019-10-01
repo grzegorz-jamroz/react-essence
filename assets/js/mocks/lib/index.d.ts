@@ -16,6 +16,12 @@ interface ICart {
     delivery: number;
     quantity: number;
 }
+interface ITopCategories {
+    id: number;
+    thumbnail: string;
+    name: string;
+}
 export declare const CART_ITEMS: ICartItem[];
+export declare const TOP_CATEGORIES: ITopCategories[];
 export declare const CART: ICart;
 export {};

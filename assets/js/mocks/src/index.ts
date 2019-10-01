@@ -1,4 +1,5 @@
 import { cartItems } from './cart-items'
+import { topCategories } from "./top-categories";
 import { cart } from './cart'
 
 interface ICartItem {
@@ -14,12 +15,19 @@ interface ICartItem {
 }
 
 interface ICart {
-    total: number;
-    subtotal: number;
-    discount: number;
-    delivery: number;
-    quantity: number;
+  total: number;
+  subtotal: number;
+  discount: number;
+  delivery: number;
+  quantity: number;
+}
+
+interface ITopCategories {
+  id: number;
+  thumbnail: string;
+  name: string;
 }
 
 export const CART_ITEMS: ICartItem[] = cartItems;
+export const TOP_CATEGORIES: ITopCategories[] = topCategories;
 export const CART: ICart = cart;
