@@ -1,0 +1,35 @@
+@import "../../Core/Settings";
+
+.productSlide {
+  position: relative;
+  z-index: 1;
+  margin-bottom: $spacer * 3.125;
+  overflow: hidden;
+  background-color: $white;
+}
+
+.productSlide__content {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.productSlide__img {
+  @include transition(.5s);
+  width: 100%;
+  transform-style: preserve-3d;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.productSlide__img--hover {
+  @include transition(.5s);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+}

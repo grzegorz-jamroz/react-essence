@@ -7,7 +7,14 @@ import Glide from '@glidejs/glide'
 import '../../Core/Glide';
 
 const ProductsSlider = () => {
-  const [slider] = useState(new Glide('.glide'));
+  const [slider] = useState(new Glide('.jsProductsSlider', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 4,
+    autoplay: 7000,
+    gap: 30,
+    animationDuration: 1000,
+  }));
 
   useEffect(() => {
     slider.mount();
@@ -16,11 +23,11 @@ const ProductsSlider = () => {
   }, []);
 
   return (
-    <section className="new_arrivals_area section-padding-80 clearfix">
+    <section className="productsSlider new_arrivals_area section-padding-80 clearfix">
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="section-heading text-center">
+            <div className="productsSlider__heading">
               <h2>Popular Products</h2>
             </div>
           </div>
@@ -30,7 +37,7 @@ const ProductsSlider = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="glide">
+            <div className="jsProductsSlider">
               <div className="glide__track" data-glide-el="track">
                 <ul className="glide__slides">
                   {PRODUCTS.map(product => (

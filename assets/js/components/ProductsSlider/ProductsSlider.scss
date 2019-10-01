@@ -1,1 +1,28 @@
 @import "../../Core/Settings";
+
+.productsSlider {
+  padding-top: $spacer * 4.5;
+  padding-bottom: $spacer * 4.5;
+}
+
+.productsSlider__heading {
+  margin-bottom: $spacer * 3.125;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.productsSlider__h2 {
+  font-size: $spacer * 1.875;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: center;
+}
+
+@include media-breakpoint-down(md) {
+  .productsSlider {
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer * 1.5;
+  }
+}

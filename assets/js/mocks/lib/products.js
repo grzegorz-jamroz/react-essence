@@ -10,7 +10,11 @@ exports.products = [
         unitPrice: 55.99,
         reducedPrice: null,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-1.jpg",
+            "product-3.jpg"
+        ]
     },
     {
         id: 2,
@@ -21,7 +25,11 @@ exports.products = [
         unitPrice: 55,
         reducedPrice: null,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-2.jpg",
+            "product-4.jpg"
+        ]
     },
     {
         id: 3,
@@ -32,7 +40,11 @@ exports.products = [
         unitPrice: 55.9,
         reducedPrice: null,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-3.jpg",
+            "product-5.jpg"
+        ]
     },
     {
         id: 4,
@@ -43,7 +55,11 @@ exports.products = [
         unitPrice: 55.9,
         reducedPrice: null,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-4.jpg",
+            "product-6.jpg"
+        ]
     },
     {
         id: 5,
@@ -54,7 +70,11 @@ exports.products = [
         unitPrice: 55.9,
         reducedPrice: null,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-5.jpg",
+            "product-7.jpg"
+        ]
     },
     {
         id: 6,
@@ -65,7 +85,11 @@ exports.products = [
         unitPrice: 45.9,
         reducedPrice: 55,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-6.jpg",
+            "product-1.jpg"
+        ]
     },
     {
         id: 7,
@@ -76,7 +100,11 @@ exports.products = [
         unitPrice: 55.9,
         reducedPrice: 75,
         currency: "$",
-        unit: "(pc.)"
+        unit: "(pc.)",
+        images: [
+            "product-7.jpg",
+            "product-2.jpg"
+        ]
     }
 ];
 //# sourceMappingURL=products.js.map

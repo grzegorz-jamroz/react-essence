@@ -13,6 +13,7 @@ interface IProduct {
   reducedPrice: number | undefined | null;
   currency: string;
   unit: string;
+  images: string[];
 }
 
 interface ICartItem {

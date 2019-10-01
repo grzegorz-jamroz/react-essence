@@ -8,6 +8,7 @@ export declare const products: ({
     reducedPrice: null;
     currency: string;
     unit: string;
+    images: string[];
 } | {
     id: number;
     thumbnail: string;
@@ -18,4 +19,5 @@ export declare const products: ({
     reducedPrice: number;
     currency: string;
     unit: string;
+    images: string[];
 })[];
