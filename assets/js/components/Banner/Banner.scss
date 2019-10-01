@@ -14,3 +14,15 @@
 .banner__row {
   align-items: center;
 }
+
+.banner__h6 {
+  font-size: $spacer * 1.125;
+  color: $gray-600;
+  margin-bottom: $px10;
+}
+
+.banner__h2 {
+  font-size: $spacer * 3.75;
+  color: $black;
+  margin-bottom: $spacer * 3.125;
+}

@@ -1,6 +1,7 @@
 @import "../../Core/Settings";
 
 .essence-btn {
+  @include transition(.3s);
   display: inline-block;
   min-width: $spacer * 10.625;
   height: $spacer * 3.125;
@@ -14,4 +15,10 @@
   background-color: $blue;
   letter-spacing: $spacer * 0.03125;
   font-weight: bold;
+}
+
+.essence-btn:hover,
+.essence-btn:focus {
+  color: $white;
+  background-color: $red;
 }
