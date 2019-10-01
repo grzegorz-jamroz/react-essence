@@ -32,3 +32,27 @@
   color: $black;
   margin-bottom: $spacer * 3.125;
 }
+
+@include media-breakpoint-down(lg) {
+  .callToAction__textBox {
+    padding-right: $spacer * 3.125;
+  }
+
+  .callToAction_h2 {
+    font-size: $spacer * 3;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .callToAction__content {
+    height: $spacer * 25;
+  }
+
+  .callToAction__textBox {
+    padding-right: $spacer;
+  }
+
+  .callToAction_h2 {
+    font-size: $spacer * 1.875;
+  }
+}
