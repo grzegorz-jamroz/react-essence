@@ -1,0 +1,1 @@
+{"version":3,"file":"top-categories.js","sourceRoot":"","sources":["../src/top-categories.ts"],"names":[],"mappings":";;AAAa,QAAA,aAAa,GAAG;IACzB;QACI,EAAE,EAAE,CAAC;QACL,SAAS,EAAE,gBAAgB;QAC3B,IAAI,EAAE,UAAU;KACnB;IACD;QACI,EAAE,EAAE,CAAC;QACL,SAAS,EAAE,gBAAgB;QAC3B,IAAI,EAAE,OAAO;KAChB;IACD;QACI,EAAE,EAAE,CAAC;QACL,SAAS,EAAE,gBAAgB;QAC3B,IAAI,EAAE,aAAa;KACtB;CACJ,CAAC"}

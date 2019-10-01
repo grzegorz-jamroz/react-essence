@@ -1,5 +1,9 @@
 @import "../../Core/Settings";
 
+.topCategory {
+  padding-top: $px8;
+  padding-bottom: $px8;
+}
 
 .topCategory__a {
   @include transition(.5s);
@@ -33,5 +37,12 @@
 
   &:hover:after {
     background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .topCategory__a {
+    font-size: $spacer * 1.25;
+    height: $spacer * 11;
   }
 }
