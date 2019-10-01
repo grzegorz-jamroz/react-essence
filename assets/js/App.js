@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
 import { CART } from './mocks/lib/index'
+import HomePage from "./components/HomePage";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +36,7 @@ const App = () => {
         addCartItemsAmount={addCartItemsAmount}
         subtractCartItemsAmount={subtractCartItemsAmount}
       />
+      <HomePage />
     </React.Fragment>
   );
 };
