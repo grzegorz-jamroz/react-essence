@@ -1,10 +1,8 @@
 import React from 'react';
 
-const ProductSlide = () => {
+const ProductSlide = ({product}) => {
   return (
-    <div>
-      Product slide
-    </div>
+    <li className="glide__slide">{product.name}</li>
   );
 };
 

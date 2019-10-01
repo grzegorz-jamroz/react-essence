@@ -52,7 +52,7 @@ const CartItem = props => {
 
   useEffect(() => {
     setCartItemStyle({maxHeight: `${cartItemRef.current.clientHeight/16}rem`});
-  });
+  }, []);
 
   return (
     <div ref={cartItemRef} style={cartItemStyle} className={cartItemClass}>
