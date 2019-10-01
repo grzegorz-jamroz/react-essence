@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../Core/Styles";
 import './ProductSlide.scss';
 
 const ProductSlide = ({ product }) => {
@@ -35,10 +36,8 @@ const ProductSlide = ({ product }) => {
             </span>
             {product.unitPrice}
           </p>
-          <div className="hover-content">
-            <div className="add-to-cart-btn">
-              <a href="#" className="btn essence-btn">Add to Cart</a>
-            </div>
+          <div className="productSlide__actions">
+            <a href="#" className="btn essence-btn productSlide__addToCartBtn">Add to Cart</a>
           </div>
         </div>
       </div>

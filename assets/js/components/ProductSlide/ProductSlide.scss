@@ -33,3 +33,29 @@
   opacity: 0;
   visibility: hidden;
 }
+
+.productSlide__description {
+  position: relative;
+  z-index: 1;
+  padding-top: 25px;
+}
+
+.productSlide__actions {
+  @include transition(.5s);
+  position: absolute;
+  width: calc(100% - #{$spacer * 2.5});
+  top: -$spacer * 4.375;
+  left: $spacer * 1.25;
+  right: $spacer * 1.25;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.productSlide:hover .productSlide__actions {
+  opacity: 1;
+  visibility: visible;
+}
+
+.productSlide__addToCartBtn {
+  width: 100%;
+}

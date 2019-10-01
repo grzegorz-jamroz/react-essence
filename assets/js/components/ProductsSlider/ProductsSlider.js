@@ -11,7 +11,7 @@ const ProductsSlider = () => {
     type: 'carousel',
     startAt: 0,
     perView: 4,
-    autoplay: 7000,
+    autoplay: 6000,
     gap: 30,
     animationDuration: 1000,
   }));
