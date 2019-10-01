@@ -2,9 +2,8 @@ import React from 'react';
 import './ProductSlide.scss';
 
 const ProductSlide = ({ product }) => {
-
   if (product.images.length < 2) {
-    return;
+    return (<li className="glide__slide" />);
   }
 
   return (
