@@ -1,0 +1,34 @@
+@import "../../Core/Settings";
+
+.callToAction {
+  position: relative;
+  z-index: 1;
+}
+
+.callToAction__content {
+  width: 100%;
+  height: $spacer * 34.375;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.callToAction__textBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  padding-right: $spacer * 9.375;
+}
+
+.callToAction_h6 {
+  font-size: $spacer * 1.5;
+  color: $red;
+  margin-bottom: $px10;
+}
+
+.callToAction_h2 {
+  font-size: $spacer * 3.75;
+  color: $black;
+  margin-bottom: $spacer * 3.125;
+}
