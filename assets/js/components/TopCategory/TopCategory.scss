@@ -7,17 +7,15 @@
 
 .topCategory__a {
   @include transition(.5s);
-  position: relative;
-  z-index: 1;
+  font-size: $spacer * 1.25;
+  height: $spacer * 11;
   width: 100%;
-  height: $spacer * 15;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
   display: flex;
-  font-size: $spacer * 1.875;
   font-weight: bold;
   color: $black;
   letter-spacing: $px1;
@@ -40,9 +38,9 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-up(lg) {
   .topCategory__a {
-    font-size: $spacer * 1.25;
-    height: $spacer * 11;
+    height: $spacer * 15;
+    font-size: $spacer * 1.875;
   }
 }

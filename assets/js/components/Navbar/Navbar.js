@@ -18,16 +18,18 @@ const Navbar = props => {
     <React.Fragment>
       <div className="navbar">
         <div className="navbar__container">
-          <div className="navbar__leftSite">
-            <Logo />
-          </div>
-          <div className="navbar__rightSite">
-            <CartToggler
-              open={cartOpen}
-              setOpen={setCartOpen}
-              cartItemsAmount={cartItemsAmount}
-            />
-            <MenuToggler open={menuOpen} setOpen={setMenuOpen} />
+          <div className="navbar__row">
+            <div className="navbar__leftSite">
+              <Logo />
+            </div>
+            <div className="navbar__rightSite">
+              <CartToggler
+                open={cartOpen}
+                setOpen={setCartOpen}
+                cartItemsAmount={cartItemsAmount}
+              />
+              <MenuToggler open={menuOpen} setOpen={setMenuOpen} />
+            </div>
           </div>
         </div>
       </div>
