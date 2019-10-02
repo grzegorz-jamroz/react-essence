@@ -56,6 +56,7 @@ export const products = [
     previousPrice: 0,
     currency: "$",
     unit: "(pc.)",
+    badge: badges.discount,
     images: [
       "product-3.jpg",
       "product-5.jpg"
