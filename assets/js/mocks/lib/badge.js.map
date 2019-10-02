@@ -1,0 +1,1 @@
+{"version":3,"file":"badge.js","sourceRoot":"","sources":["../src/badge.ts"],"names":[],"mappings":";;AAUa,QAAA,MAAM,GAAW;IAC5B,GAAG,EAAE;QACH,IAAI,EAAE,KAAK;QACX,OAAO,EAAE,SAAS;QAClB,KAAK,EAAE,SAAS;KACjB;IACD,QAAQ,EAAE;QACR,IAAI,EAAE,MAAM;QACZ,OAAO,EAAE,SAAS;QAClB,KAAK,EAAE,SAAS;KACjB;CACF,CAAC"}

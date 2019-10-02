@@ -2,6 +2,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.6.2",
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "@symfony/webpack-encore": "^0.27.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "node-sass": "^4.12.0",

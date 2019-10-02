@@ -1,13 +1,12 @@
 import React from 'react';
 import "../../Core/Styles";
+import "../../Core/Fonts/Fontawesome";
 import './ProductSlide.scss';
 import ProductSlideBadge from "../ProductSlideBadge";
-import variables from "../../Core/Bootstrap/VariablesExport.scss";
-import CartItemBadge from "../CartItemBadge";
 
-const ProductSlide = ({ product }) => {
+const ProductSlide = ({product}) => {
   if (product.images.length < 2) {
-    return (<li className="glide__slide" />);
+    return (<li className="glide__slide"/>);
   }
 
   let previousPrice = "";
@@ -42,14 +41,14 @@ const ProductSlide = ({ product }) => {
             alt={product.name}
           />
           {badge}
+          <div className="productSlide__favourite">
+            <a href="#" className="productSlide__favourite" />
+          </div>
           <img
             className="productSlide__img productSlide__img--hover"
             src={require("../../../img/product/" + product.images[1])}
             alt={product.name}
           />
-          <div className="product-favourite">
-            <a href="#" className="favme fa fa-heart" />
-          </div>
         </div>
         <div className="productSlide__description">
           <span className="productSlide__label">{product.label}</span>
