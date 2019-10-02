@@ -40,6 +40,39 @@
   padding-top: 25px;
 }
 
+.productSlide__label {
+  font-size: $px10;
+  text-transform: uppercase;
+  color: $gray-600;
+  margin-bottom: $px15;
+  letter-spacing: $spacer * 0.046875;
+  font-weight: bold;
+}
+
+.productSlide__h6 {
+  color: $black;
+  margin-bottom: $px5;
+  font-size: $spacer;
+}
+
+.productSlide__h6 {
+  color: $black;
+  margin-bottom: $px5;
+  font-size: $spacer;
+}
+
+.productSlide__price {
+  font-size: $px14;
+  font-weight: bold;
+  color: $black;
+}
+
+.productSlide__previousPrice {
+  color: $gray-500;
+  margin-right: $px10;
+  text-decoration: line-through;
+}
+
 .productSlide__actions {
   @include transition(.5s);
   position: absolute;

@@ -7,6 +7,14 @@ const ProductSlide = ({ product }) => {
     return (<li className="glide__slide" />);
   }
 
+  let previousPrice = "";
+
+  if (product.previousPrice > product.unitPrice) {
+    previousPrice = (
+      <span className="productSlide__previousPrice">{product.currency + ' ' + product.previousPrice.toFixed(2)}</span>
+    );
+  }
+
   return (
     <li className="glide__slide">
       <div className="productSlide">
@@ -26,15 +34,13 @@ const ProductSlide = ({ product }) => {
           </div>
         </div>
         <div className="productSlide__description">
-          <span>{product.label}</span>
+          <span className="productSlide__label">{product.label}</span>
           <a href="#">
-            <h6>{product.name}</h6>
+            <h6 className="productSlide__h6">{product.name}</h6>
           </a>
-          <p className="product-price">
-            <span className="old-price">
-              {product.reducedPrice}
-            </span>
-            {product.unitPrice}
+          <p className="productSlide__price">
+            {previousPrice}
+            {product.currency}{product.unitPrice.toFixed(2)}
           </p>
           <div className="productSlide__actions">
             <a href="#" className="btn essence-btn productSlide__addToCartBtn">Add to Cart</a>
