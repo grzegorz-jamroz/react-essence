@@ -1,23 +1,24 @@
-export declare const products: ({
+export interface IProduct {
     id: number;
     thumbnail: string;
     name: string;
     type: string;
     label: string;
     unitPrice: number;
-    reducedPrice: null;
+    previousPrice: number;
     currency: string;
     unit: string;
     images: string[];
-} | {
+}
+export declare const products: {
     id: number;
     thumbnail: string;
     name: string;
     type: string;
     label: string;
     unitPrice: number;
-    reducedPrice: number;
+    previousPrice: number;
     currency: string;
     unit: string;
     images: string[];
-})[];
+}[];

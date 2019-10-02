@@ -5,7 +5,7 @@ export interface IProduct {
   type: string;
   label: string;
   unitPrice: number;
-  reducedPrice: number | undefined | null;
+  previousPrice: number;
   currency: string;
   unit: string;
   images: string[];
@@ -18,8 +18,8 @@ export const products = [
     name: "Knot Front Mini Dress",
     type: "size: M color: blue",
     label: "topshop",
-    unitPrice: 55.99,
-    reducedPrice: null,
+    unitPrice: 79.99,
+    previousPrice: 99.99,
     currency: "$",
     unit: "(pc.)",
     images: [
@@ -34,7 +34,7 @@ export const products = [
     type: "size: S color: green",
     label: "asoss",
     unitPrice: 55,
-    reducedPrice: null,
+    previousPrice: 0,
     currency: "$",
     unit: "(pc.)",
     images: [
@@ -49,7 +49,7 @@ export const products = [
     type: "size: S color: beige",
     label: "topshop",
     unitPrice: 55.9,
-    reducedPrice: null,
+    previousPrice: 0,
     currency: "$",
     unit: "(pc.)",
     images: [
@@ -64,7 +64,7 @@ export const products = [
     type: "size: S color: beige",
     label: "mango",
     unitPrice: 55.9,
-    reducedPrice: null,
+    previousPrice: 0,
     currency: "$",
     unit: "(pc.)",
     images: [
@@ -79,7 +79,7 @@ export const products = [
     type: "size: S color: beige",
     label: "topshop",
     unitPrice: 55.9,
-    reducedPrice: null,
+    previousPrice: 0,
     currency: "$",
     unit: "(pc.)",
     images: [
@@ -94,7 +94,7 @@ export const products = [
     type: "size: S color: beige",
     label: "mango",
     unitPrice: 45.9,
-    reducedPrice: 55,
+    previousPrice: 55,
     currency: "$",
     unit: "(pc.)",
     images: [
@@ -109,7 +109,7 @@ export const products = [
     type: "size: S color: beige",
     label: "topshop",
     unitPrice: 55.9,
-    reducedPrice: 75,
+    previousPrice: 75,
     currency: "$",
     unit: "(pc.)",
     images: [

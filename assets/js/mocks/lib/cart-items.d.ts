@@ -1,4 +1,4 @@
-export declare const cartItems: {
+export interface ICartItem {
     id: number;
     thumbnail: string;
     name: string;
@@ -8,4 +8,5 @@ export declare const cartItems: {
     amountValue: number;
     currency: string;
     unit: string;
-}[];
+}
+export declare const cartItems: ICartItem[];
