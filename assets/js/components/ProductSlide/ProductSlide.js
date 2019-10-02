@@ -1,6 +1,6 @@
 import React from 'react';
+import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
-import "../../Core/Fonts/Fontawesome";
 import './ProductSlide.scss';
 import ProductSlideBadge from "../ProductSlideBadge";
 
@@ -41,9 +41,7 @@ const ProductSlide = ({product}) => {
             alt={product.name}
           />
           {badge}
-          <div className="productSlide__favourite">
-            <a href="#" className="productSlide__favourite" />
-          </div>
+          <span className="productSlide__favourite fa fa-heart" />
           <img
             className="productSlide__img productSlide__img--hover"
             src={require("../../../img/product/" + product.images[1])}
@@ -60,7 +58,7 @@ const ProductSlide = ({product}) => {
             {product.currency}{product.unitPrice.toFixed(2)}
           </p>
           <div className="productSlide__actions">
-            <a href="#" className="btn essence-btn productSlide__addToCartBtn">Add to Cart</a>
+            <span className="btn essence-btn productSlide__addToCartBtn">Add to Cart</span>
           </div>
         </div>
       </div>

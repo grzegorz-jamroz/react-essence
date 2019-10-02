@@ -49,6 +49,7 @@
   text-align: center;
   opacity: 0;
   visibility: hidden;
+  cursor: pointer;
 }
 
 .productSlide__description {
@@ -107,6 +108,12 @@
   visibility: visible;
 }
 
+.productSlide__favourite:hover {
+  color: $red;
+}
+
 .productSlide__addToCartBtn {
   width: 100%;
+  cursor: pointer;
 }
+
