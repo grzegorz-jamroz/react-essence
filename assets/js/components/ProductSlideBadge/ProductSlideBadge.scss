@@ -1,0 +1,13 @@
+@import "../../Core/Settings";
+
+.productSlideBadge {
+  height: $spacer * 1.5625;
+  font-weight: 700;
+  font-size: $px12;
+  padding: 0 $px10;
+  line-height: $spacer * 1.5625;
+  position: absolute;
+  top: $spacer * 1.25;
+  left: $spacer * 1.25;
+  z-index: 10;
+}

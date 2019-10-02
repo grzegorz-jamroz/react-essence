@@ -1,3 +1,5 @@
+import { IBadge, badges } from "./badge";
+
 export interface IProduct {
   id: number;
   thumbnail: string;
@@ -9,6 +11,7 @@ export interface IProduct {
   currency: string;
   unit: string;
   images: string[];
+  badge?: IBadge;
 }
 
 export const products = [
@@ -22,6 +25,7 @@ export const products = [
     previousPrice: 99.99,
     currency: "$",
     unit: "(pc.)",
+    badge: badges.new,
     images: [
       "product-1.jpg",
       "product-3.jpg"

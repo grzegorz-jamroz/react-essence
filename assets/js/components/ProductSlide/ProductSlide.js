@@ -1,6 +1,9 @@
 import React from 'react';
 import "../../Core/Styles";
 import './ProductSlide.scss';
+import ProductSlideBadge from "../ProductSlideBadge";
+import variables from "../../Core/Bootstrap/VariablesExport.scss";
+import CartItemBadge from "../CartItemBadge";
 
 const ProductSlide = ({ product }) => {
   if (product.images.length < 2) {
@@ -15,6 +18,20 @@ const ProductSlide = ({ product }) => {
     );
   }
 
+  let badge = "";
+
+  if (typeof product.badge === "object") {
+    badge = (
+      <ProductSlideBadge
+        options={{
+          backgroundColor: product.badge.bgColor,
+          color: product.badge.color
+        }}
+        text={product.badge.text}
+      />
+    );
+  }
+
   return (
     <li className="glide__slide">
       <div className="productSlide">
@@ -24,6 +41,7 @@ const ProductSlide = ({ product }) => {
             src={require("../../../img/product/" + product.images[0])}
             alt={product.name}
           />
+          {badge}
           <img
             className="productSlide__img productSlide__img--hover"
             src={require("../../../img/product/" + product.images[1])}

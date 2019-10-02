@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const badge_1 = require("./badge");
 exports.products = [
     {
         id: 1,
@@ -11,6 +12,7 @@ exports.products = [
         previousPrice: 99.99,
         currency: "$",
         unit: "(pc.)",
+        badge: badge_1.badges.new,
         images: [
             "product-1.jpg",
             "product-3.jpg"

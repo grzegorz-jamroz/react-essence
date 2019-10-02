@@ -3,7 +3,7 @@ import "../../Core/Fonts";
 import variables from "../../Core/Bootstrap/VariablesExport.scss";
 import "./CartItem.scss";
 import Bin from "../CartItemBin";
-import Badge from "../CartItemBadge";
+import CartItemBadge from "../CartItemBadge";
 
 const CartItem = props => {
   const {
@@ -58,11 +58,11 @@ const CartItem = props => {
     <div ref={cartItemRef} style={cartItemStyle} className={cartItemClass}>
       <div className="cartItem__thumbnail">
         <div className="cartItem__badgesLeft">
-          <Badge bgColor={variables.red} text={quantity} />
+          <CartItemBadge options={{backgroundColor: variables.red}} text={quantity} />
         </div>
         <div className="cartItem__badgesRight">
-          <Badge
-            bgColor={variables.blue}
+          <CartItemBadge
+            options={{backgroundColor: variables.blue}}
             text={`${item.unitPrice.toFixed(2)} ${item.currency}`}
           />
         </div>
