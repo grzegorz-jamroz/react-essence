@@ -4,6 +4,7 @@ import variables from "../../Core/Bootstrap/VariablesExport.scss";
 import "./CartItem.scss";
 import Bin from "../CartItemBin";
 import CartItemBadge from "../CartItemBadge";
+import Decimal from 'decimal.js';
 
 const CartItem = props => {
   const {
@@ -17,26 +18,26 @@ const CartItem = props => {
     total
   } = props;
   const [quantity, setQuantity] = useState(item.quantity);
-  const [amountValue, setAmountValue] = useState(item.amountValue);
+  const [amountValue, setAmountValue] = useState(new Decimal(item.amountValue));
   const [cartItemStyle, setCartItemStyle] = useState({});
   const [cartItemClass, setCartItemClass] = useState('cartItem');
   const cartItemRef = useRef(null);
 
   const increaseAmount = () => () => {
     addCartItemsAmount(1);
-    setAmountValue(amountValue + item.unitPrice);
+    setAmountValue(amountValue.plus(item.unitPrice));
     setQuantity(quantity + 1);
-    setTotal(total + item.unitPrice);
-    setSubtotal(subtotal + item.unitPrice);
+    setTotal(total.plus(item.unitPrice));
+    setSubtotal(subtotal.plus(item.unitPrice));
   };
 
   const decreaseAmount = () => () => {
     if (quantity > 1) {
       subtractCartItemsAmount(1);
-      setAmountValue(amountValue - item.unitPrice);
+      setAmountValue(amountValue.minus(item.unitPrice));
       setQuantity(quantity - 1);
-      setTotal(total - item.unitPrice);
-      setSubtotal(subtotal - item.unitPrice);
+      setTotal(total.plus(item.unitPrice));
+      setSubtotal(subtotal.plus(item.unitPrice));
     }
   };
 
@@ -45,8 +46,8 @@ const CartItem = props => {
     setTimeout(() => {
       removeCartItem(item.id);
       subtractCartItemsAmount(quantity);
-      setTotal(total - amountValue);
-      setSubtotal(subtotal - amountValue);
+      setTotal(total.minus(amountValue));
+      setSubtotal(subtotal.minus(amountValue));
     }, 500);
   };
 

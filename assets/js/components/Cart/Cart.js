@@ -5,6 +5,7 @@ import "./Cart.scss";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import {CART, CART_ITEMS} from '../../mocks/lib/index'
+import Decimal from 'decimal.js';
 
 const Cart = props => {
   const {
@@ -15,10 +16,10 @@ const Cart = props => {
     subtractCartItemsAmount
   } = props;
   const [cartItems, setCartItems] = useState(CART_ITEMS);
-  const [subtotal, setSubtotal] = useState(CART.subtotal);
-  const [discount, setDiscount] = useState(CART.discount);
-  const [delivery, setDelivery] = useState(CART.delivery);
-  const [total, setTotal] = useState(CART.total);
+  const [subtotal, setSubtotal] = useState(new Decimal(CART.subtotal));
+  const [discount, setDiscount] = useState(new Decimal(CART.discount));
+  const [delivery, setDelivery] = useState(new Decimal(CART.delivery));
+  const [total, setTotal] = useState(new Decimal(CART.total));
 
   const removeCartItem = id => {
     const newCartItems = cartItems.filter(item => item.id !== id);
@@ -46,11 +47,11 @@ const Cart = props => {
             </div>
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">delivery</div>
-              <div className="cartSummaryColumn__right">{delivery} $</div>
+              <div className="cartSummaryColumn__right">{delivery.toFixed(2)} $</div>
             </div>
             <div className="cartSummary__column ">
               <div className="cartSummaryColumn__left">discount</div>
-              <div className="cartSummaryColumn__right">{discount} $</div>
+              <div className="cartSummaryColumn__right">{discount.toFixed(2)} $</div>
             </div>
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">total</div>
