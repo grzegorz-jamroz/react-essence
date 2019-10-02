@@ -1,4 +1,16 @@
-export const cartItems = [
+export interface ICartItem {
+  id: number;
+  thumbnail: string;
+  name: string;
+  type: string;
+  quantity: number;
+  unitPrice: number;
+  amountValue: number;
+  currency: string;
+  unit: string;
+}
+
+export const cartItems: ICartItem[] = [
   {
     id: 1,
     thumbnail: "product-3.jpg",
