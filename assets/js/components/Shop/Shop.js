@@ -1,11 +1,10 @@
 import React from "react";
-import Banner from "../Banner";
+import Breadcrumb from "../Breadcrumb";
 
 const Shop = () => {
   return (
     <React.Fragment>
-      <Banner />
-      <h1>Welcome in shop!</h1>
+      <Breadcrumb text="Welcome in shop!"/>
     </React.Fragment>
   );
 };
