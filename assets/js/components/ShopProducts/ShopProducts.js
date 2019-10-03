@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { firestore } from '../../Firebase'
+import { firestore } from '../../Firebase';
 import ProductSlide from "../ProductSlide";
 import { collectIdsAndDocs } from "../../Firebase/utilities";
+import './ShopProducts.scss';
 
-export const ShopProducts = () => {
+const ShopProducts = () => {
   const [products, setProducts] = useState([]);
 
   const requestProducts = async () => {
@@ -55,3 +56,5 @@ export const ShopProducts = () => {
     </div>
   );
 };
+
+export default ShopProducts;

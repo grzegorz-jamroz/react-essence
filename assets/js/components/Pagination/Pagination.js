@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Pagination = () => {
+const Pagination = () => {
   return (
     <nav aria-label="navigation">
       <ul className="pagination mt-50 mb-70">
@@ -17,3 +17,5 @@ export const Pagination = () => {
     </nav>
   );
 };
+
+export default Pagination;

@@ -1,16 +1,12 @@
 @import "../../Core/Settings";
 
-.shopProducts {
+.shopContent {
   padding-top: $spacer * 4.5;
   padding-bottom: $spacer * 4.5;
 }
 
-.shopProducts__row {
-  justify-content: center;
-}
-
 @include media-breakpoint-down(md) {
-  .shopProducts {
+  .shopContent {
     padding-top: $spacer * 1.5;
     padding-bottom: $spacer * 1.5;
   }

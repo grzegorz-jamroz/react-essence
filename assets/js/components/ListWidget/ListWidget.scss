@@ -1,0 +1,43 @@
+@import "../../Core/Settings";
+
+.listWidget{
+  position: relative;
+  z-index: 1;
+  margin-bottom: $spacer * 3.125;
+}
+
+.listWidget__categories {
+  font-family: $font-family-poppins;
+}
+
+.listWidget__title {
+  font-size: $spacer * 1.125;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: $spacer * 1.875;
+}
+
+.listWidget__categoryName {
+  text-transform: uppercase;
+  font-size: $px12;
+  margin-bottom: $px15;
+  display: block;
+  font-weight: bold;
+}
+
+.subListWidget {
+  margin-left: $px15;
+  margin-bottom: $px15;
+}
+
+.subListWidget__link {
+  text-transform: capitalize;
+  font-size: $px14;
+  margin-bottom: $px5;
+  display: block;
+  color: $gray-600;
+
+  &:hover {
+    color: $blue;
+  }
+}
