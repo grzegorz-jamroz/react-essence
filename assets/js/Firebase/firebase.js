@@ -1,18 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import firebaseConfig from './firebaseConfig';
 
-const config = {
-  apiKey: "apiKey",
-  authDomain: "authDomain",
-  databaseURL: "databaseURL",
-  projectId: "projectId",
-  storageBucket: "storageBucket",
-  messagingSenderId: "messagingSenderId",
-  appId: "appId",
-  measurementId: "measurementId"
-};
-
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 export const firestore = firebase.firestore();
 export default firebase;
