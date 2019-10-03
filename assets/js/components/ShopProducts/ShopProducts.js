@@ -2,16 +2,14 @@ import React from 'react';
 
 export const ShopProducts = () => {
   return (
-    <div className="shop_grid_product_area">
+    <div className="shopProducts">
       <div className="row">
         <div className="col-12">
-          <div className="product-topbar d-flex align-items-center justify-content-between">
-            <!-- Total Products -->
-            <div className="total-products">
+          <div className="shopProducts__topbar d-flex align-items-center justify-content-between">
+            <div className="shopProducts__total">
               <p><span>186</span> products found</p>
             </div>
-            <!-- Sorting -->
-            <div className="product-sorting d-flex">
+            <div className="shopProducts__sorting d-flex">
               <p>Sort by:</p>
               <form action="#" method="get">
                 <select name="select" id="sortByselect" style="display: none;">

@@ -2,17 +2,13 @@ import React from 'react';
 
 export const ShopWidgets = () => {
   return (
-    <div className="shop_sidebar_area">
+    <div className="shopWidgets">
 
-      <!-- ##### Single Widget ##### -->
-      <div className="widget catagory mb-50">
-        <!-- Widget Title -->
-        <h6 className="widget-title mb-30">Catagories</h6>
+      <div className="shopWidget catagory mb-50">
+        <h6 className="shopWidget__title mb-30">Catagories</h6>
 
-        <!--  Catagories  -->
-        <div className="catagories-menu">
+        <div className="shopWidget__catagories-menu">
           <ul id="menu-content2" className="menu-content collapse show">
-            <!-- Single Item -->
             <li data-toggle="collapse" data-target="#clothing">
               <a href="#">clothing</a>
               <ul className="sub-menu collapse show" id="clothing">
@@ -29,7 +25,6 @@ export const ShopWidgets = () => {
                 <li><a href="#">Sweaters &amp; Knits</a></li>
               </ul>
             </li>
-            <!-- Single Item -->
             <li data-toggle="collapse" data-target="#shoes" className="collapsed">
               <a href="#">shoes</a>
               <ul className="sub-menu collapse" id="shoes">
@@ -46,7 +41,6 @@ export const ShopWidgets = () => {
                 <li><a href="#">Sweaters &amp; Knits</a></li>
               </ul>
             </li>
-            <!-- Single Item -->
             <li data-toggle="collapse" data-target="#accessories" className="collapsed">
               <a href="#">accessories</a>
               <ul className="sub-menu collapse" id="accessories">
@@ -67,11 +61,8 @@ export const ShopWidgets = () => {
         </div>
       </div>
 
-      <!-- ##### Single Widget ##### -->
       <div className="widget price mb-50">
-        <!-- Widget Title -->
         <h6 className="widget-title mb-30">Filter by</h6>
-        <!-- Widget Title 2 -->
         <p className="widget-title2 mb-30">Price</p>
 
         <div className="widget-desc">
@@ -106,9 +97,7 @@ export const ShopWidgets = () => {
         </div>
       </div>
 
-      <!-- ##### Single Widget ##### -->
       <div className="widget color mb-50">
-        <!-- Widget Title 2 -->
         <p className="widget-title2 mb-30">Color</p>
         <div className="widget-desc">
           <ul className="d-flex">
@@ -126,9 +115,7 @@ export const ShopWidgets = () => {
         </div>
       </div>
 
-      <!-- ##### Single Widget ##### -->
       <div className="widget brands mb-50">
-        <!-- Widget Title 2 -->
         <p className="widget-title2 mb-30">Brands</p>
         <div className="widget-desc">
           <ul>
