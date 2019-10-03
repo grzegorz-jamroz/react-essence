@@ -3,8 +3,12 @@ import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
 import './ProductSlide.scss';
 import ProductSlideBadge from "../ProductSlideBadge";
+import { Decimal } from "decimal.js";
 
 const ProductSlide = ({product}) => {
+  product.previousPrice = new Decimal(product.previousPrice);
+  product.unitPrice = new Decimal(product.unitPrice);
+
   if (product.images.length < 2) {
     return (<li className="glide__slide"/>);
   }
@@ -17,7 +21,7 @@ const ProductSlide = ({product}) => {
     );
   }
 
-  let badge = "";
+  let badge =  "";
 
   if (typeof product.badge === "object") {
     badge = (
@@ -31,20 +35,26 @@ const ProductSlide = ({product}) => {
     );
   }
 
+  try {
+    product.images[0] = require("../../../img/product/" + product.images[0]);
+    product.images[1] = require("../../../img/product/" + product.images[1]);
+  } catch (e) {
+  }
+
   return (
     <li className="glide__slide">
       <div className="productSlide">
         <div className="productSlide__image">
           <img
             className="productSlide__img"
-            src={require("../../../img/product/" + product.images[0])}
+            src={product.images[0]}
             alt={product.name}
           />
           {badge}
           <span className="productSlide__favourite fa fa-heart" />
           <img
             className="productSlide__img productSlide__img--hover"
-            src={require("../../../img/product/" + product.images[1])}
+            src={product.images[1]}
             alt={product.name}
           />
         </div>

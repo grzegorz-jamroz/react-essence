@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { firestore } from '../../Firebase'
+import ProductSlide from "../ProductSlide";
 
 export const ShopProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  const requestProducts = async () => {
+    const snapshot = await firestore.collection('products').get();
+    const products = snapshot.docs.map(doc => {
+      return { id: doc.id, ...doc.data() };
+    });
+    setProducts(products);
+  };
+
+  useEffect(() => {
+    requestProducts();
+  }, []);
+
   return (
     <div className="shopProducts">
       <div className="row">
@@ -12,7 +28,7 @@ export const ShopProducts = () => {
             <div className="shopProducts__sorting d-flex">
               <p>Sort by:</p>
               <form action="#" method="get">
-                <select name="select" id="sortByselect" style="display: none;">
+                <select name="select" id="sortByselect" style={{display: "none"}}>
                   <option value="value">Highest Rated</option>
                   <option value="value">Newest</option>
                   <option value="value">Price: $$ - $</option>
@@ -26,13 +42,16 @@ export const ShopProducts = () => {
                     <li data-value="value" className="option">Price: $ - $$</li>
                   </ul>
                 </div>
-                <input type="submit" className="d-none" value="" />
+                <input type="submit" className="d-none" value=""/>
               </form>
             </div>
           </div>
         </div>
       </div>
       <div className="row">
+        {products.map(product => (
+          <ProductSlide key={product.id} product={product} />
+        ))}
       </div>
     </div>
   );
