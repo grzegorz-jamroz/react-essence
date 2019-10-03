@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { firestore } from '../../Firebase'
 import ProductSlide from "../ProductSlide";
+import { collectIdsAndDocs } from "../../Firebase/utilities";
 
 export const ShopProducts = () => {
   const [products, setProducts] = useState([]);
 
   const requestProducts = async () => {
     const snapshot = await firestore.collection('products').get();
-    const products = snapshot.docs.map(doc => {
-      return { id: doc.id, ...doc.data() };
-    });
+    const products = snapshot.docs.map(collectIdsAndDocs);
     setProducts(products);
   };
 
