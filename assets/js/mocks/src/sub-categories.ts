@@ -17,12 +17,12 @@ export const subCategories: ISubCategories = {
       parentId: ""
     },
     {
-      name: "Hoodies &amp; Sweats",
+      name: "Hoodies & Sweats",
       thumbnail: "category-1.jpg",
       parentId: ""
     },
     {
-      name: "Jackets &amp; Coats",
+      name: "Jackets & Coats",
       thumbnail: "category-1.jpg",
       parentId: ""
     },
@@ -32,17 +32,17 @@ export const subCategories: ISubCategories = {
       parentId: ""
     },
     {
-      name: "Pants &amp; Leggings",
+      name: "Pants & Leggings",
       thumbnail: "category-1.jpg",
       parentId: ""
     },
     {
-      name: "Rompers &amp; Jumpsuits",
+      name: "Rompers & Jumpsuits",
       thumbnail: "category-1.jpg",
       parentId: ""
     },
     {
-      name: "Shirts &amp; Blouses",
+      name: "Shirts & Blouses",
       thumbnail: "category-1.jpg",
       parentId: ""
     },
@@ -52,7 +52,7 @@ export const subCategories: ISubCategories = {
       parentId: ""
     },
     {
-      name: "Sweaters &amp; Knits",
+      name: "Sweaters & Knits",
       thumbnail: "category-1.jpg",
       parentId: ""
     }

@@ -9,7 +9,7 @@ const TopCategories = () => {
   const [categories, setCategories] = useState([]);
 
   const requestCategories = async () => {
-    const snapshot = await firestore.collection('categories').get();
+    const snapshot = await firestore.collection('categories').where("parentId", "==", "").orderBy("name", "asc").get();
     const categories = snapshot.docs.map(collectIdsAndDocs);
     setCategories(categories);
   };
