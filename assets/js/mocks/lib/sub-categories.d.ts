@@ -1,7 +1,5 @@
-export interface ISubCategory {
-    name: string;
-}
+import { ICategory } from "./categories";
 export interface ISubCategories {
-    [name: string]: ISubCategory[];
+    [name: string]: ICategory[];
 }
 export declare const subCategories: ISubCategories;
