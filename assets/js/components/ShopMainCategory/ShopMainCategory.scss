@@ -1,0 +1,14 @@
+@import "../../Core/Settings";
+
+.shopMainCategory__name {
+  text-transform: uppercase;
+  font-size: $px12;
+  margin-bottom: $px15;
+  display: block;
+  font-weight: bold;
+}
+
+.shopMainCategory__ul {
+  margin-left: $px15;
+  margin-bottom: $px15;
+}

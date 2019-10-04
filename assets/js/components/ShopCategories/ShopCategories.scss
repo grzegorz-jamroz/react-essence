@@ -1,0 +1,18 @@
+@import "../../Core/Settings";
+
+.shopCategories {
+  position: relative;
+  z-index: 1;
+  margin-bottom: $spacer * 3.125;
+}
+
+.shopCategories__title {
+  font-size: $spacer * 1.125;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: $spacer * 1.875;
+}
+
+.shopCategories__content {
+  font-family: $font-family-poppins;
+}

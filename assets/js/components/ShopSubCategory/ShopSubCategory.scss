@@ -1,0 +1,13 @@
+@import "../../Core/Settings";
+
+.shopSubCategory__link {
+  text-transform: capitalize;
+  font-size: $px14;
+  margin-bottom: $px5;
+  display: block;
+  color: $gray-600;
+
+  &:hover {
+    color: $blue;
+  }
+}

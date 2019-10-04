@@ -1,10 +1,10 @@
 import React from 'react';
-import ListWidget from "../ListWidget";
+import ShopCategories from "../ShopCategories";
 
 const ShopSidebar = () => {
   return (
     <div className="shopSidebar">
-      <ListWidget />
+      <ShopCategories />
 
       <div className="widget price mb-50">
         <h6 className="widget-title mb-30">Filter by</h6>
