@@ -3,13 +3,18 @@ import "../../Core/Styles";
 import './TopCategory.scss';
 
 const TopCategory = props => {
-  const {name, imgUrl} = props;
+  const { category } = props;
+
+  try {
+    category.thumbnail = require("../../../img/category/" + category.thumbnail);
+  } catch (e) {
+  }
 
   return (
     <div className="topCategory col-12 col-md-4">
       <a className="topCategory__a"
-         style={ { backgroundImage: `url(${require("../../../img/category/" + imgUrl)})` } }
-         href="#">{name}</a>
+         style={ { backgroundImage: `url(${category.thumbnail})` } }
+         href="#">{category.name}</a>
     </div>
   );
 };
