@@ -1,10 +1,11 @@
 import { IBadge } from "./badge";
+import { IBrand } from "./brands";
 export interface IProduct {
     id: number;
     thumbnail: string;
     name: string;
     type: string;
-    label: string;
+    label: IBrand;
     unitPrice: number;
     previousPrice: number;
     currency: string;
@@ -17,7 +18,7 @@ export declare const products: ({
     thumbnail: string;
     name: string;
     type: string;
-    label: string;
+    label: IBrand;
     unitPrice: number;
     previousPrice: number;
     currency: string;
@@ -29,7 +30,7 @@ export declare const products: ({
     thumbnail: string;
     name: string;
     type: string;
-    label: string;
+    label: IBrand;
     unitPrice: number;
     previousPrice: number;
     currency: string;

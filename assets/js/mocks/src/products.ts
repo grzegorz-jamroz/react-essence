@@ -1,11 +1,12 @@
 import { IBadge, badges } from "./badge";
+import { IBrand, brands } from "./brands";
 
 export interface IProduct {
   id: number;
   thumbnail: string;
   name: string;
   type: string;
-  label: string;
+  label: IBrand;
   unitPrice: number;
   previousPrice: number;
   currency: string;
@@ -20,7 +21,7 @@ export const products = [
     thumbnail: "product-1.jpg",
     name: "Knot Front Mini Dress",
     type: "size: M color: blue",
-    label: "topshop",
+    label: brands.topshop,
     unitPrice: 79.99,
     previousPrice: 99.99,
     currency: "$",
@@ -36,7 +37,7 @@ export const products = [
     thumbnail: "product-2.jpg",
     name: "PETITE Crepe Wrap Mini Dress",
     type: "size: S color: green",
-    label: "asoss",
+    label: brands.asoss,
     unitPrice: 55,
     previousPrice: 0,
     currency: "$",
@@ -51,7 +52,7 @@ export const products = [
     thumbnail: "product-3.jpg",
     name: "Poplin Displaced Wrap Dress",
     type: "size: S color: beige",
-    label: "topshop",
+    label: brands.topshop,
     unitPrice: 55.9,
     previousPrice: 0,
     currency: "$",
@@ -67,7 +68,7 @@ export const products = [
     thumbnail: "product-4.jpg",
     name: "Button Through Strap Mini Dress",
     type: "size: S color: beige",
-    label: "mango",
+    label: brands.mango,
     unitPrice: 55.9,
     previousPrice: 0,
     currency: "$",
@@ -82,7 +83,7 @@ export const products = [
     thumbnail: "product-5.jpg",
     name: "PETITE Belted Jumper Dress",
     type: "size: S color: beige",
-    label: "topshop",
+    label: brands.topshop,
     unitPrice: 55.9,
     previousPrice: 0,
     currency: "$",
@@ -97,7 +98,7 @@ export const products = [
     thumbnail: "product-6.jpg",
     name: "Poplin Displaced Wrap Dress",
     type: "size: S color: beige",
-    label: "mango",
+    label: brands.mango,
     unitPrice: 45.9,
     previousPrice: 55,
     currency: "$",
@@ -112,7 +113,7 @@ export const products = [
     thumbnail: "product-7.jpg",
     name: "Poplin Displaced Wrap Dress",
     type: "size: S color: beige",
-    label: "topshop",
+    label: brands.mango,
     unitPrice: 55.9,
     previousPrice: 75,
     currency: "$",
