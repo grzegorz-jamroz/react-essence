@@ -59,7 +59,7 @@ const ProductSlide = ({product}) => {
           />
         </div>
         <div className="productSlide__description">
-          <span className="productSlide__label">{product.label}</span>
+          <span className="productSlide__label">{product.label.name}</span>
           <a href="#">
             <h6 className="productSlide__h6">{product.name}</h6>
           </a>
