@@ -1,0 +1,17 @@
+@import "../../Core/Settings";
+
+.filterDropdown {
+  display: flex;
+  margin-bottom: 0;
+  font-size: $px12;
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: $spacer * 0.046875;
+  margin-right: $px15;
+}
+
+.filterDropdown__p {
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+}
