@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from "react-select";
 import './FilterDropdown.scss';
 
 const FilterDropdown = () => {
   const options = [
-    { value: '1', label: 'Highest Rated' },
-    { value: '2', label: 'Newest' },
-    { value: '3', label: 'Price: $$ - $' },
-    { value: '4', label: 'Price: $ - $$' }
+    { value: 'highest_rated', label: 'Highest Rated' },
+    { value: 'newest', label: 'Newest' },
+    { value: 'price_hight_low', label: 'Price: $$ - $' },
+    { value: 'price_low_hight', label: 'Price: $ - $$' }
   ];
+
+  const [filterValue, setFilterValue] = useState({ value: 'newest', label: 'Newest' })
 
   const customStyles = {
     control: (styles) => ({...styles, border: 'none', boxShadow: 'none'}),
@@ -26,7 +28,8 @@ const FilterDropdown = () => {
     <div className="filterDropdown">
       <p className="filterDropdown__p">Sort by:</p>
       <Select
-        value={options.filter(option => option.label === 'Highest Rated')}
+        value={filterValue}
+        onChange={value => setFilterValue(value)}
         options={options}
         styles={customStyles}
       />
