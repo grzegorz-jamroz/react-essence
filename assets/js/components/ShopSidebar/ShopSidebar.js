@@ -1,5 +1,6 @@
 import React from 'react';
 import ShopCategories from "../ShopCategories";
+import ShopBrands from "../ShopBrands";
 
 const ShopSidebar = () => {
   return (
@@ -60,18 +61,7 @@ const ShopSidebar = () => {
         </div>
       </div>
 
-      <div className="widget brands mb-50">
-        <p className="widget-title2 mb-30">Brands</p>
-        <div className="widget-desc">
-          <ul>
-            <li><a href="#">Asos</a></li>
-            <li><a href="#">Mango</a></li>
-            <li><a href="#">River Island</a></li>
-            <li><a href="#">Topshop</a></li>
-            <li><a href="#">Zara</a></li>
-          </ul>
-        </div>
-      </div>
+      <ShopBrands />
     </div>
   );
 };
