@@ -1,6 +1,8 @@
 import { removeFixtures, setUpFixtures } from "./utilities";
 
-removeFixtures();
-setUpFixtures();
+const init = async () => {
+  await removeFixtures();
+  await setUpFixtures();
+};
 
-
+init();

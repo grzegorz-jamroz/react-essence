@@ -1,13 +1,16 @@
 import { deleteCollection } from "./deleteCollection";
 import { createCategories } from "./createCategories";
 import { createProducts } from "./createProducts";
+import { createBrands } from "./BrandRepository";
 
-export const removeFixtures = () => {
-  deleteCollection("products");
-  deleteCollection("categories");
+export const removeFixtures = async () => {
+  await deleteCollection("brands");
+  await deleteCollection("categories");
+  await deleteCollection("products");
 };
 
-export const setUpFixtures = () => {
-  createCategories();
-  createProducts();
+export const setUpFixtures = async () => {
+  await createBrands();
+  await createCategories();
+  await createProducts();
 };

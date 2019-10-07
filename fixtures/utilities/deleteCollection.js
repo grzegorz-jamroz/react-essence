@@ -1,3 +1,5 @@
+import { firestore } from "../../assets/js/Firebase";
+
 export const deleteCollection = async (collectionPath, batchSize = 10) => {
   let collectionRef = firestore.collection(collectionPath);
   let query = collectionRef.orderBy('__name__').limit(batchSize);
