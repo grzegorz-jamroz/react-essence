@@ -2,7 +2,6 @@
 
 .singleProduct {
   position: relative;
-  z-index: 1;
   margin-bottom: $spacer * 3.125;
   overflow: hidden;
   background-color: $white;
@@ -10,7 +9,6 @@
 
 .singleProduct__image {
   position: relative;
-  z-index: 1;
   overflow: hidden;
 }
 

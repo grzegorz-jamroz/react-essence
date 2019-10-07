@@ -1,0 +1,39 @@
+@import "../../Core/Settings";
+
+.shopTopBar {
+  display: flex;
+  position: relative;
+  margin-bottom: $spacer * 2.5;
+}
+
+.shopTopBar__found {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  font-size: $px12;
+  font-weight: bold;
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: $spacer * 0.046875;
+}
+
+.shopTopBar__foundNumber {
+  color: $blue;
+  margin-right: $px4;
+}
+
+.shopTopBar__filter {
+  display: flex;
+  margin-bottom: 0;
+  font-size: $px12;
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: $spacer * 0.046875;
+  margin-right: $px15;
+}
+
+.shopTopBar__p {
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+}
