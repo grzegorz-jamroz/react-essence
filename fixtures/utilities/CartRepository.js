@@ -1,19 +1,30 @@
 import { firestore } from "../../assets/js/Firebase";
-import { CART_ITEMS, CART } from "../../assets/js/mocks/lib";
+import { CART } from "../../assets/js/mocks/lib";
 import { createDocument } from "./createDocument";
 import { collectIdsAndDocs } from "../../assets/js/Firebase/utilities";
+import Decimal from 'decimal.js';
 
 export const createCart = async () => {
-  createDocument("carts", CART);
-};
+  let collectionRef = firestore.collection('products');
+  let query = collectionRef.orderBy('name').limit(3);
+  const snapshot = await query.get();
+  const products = snapshot.docs.map(collectIdsAndDocs);
+  CART.delivery = 15;
 
-export const addItemsToCart = async () => {
-  const snapshot = await firestore.collection('categories').get();
-  const carts = snapshot.docs.map(collectIdsAndDocs);
+  CART.items = products.map((product, index) => {
+    const quantity = index + 1;
+    const amountValue = new Decimal(product.unitPrice).times(quantity);
+    CART.quantity = new Decimal(CART.quantity).add(quantity).toNumber();
+    CART.subtotal = new Decimal(CART.subtotal).add(amountValue).toNumber();
 
-  console.log(carts);
+    return {
+      product: product,
+      quantity: quantity,
+      amountValue: amountValue.toNumber()
+    };
+  });
 
-  // CART_ITEMS.map(cartItem => {
-  //   createDocument("carts/cartItems", cartItem);
-  // });
+  CART.total = new Decimal(CART.subtotal).add(CART.delivery).toNumber();
+
+  await createDocument("carts", CART);
 };

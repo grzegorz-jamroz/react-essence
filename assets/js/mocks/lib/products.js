@@ -4,9 +4,8 @@ const badge_1 = require("./badge");
 const brands_1 = require("./brands");
 exports.products = [
     {
-        id: 1,
-        thumbnail: "product-1.jpg",
         name: "Knot Front Mini Dress",
+        thumbnail: "product-1.jpg",
         type: "size: M color: blue",
         label: brands_1.brands.topshop,
         unitPrice: 79.99,
@@ -20,9 +19,8 @@ exports.products = [
         ]
     },
     {
-        id: 2,
-        thumbnail: "product-2.jpg",
         name: "PETITE Crepe Wrap Mini Dress",
+        thumbnail: "product-2.jpg",
         type: "size: S color: green",
         label: brands_1.brands.asoss,
         unitPrice: 55,
@@ -35,9 +33,8 @@ exports.products = [
         ]
     },
     {
-        id: 3,
-        thumbnail: "product-3.jpg",
         name: "Poplin Displaced Wrap Dress",
+        thumbnail: "product-3.jpg",
         type: "size: S color: beige",
         label: brands_1.brands.topshop,
         unitPrice: 55.9,
@@ -51,9 +48,8 @@ exports.products = [
         ]
     },
     {
-        id: 4,
-        thumbnail: "product-4.jpg",
         name: "Button Through Strap Mini Dress",
+        thumbnail: "product-4.jpg",
         type: "size: S color: beige",
         label: brands_1.brands.mango,
         unitPrice: 55.9,
@@ -66,9 +62,8 @@ exports.products = [
         ]
     },
     {
-        id: 5,
-        thumbnail: "product-5.jpg",
         name: "PETITE Belted Jumper Dress",
+        thumbnail: "product-5.jpg",
         type: "size: S color: beige",
         label: brands_1.brands.topshop,
         unitPrice: 55.9,
@@ -81,9 +76,8 @@ exports.products = [
         ]
     },
     {
-        id: 6,
-        thumbnail: "product-6.jpg",
         name: "Poplin Displaced Wrap Dress",
+        thumbnail: "product-6.jpg",
         type: "size: S color: beige",
         label: brands_1.brands.mango,
         unitPrice: 45.9,
@@ -96,9 +90,8 @@ exports.products = [
         ]
     },
     {
-        id: 7,
-        thumbnail: "product-7.jpg",
         name: "Poplin Displaced Wrap Dress",
+        thumbnail: "product-7.jpg",
         type: "size: S color: beige",
         label: brands_1.brands.mango,
         unitPrice: 55.9,

@@ -1,9 +1,9 @@
 import { IBadge } from "./badge";
 import { IBrand } from "./brands";
 export interface IProduct {
-    id: number;
-    thumbnail: string;
+    id?: string;
     name: string;
+    thumbnail: string;
     type: string;
     label: IBrand;
     unitPrice: number;
@@ -14,9 +14,8 @@ export interface IProduct {
     badge?: IBadge;
 }
 export declare const products: ({
-    id: number;
-    thumbnail: string;
     name: string;
+    thumbnail: string;
     type: string;
     label: IBrand;
     unitPrice: number;
@@ -26,9 +25,8 @@ export declare const products: ({
     badge: IBadge;
     images: string[];
 } | {
-    id: number;
-    thumbnail: string;
     name: string;
+    thumbnail: string;
     type: string;
     label: IBrand;
     unitPrice: number;

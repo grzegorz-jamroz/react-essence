@@ -2,9 +2,9 @@ import { IBadge, badges } from "./badge";
 import { IBrand, brands } from "./brands";
 
 export interface IProduct {
-  id: number;
-  thumbnail: string;
+  id?: string;
   name: string;
+  thumbnail: string;
   type: string;
   label: IBrand;
   unitPrice: number;
@@ -17,9 +17,8 @@ export interface IProduct {
 
 export const products = [
   {
-    id: 1,
-    thumbnail: "product-1.jpg",
     name: "Knot Front Mini Dress",
+    thumbnail: "product-1.jpg",
     type: "size: M color: blue",
     label: brands.topshop,
     unitPrice: 79.99,
@@ -33,9 +32,8 @@ export const products = [
     ]
   },
   {
-    id: 2,
-    thumbnail: "product-2.jpg",
     name: "PETITE Crepe Wrap Mini Dress",
+    thumbnail: "product-2.jpg",
     type: "size: S color: green",
     label: brands.asoss,
     unitPrice: 55,
@@ -48,9 +46,8 @@ export const products = [
     ]
   },
   {
-    id: 3,
-    thumbnail: "product-3.jpg",
     name: "Poplin Displaced Wrap Dress",
+    thumbnail: "product-3.jpg",
     type: "size: S color: beige",
     label: brands.topshop,
     unitPrice: 55.9,
@@ -64,9 +61,8 @@ export const products = [
     ]
   },
   {
-    id: 4,
-    thumbnail: "product-4.jpg",
     name: "Button Through Strap Mini Dress",
+    thumbnail: "product-4.jpg",
     type: "size: S color: beige",
     label: brands.mango,
     unitPrice: 55.9,
@@ -79,9 +75,8 @@ export const products = [
     ]
   },
   {
-    id: 5,
-    thumbnail: "product-5.jpg",
     name: "PETITE Belted Jumper Dress",
+    thumbnail: "product-5.jpg",
     type: "size: S color: beige",
     label: brands.topshop,
     unitPrice: 55.9,
@@ -94,9 +89,8 @@ export const products = [
     ]
   },
   {
-    id: 6,
-    thumbnail: "product-6.jpg",
     name: "Poplin Displaced Wrap Dress",
+    thumbnail: "product-6.jpg",
     type: "size: S color: beige",
     label: brands.mango,
     unitPrice: 45.9,
@@ -109,9 +103,8 @@ export const products = [
     ]
   },
   {
-    id: 7,
-    thumbnail: "product-7.jpg",
     name: "Poplin Displaced Wrap Dress",
+    thumbnail: "product-7.jpg",
     type: "size: S color: beige",
     label: brands.mango,
     unitPrice: 55.9,
