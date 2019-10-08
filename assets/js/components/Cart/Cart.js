@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../Sidebar";
 import CartItem from "../CartItem";
 import "./Cart.scss";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import {CART, CART_ITEMS} from '../../mocks/lib/index'
-import Decimal from 'decimal.js';
+import { Decimal } from "decimal.js";
 
 const Cart = props => {
   const {
@@ -13,25 +12,29 @@ const Cart = props => {
     cartItemsAmount,
     setCartOpen,
     addCartItemsAmount,
-    subtractCartItemsAmount
+    subtractCartItemsAmount,
+    total,
+    delivery,
+    discount,
+    subtotal,
+    cartItems,
+    setCartItems,
+    setDelivery,
+    setTotal,
+    setSubtotal
   } = props;
-  const [cartItems, setCartItems] = useState(CART_ITEMS);
-  const [subtotal, setSubtotal] = useState(new Decimal(CART.subtotal));
-  const [discount, setDiscount] = useState(new Decimal(CART.discount));
-  const [delivery, setDelivery] = useState(new Decimal(CART.delivery));
-  const [total, setTotal] = useState(new Decimal(CART.total));
 
   const removeCartItem = id => {
-    const newCartItems = cartItems.filter(item => item.id !== id);
+    const newCartItems = cartItems.filter(item => item.product.id !== id);
     setCartItems(newCartItems);
   };
 
   useEffect(() => {
     if (cartItemsAmount === 0) {
-      setDelivery(0);
-      setTotal(0);
+      setDelivery(new Decimal(0));
+      setTotal(new Decimal(0));
     }
-  }, [cartItemsAmount, total]);
+  }, [cartItemsAmount]);
 
   return (
     <Sidebar open={cartOpen} setOpen={setCartOpen}>
@@ -63,7 +66,7 @@ const Cart = props => {
           <div className="cart__list">
             {cartItems.map(item => (
               <CartItem
-                key={item.id}
+                key={item.product.id}
                 item={item}
                 addCartItemsAmount={addCartItemsAmount}
                 subtractCartItemsAmount={subtractCartItemsAmount}

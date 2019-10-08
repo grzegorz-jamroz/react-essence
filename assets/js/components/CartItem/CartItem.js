@@ -25,19 +25,19 @@ const CartItem = props => {
 
   const increaseAmount = () => () => {
     addCartItemsAmount(1);
-    setAmountValue(amountValue.plus(item.unitPrice));
+    setAmountValue(amountValue.plus(item.product.unitPrice));
     setQuantity(quantity + 1);
-    setTotal(total.plus(item.unitPrice));
-    setSubtotal(subtotal.plus(item.unitPrice));
+    setTotal(total.plus(item.product.unitPrice));
+    setSubtotal(subtotal.plus(item.product.unitPrice));
   };
 
   const decreaseAmount = () => () => {
     if (quantity > 1) {
       subtractCartItemsAmount(1);
-      setAmountValue(amountValue.minus(item.unitPrice));
+      setAmountValue(amountValue.minus(item.product.unitPrice));
       setQuantity(quantity - 1);
-      setTotal(total.plus(item.unitPrice));
-      setSubtotal(subtotal.plus(item.unitPrice));
+      setTotal(total.minus(item.product.unitPrice));
+      setSubtotal(subtotal.minus(item.product.unitPrice));
     }
   };
 
@@ -64,7 +64,7 @@ const CartItem = props => {
         <div className="cartItem__badgesRight">
           <CartItemBadge
             options={{backgroundColor: variables.blue}}
-            text={`${item.unitPrice.toFixed(2)} ${item.currency}`}
+            text={`${item.product.unitPrice.toFixed(2)} ${item.product.currency}`}
           />
         </div>
         <div className="cartItem__overlay" />
@@ -85,21 +85,21 @@ const CartItem = props => {
           className="cartItemThumbnail__image"
           style={{
             backgroundImage: `url(${require("../../../img/product/" +
-              item.thumbnail)})`
+              item.product.thumbnail)})`
           }}
         />
       </div>
       <div className="cartItem__info">
         <div className="cartItem__details">
-          <div className="cartItem__name">{item.name}</div>
-          <div className="cartItem__type">{item.type}</div>
+          <div className="cartItem__name">{item.product.name}</div>
+          <div className="cartItem__type">{item.product.type}</div>
           <div className="cartItem__depot">
             <span className="cartItemUnit">
               <span className="cartItemUnit__price">
-                {item.amountValue.toFixed(2)}
+                {amountValue.toFixed(2)}
               </span>
               &nbsp;
-              <span className="cartItemUnit__currency">{item.currency}</span>
+              <span className="cartItemUnit__currency">{item.product.currency}</span>
               &nbsp;
             </span>
           </div>
