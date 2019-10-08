@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "../../Core/Styles";
 import './ProductsSlider.scss'
-import { PRODUCTS } from '../../mocks/lib/index'
 import ProductSlide from "../ProductSlide";
 import Glide from '@glidejs/glide'
 import '../../Core/Glide';
+import { firestore } from "../../Firebase";
+import { collectIdsAndDocs } from "../../Firebase/utilities";
 
 const ProductsSlider = () => {
   const [slider] = useState(new Glide('.jsProductsSlider', {
@@ -15,9 +16,18 @@ const ProductsSlider = () => {
     gap: 30,
     animationDuration: 1000,
   }));
+  const [products, setProducts] = useState([]);
+
+  const requestProducts = async () => {
+    const snapshot = await firestore.collection('products').get();
+    const products = snapshot.docs.map(collectIdsAndDocs);
+    setProducts(products);
+  };
 
   useEffect(() => {
-    slider.mount();
+    requestProducts().then(result => {
+      slider.mount();
+    });
 
     return () => slider.destroy();
   }, []);
@@ -40,7 +50,7 @@ const ProductsSlider = () => {
             <div className="jsProductsSlider">
               <div className="glide__track" data-glide-el="track">
                 <ul className="glide__slides">
-                  {PRODUCTS.map(product => (
+                  {products.map(product => (
                     <ProductSlide key={product.id} product={product} />
                   ))}
                 </ul>
