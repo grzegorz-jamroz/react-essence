@@ -1,0 +1,42 @@
+@import "../../Core/Settings";
+
+.pagination__ul {
+  margin-top: $spacer * 3.125;
+  margin-bottom: $spacer * 4.375;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: $px4;
+}
+
+.pagination__li:first-child {
+  margin-right: $px15;
+}
+
+.pagination__li:last-child {
+  margin-left: 15px;
+}
+
+.pagination__link {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: $spacer * 2.5;
+  height: $spacer * 2.5;
+  border: $px1 solid $gray-200;
+  font-size: $px12;
+  font-weight: 600;
+  line-height: $spacer * 2.375;
+  padding: 0;
+  text-align: center;
+  color: $gray-600;
+  display: block;
+  @include transition(.5s);
+
+  &:hover,
+  &:focus {
+    color: $blue;
+    box-shadow: none;
+    background-color: $gray-300;
+  }
+}

@@ -1,17 +1,18 @@
 import React from 'react';
+import './Pagination.scss';
 
 const Pagination = () => {
   return (
-    <nav aria-label="navigation">
-      <ul className="pagination mt-50 mb-70">
-        <li className="page-item"><a className="page-link" href="#"><i className="fa fa-angle-left" /></a>
+    <nav className="pagination">
+      <ul className="pagination__ul">
+        <li className="pagination__li"><a className="pagination__link" href="#"><i className="fa fa-angle-left" /></a>
         </li>
-        <li className="page-item"><a className="page-link" href="#">1</a></li>
-        <li className="page-item"><a className="page-link" href="#">2</a></li>
-        <li className="page-item"><a className="page-link" href="#">3</a></li>
-        <li className="page-item"><a className="page-link" href="#">...</a></li>
-        <li className="page-item"><a className="page-link" href="#">21</a></li>
-        <li className="page-item"><a className="page-link" href="#"><i className="fa fa-angle-right" /></a>
+        <li className="pagination__li"><a className="pagination__link" href="#">1</a></li>
+        <li className="pagination__li"><a className="pagination__link" href="#">2</a></li>
+        <li className="pagination__li"><a className="pagination__link" href="#">3</a></li>
+        <li className="pagination__li"><a className="pagination__link" href="#">...</a></li>
+        <li className="pagination__li"><a className="pagination__link" href="#">21</a></li>
+        <li className="pagination__li"><a className="pagination__link" href="#"><i className="fa fa-angle-right" /></a>
         </li>
       </ul>
     </nav>

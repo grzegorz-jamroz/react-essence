@@ -1,6 +1,6 @@
 import React from "react";
-import Pagination from "../Pagination/Pagination";
-import ShopProducts from "../ShopProducts/ShopProducts";
+import Pagination from "../Pagination";
+import ShopProducts from "../ShopProducts";
 import ShopSidebar from "../ShopSidebar";
 import './ShopContent.scss';
 
