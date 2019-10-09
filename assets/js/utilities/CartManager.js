@@ -69,6 +69,12 @@ class CartManager {
   decreaseCartItemsQuantity = quantity => {
     this.setCartItemsAmount(this.cartItemsAmount - quantity);
   };
+
+  removeDelivery = () => {
+    if (this.cartItemsAmount === 0) {
+      this.setDelivery(new Decimal(0));
+    }
+  }
 }
 
 export default CartManager;

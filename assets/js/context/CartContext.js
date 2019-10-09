@@ -8,7 +8,9 @@ const CartContext = createContext({
   delivery: new Decimal(0),
   discount: new Decimal(0),
   total: new Decimal(0),
-  cartItems: []
+  cartItems: [],
+  requestCart: () => {},
+  removeDelivery: () => {}
 });
 
 const CartProvider = (props) => {
@@ -18,6 +20,8 @@ const CartProvider = (props) => {
   const [discount, setDiscount] = useState(new Decimal(0));
   const [delivery, setDelivery] = useState(new Decimal(0));
   const [total, setTotal] = useState(new Decimal(0));
+
+  console.count('CartProvider');
 
   const cart = new CartManager(
     cartItems,
