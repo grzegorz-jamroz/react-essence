@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../../Core/Styles";
 import "./Navbar.scss";
 import MenuToggler from "../MenuToggler";
 import Logo from "../Logo";
 import CartToggler from "../CartToggler";
-import { CartContext } from "../../context/CartContext";
 
 const Navbar = props => {
   const {
@@ -14,8 +13,6 @@ const Navbar = props => {
     setCartOpen
   } = props;
 
-  const cart = useContext(CartContext);
-console.log(cart.cartItemsAmount);
   return (
     <React.Fragment>
       <div className="navbar">
@@ -25,7 +22,11 @@ console.log(cart.cartItemsAmount);
               <Logo />
             </div>
             <div className="navbar__rightSite">
-
+              <CartToggler
+                open={cartOpen}
+                setOpen={setCartOpen}
+              />
+              <MenuToggler open={menuOpen} setOpen={setMenuOpen} />
             </div>
           </div>
         </div>

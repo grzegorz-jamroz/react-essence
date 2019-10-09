@@ -7,7 +7,7 @@ import '../../Core/Glide';
 import { firestore } from "../../Firebase";
 import { collectIdsAndDocs } from "../../Firebase/utilities";
 
-const ProductsSlider = ({ cart }) => {
+const ProductsSlider = () => {
   const [slider] = useState(new Glide('.jsProductsSlider', {
     type: 'carousel',
     startAt: 0,
@@ -51,7 +51,7 @@ const ProductsSlider = ({ cart }) => {
               <div className="glide__track" data-glide-el="track">
                 <ul className="glide__slides">
                   {products.map(product => (
-                    <ProductSlide key={product.id} product={product} cart={cart} />
+                    <ProductSlide key={product.id} product={product} />
                   ))}
                 </ul>
               </div>

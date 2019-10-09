@@ -2,7 +2,14 @@ import React, { useState, useEffect, createContext } from 'react';
 import Decimal from "decimal.js";
 import CartManager from "../utilities/CartManager";
 
-const CartContext = createContext({name: 'hello'});
+const CartContext = createContext({
+  cartItemsAmount: 0,
+  subtotal: new Decimal(0),
+  delivery: new Decimal(0),
+  discount: new Decimal(0),
+  total: new Decimal(0),
+  cartItems: []
+});
 
 const CartProvider = (props) => {
   const [cartItemsAmount, setCartItemsAmount] = useState(0);

@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Sidebar from "../Sidebar";
 import CartItem from "../CartItem";
 import "./Cart.scss";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { Decimal } from "decimal.js";
+import { CartContext } from "../../context/CartContext";
 
 const Cart = props => {
   const {
     cartOpen,
-    setCartOpen,
-    cart
+    setCartOpen
   } = props;
+  const cart = useContext(CartContext);
 
   useEffect(() => {
     if (cart.cartItemsAmount === 0) {

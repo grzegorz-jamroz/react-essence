@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
 import './SingleProduct.scss';
 import ProductSlideBadge from "../ProductSlideBadge";
 import { Decimal } from "decimal.js";
+import { CartContext } from "../../context/CartContext";
 
-const SingleProduct = ({product, cart}) => {
+const SingleProduct = ({product}) => {
   product.previousPrice = new Decimal(product.previousPrice);
   product.unitPrice = new Decimal(product.unitPrice);
+
+  const cart = useContext(CartContext);
 
   const addItemToCart = () => () => {
     cart.addCartItem(product);

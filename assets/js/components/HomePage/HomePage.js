@@ -5,13 +5,13 @@ import TopCategories from "../TopCategories";
 import CallToAction from "../CallToAction";
 import ProductsSlider from "../ProductsSlider";
 
-const HomePage = ({ cart }) => {
+const HomePage = () => {
   return (
     <React.Fragment>
       <Banner/>
       <TopCategories/>
       <CallToAction/>
-      <ProductsSlider cart={cart}/>
+      <ProductsSlider/>
     </React.Fragment>
   );
 };
