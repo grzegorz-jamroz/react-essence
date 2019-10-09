@@ -87,13 +87,13 @@ a) replace content of `react-essence\assets\js\App.js` with
 import '../../fixtures/fixtures'
 ```
 
-b) [compile assets](#compile-assets-once)
+b) [Compile assets once](#compile-assets-once)
 
 c) run PHP server and open browser - check: [Run PHP server](#run-php-server)
 
 d) revert content of `react-essence\assets\js\App.js`
 
-e) again [compile assets](#compile-assets-once)
+e) again [Compile assets once](#compile-assets-once)
 
 f) I'm sorry that it's not simplified yet :)
 
