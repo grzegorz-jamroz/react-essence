@@ -89,19 +89,11 @@ import '../../fixtures/fixtures'
 
 b) [compile assets](#compile-assets-once)
 
-```
-yarn encore dev
-```
-
 c) run PHP server and open browser - check: [Run PHP server](#run-php-server)
 
 d) revert content of `react-essence\assets\js\App.js`
 
 e) again [compile assets](#compile-assets-once)
-
-```
-yarn encore dev
-```
 
 f) I'm sorry that it's not simplified yet :)
 
