@@ -87,17 +87,17 @@ a) replace content of `react-essence\assets\js\App.js` with
 import '../../fixtures/fixtures'
 ```
 
-b) [compile assets](####Compile assets once)
+b) [compile assets](#compile-assets-once)
 
 ```
 yarn encore dev
 ```
 
-c) run PHP server and open browser - check: [Run PHP server](####Run PHP server)
+c) run PHP server and open browser - check: [Run PHP server](#run-php-server)
 
 d) revert content of `react-essence\assets\js\App.js`
 
-e) again [compile assets](####Compile assets once)
+e) again [compile assets](#compile-assets-once)
 
 ```
 yarn encore dev
