@@ -32,45 +32,109 @@ I would like to write some react components similar with Essence template.
 
 ## Installation
 
-**Install all dependencies:**
+#### Install dependencies
 
 ```
 yarn install
 ```
 
-**Create dummy data:**
+#### Create dummy data
 
-```
-cd assets/js/mocks/src
-```
-
-Install TypeScript globally if you don't have it yet
+1\. Install TypeScript globally if you don't have it yet
 
 ```
 npm install -g typescript
 ```
 
-than run just
+2\. enter to directory
+
+```
+cd assets/js/mocks/src
+```
+
+3\. run
 
 ```
 tsc
 ```
 
-**Enter to public directory:**
+4\. Create new Firebase project [here](https://console.firebase.google.com)
+
+5\. Rename `firebaseConfig-example.json` with `firebaseConfig.json` (it is located inside `react-essence\assets\js\Firebase\firebaseConfig-example.json`)
+
+6\. Get your Firebase configuration (You will find it inside `Project Overview -> General -> Your apps -> Firebase SDK snippet`)
+
+7\. Replace data inside `firebaseConfig.json` with your firebaseConfig data
+
+```json
+{
+  "apiKey": "AIzaSyC6CiPTHU4HApF09WcKpbwz4iPFynSmO_s",
+  "authDomain": "react-essence.firebaseapp.com",
+  "databaseURL": "https://react-essence.firebaseio.com",
+  "projectId": "react-essence",
+  "storageBucket": "",
+  "messagingSenderId": "628617378803",
+  "appId": "1:628617378803:web:6753c25ca3c7a500be7086",
+  "measurementId": "G-FXXQQHV9NF"
+}
+```
+
+8\. Because I don't prepared yet script for auto fill Firebase - you have to temporary:
+
+a) replace content of `react-essence\assets\js\App.js` with
+
+```js
+import '../../fixtures/fixtures'
+```
+
+b) [compile assets](####Compile assets once)
+
+```
+yarn encore dev
+```
+
+c) run PHP server and open browser - check: [Run PHP server](####Run PHP server)
+
+d) revert content of `react-essence\assets\js\App.js`
+
+e) again [compile assets](####Compile assets once)
+
+```
+yarn encore dev
+```
+
+f) I'm sorry that it's not simplified yet :)
+
+## Development
+
+#### Run PHP server
+
+enter to public directory:
 
 ```
 cd public
 ```
 
-**Run php server:**
+run php server:
 
 ```
 php -S 127.0.0.1:8000
 ```
 
-**Open browser and enter:**
+Open browser and enter:
 
 ```
 localhost:8000
 ```
 
+#### Compile assets once 
+
+```
+yarn encore dev
+```
+
+#### recompile assets automatically when files change
+
+```
+yarn encore dev --watch
+```
