@@ -125,8 +125,20 @@ localhost:8000
 yarn encore dev
 ```
 
-#### recompile assets automatically when files change
+#### Recompile assets automatically when files change
 
 ```
 yarn encore dev --watch
+```
+
+#### Prettier
+
+```
+yarn run format
+```
+
+#### ESLint
+
+```
+yarn run lint
 ```
