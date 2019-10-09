@@ -9,13 +9,12 @@ import Decimal from 'decimal.js';
 const CartItem = props => {
   const {
     item,
-    addCartItemsAmount,
-    subtractCartItemsAmount,
     setSubtotal,
     removeCartItem,
     subtotal,
     setTotal,
-    total
+    total,
+    cart
   } = props;
   const [quantity, setQuantity] = useState(item.quantity);
   const [amountValue, setAmountValue] = useState(new Decimal(item.amountValue));
@@ -24,7 +23,7 @@ const CartItem = props => {
   const cartItemRef = useRef(null);
 
   const increaseAmount = () => () => {
-    addCartItemsAmount(1);
+    cart.increaseCartItemsQuantity(1);
     setAmountValue(amountValue.plus(item.product.unitPrice));
     setQuantity(quantity + 1);
     setTotal(total.plus(item.product.unitPrice));
@@ -33,7 +32,7 @@ const CartItem = props => {
 
   const decreaseAmount = () => () => {
     if (quantity > 1) {
-      subtractCartItemsAmount(1);
+      cart.decreaseCartItemsQuantity(1);
       setAmountValue(amountValue.minus(item.product.unitPrice));
       setQuantity(quantity - 1);
       setTotal(total.minus(item.product.unitPrice));
@@ -45,7 +44,7 @@ const CartItem = props => {
     setCartItemClass(`${cartItemClass} cartItem--deleted`);
     setTimeout(() => {
       removeCartItem(item.id);
-      subtractCartItemsAmount(quantity);
+      cart.decreaseCartItemsQuantity(quantity);
       setTotal(total.minus(amountValue));
       setSubtotal(subtotal.minus(amountValue));
     }, 500);

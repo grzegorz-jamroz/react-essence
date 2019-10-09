@@ -9,6 +9,7 @@ import Shop from "./components/Shop";
 import Decimal from "decimal.js";
 import { firestore } from "./Firebase";
 import { collectIdsAndDocs } from "./Firebase/utilities";
+import CartManager from "./utilities/CartManager";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,13 +22,12 @@ const App = () => {
   const [delivery, setDelivery] = useState(new Decimal(0));
   const [total, setTotal] = useState(new Decimal(0));
 
-  const addCartItemsAmount = quantity => {
-    setCartItemsAmount(cartItemsAmount + quantity);
-  };
-
-  const subtractCartItemsAmount = quantity => {
-    setCartItemsAmount(cartItemsAmount - quantity);
-  };
+  const cart = new CartManager(
+    cartItems,
+    setCartItems,
+    cartItemsAmount,
+    setCartItemsAmount
+  );
 
   const requestCart = async () => {
     const snapshot = await firestore.collection('carts').limit(1).get();
@@ -60,8 +60,6 @@ const App = () => {
       <Cart
         cartOpen={cartOpen}
         setCartOpen={setCartOpen}
-        addCartItemsAmount={addCartItemsAmount}
-        subtractCartItemsAmount={subtractCartItemsAmount}
         cartItemsAmount={cartItemsAmount}
         total={total}
         delivery={delivery}
@@ -72,11 +70,12 @@ const App = () => {
         setDelivery={setDelivery}
         setTotal={setTotal}
         setSubtotal={setSubtotal}
+        cart={cart}
       />
       <Router>
-        <HomePage path="/" />
+        <HomePage path="/" cart={cart} />
         <Shop path="/shop" />
-      </Router>;
+      </Router>
     </React.Fragment>
   );
 };

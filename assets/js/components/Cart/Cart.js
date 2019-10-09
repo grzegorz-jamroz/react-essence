@@ -11,8 +11,6 @@ const Cart = props => {
     cartOpen,
     cartItemsAmount,
     setCartOpen,
-    addCartItemsAmount,
-    subtractCartItemsAmount,
     total,
     delivery,
     discount,
@@ -21,7 +19,8 @@ const Cart = props => {
     setCartItems,
     setDelivery,
     setTotal,
-    setSubtotal
+    setSubtotal,
+    cart
   } = props;
 
   const removeCartItem = id => {
@@ -68,13 +67,12 @@ const Cart = props => {
               <CartItem
                 key={item.product.id}
                 item={item}
-                addCartItemsAmount={addCartItemsAmount}
-                subtractCartItemsAmount={subtractCartItemsAmount}
                 setTotal={setTotal}
                 removeCartItem={removeCartItem}
                 total={total}
                 setSubtotal={setSubtotal}
                 subtotal={subtotal}
+                cart={cart}
               />
             ))}
           </div>

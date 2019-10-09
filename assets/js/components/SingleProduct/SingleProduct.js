@@ -5,9 +5,13 @@ import './SingleProduct.scss';
 import ProductSlideBadge from "../ProductSlideBadge";
 import { Decimal } from "decimal.js";
 
-const SingleProduct = ({product}) => {
+const SingleProduct = ({product, cart}) => {
   product.previousPrice = new Decimal(product.previousPrice);
   product.unitPrice = new Decimal(product.unitPrice);
+
+  const addItemToCart = () => () => {
+    cart.addCartItem(product);
+  };
 
   let previousPrice = "";
 
@@ -63,7 +67,7 @@ const SingleProduct = ({product}) => {
           {product.currency}{product.unitPrice.toFixed(2)}
         </p>
         <div className="singleProduct__actions">
-          <span className="btn essence-btn singleProduct__addToCartBtn">Add to Cart</span>
+          <span className="btn essence-btn singleProduct__addToCartBtn" onClick={addItemToCart()}>Add to Cart</span>
         </div>
       </div>
     </div>
