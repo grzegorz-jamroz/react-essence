@@ -9,11 +9,6 @@ import Decimal from 'decimal.js';
 const CartItem = props => {
   const {
     item,
-    setSubtotal,
-    removeCartItem,
-    subtotal,
-    setTotal,
-    total,
     cart
   } = props;
   const [quantity, setQuantity] = useState(item.quantity);
@@ -26,8 +21,8 @@ const CartItem = props => {
     cart.increaseCartItemsQuantity(1);
     setAmountValue(amountValue.plus(item.product.unitPrice));
     setQuantity(quantity + 1);
-    setTotal(total.plus(item.product.unitPrice));
-    setSubtotal(subtotal.plus(item.product.unitPrice));
+    cart.setTotal(cart.total.plus(item.product.unitPrice));
+    cart.setSubtotal(cart.subtotal.plus(item.product.unitPrice));
   };
 
   const decreaseAmount = () => () => {
@@ -35,18 +30,18 @@ const CartItem = props => {
       cart.decreaseCartItemsQuantity(1);
       setAmountValue(amountValue.minus(item.product.unitPrice));
       setQuantity(quantity - 1);
-      setTotal(total.minus(item.product.unitPrice));
-      setSubtotal(subtotal.minus(item.product.unitPrice));
+      cart.setTotal(cart.total.minus(item.product.unitPrice));
+      cart.setSubtotal(cart.subtotal.minus(item.product.unitPrice));
     }
   };
 
   const deleteCartItem = () => () => {
     setCartItemClass(`${cartItemClass} cartItem--deleted`);
     setTimeout(() => {
-      removeCartItem(item.id);
+      cart.removeCartItem(item.id);
       cart.decreaseCartItemsQuantity(quantity);
-      setTotal(total.minus(amountValue));
-      setSubtotal(subtotal.minus(amountValue));
+      cart.setTotal(cart.total.minus(amountValue));
+      cart.setSubtotal(cart.subtotal.minus(amountValue));
     }, 500);
   };
 
