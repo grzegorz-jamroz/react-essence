@@ -6,7 +6,7 @@ import Menu from "./components/Menu";
 import Cart from "./components/Cart";
 import HomePage from "./components/HomePage";
 import Shop from "./components/Shop";
-import { CartProvider } from './context/CartContext'
+import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,10 +21,7 @@ const App = () => {
         setCartOpen={setCartOpen}
       />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Cart
-        cartOpen={cartOpen}
-        setCartOpen={setCartOpen}
-      />
+      <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <Router>
         <HomePage path="/" />
         <Shop path="/shop" />

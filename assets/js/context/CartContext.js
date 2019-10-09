@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext } from "react";
 import Decimal from "decimal.js";
 import CartManager from "../utilities/CartManager";
 
@@ -13,7 +13,7 @@ const CartContext = createContext({
   removeDelivery: () => {}
 });
 
-const CartProvider = (props) => {
+const CartProvider = props => {
   const [cartItemsAmount, setCartItemsAmount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(new Decimal(0));
@@ -21,7 +21,7 @@ const CartProvider = (props) => {
   const [delivery, setDelivery] = useState(new Decimal(0));
   const [total, setTotal] = useState(new Decimal(0));
 
-  console.count('CartProvider');
+  console.count("CartProvider");
 
   const cart = new CartManager(
     cartItems,
@@ -43,9 +43,7 @@ const CartProvider = (props) => {
   }, []);
 
   return (
-    <CartContext.Provider value={cart}>
-      {props.children}
-    </CartContext.Provider>
+    <CartContext.Provider value={cart}>{props.children}</CartContext.Provider>
   );
 };
 

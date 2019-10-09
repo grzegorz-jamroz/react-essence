@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
 import SingleProduct from "../SingleProduct";
 
-const ProductSlide = ({product}) => {
+const ProductSlide = ({ product }) => {
   if (product.images.length < 2) {
-    return (<li className="glide__slide"/>);
+    return <li className="glide__slide" />;
   }
 
   return (

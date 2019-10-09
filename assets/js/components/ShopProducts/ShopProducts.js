@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { firestore } from '../../Firebase';
-import './ShopProducts.scss';
+import React, { useEffect, useState } from "react";
+import { firestore } from "../../Firebase";
+import "./ShopProducts.scss";
 import SingleProduct from "../SingleProduct";
 import { collectIdsAndDocs } from "../../Firebase/utilities";
 import ShopTopBar from "../ShopTopBar";
@@ -9,7 +9,7 @@ const ShopProducts = () => {
   const [products, setProducts] = useState([]);
 
   const requestProducts = async () => {
-    const snapshot = await firestore.collection('products').get();
+    const snapshot = await firestore.collection("products").get();
     const products = snapshot.docs.map(collectIdsAndDocs);
     setProducts(products);
   };

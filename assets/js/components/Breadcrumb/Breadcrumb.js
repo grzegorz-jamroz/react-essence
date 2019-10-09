@@ -1,9 +1,14 @@
-import React from 'react';
-import './Breadcrumb.scss';
+import React from "react";
+import "./Breadcrumb.scss";
 
-const Breadcrumb = ({text}) => {
+const Breadcrumb = ({ text }) => {
   return (
-    <div className="breadcrumb" style={{backgroundImage: `url(${require("../../../img/bg-img/breadcrumb.jpg")})`}}>
+    <div
+      className="breadcrumb"
+      style={{
+        backgroundImage: `url(${require("../../../img/bg-img/breadcrumb.jpg")})`
+      }}
+    >
       <div className="container h-100">
         <div className="breadcrumb__row row h-100">
           <div className="col-12">

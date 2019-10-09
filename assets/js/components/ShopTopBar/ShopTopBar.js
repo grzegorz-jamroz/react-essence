@@ -1,5 +1,5 @@
-import React from 'react';
-import './ShopTopBar.scss';
+import React from "react";
+import "./ShopTopBar.scss";
 import FilterDropdown from "../FilterDropdown";
 
 const ShopTopBar = () => {

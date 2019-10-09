@@ -1,1 +1,1 @@
-import './Bootstrap.scss';
+import "./Bootstrap.scss";

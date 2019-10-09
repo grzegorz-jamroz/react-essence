@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { firestore } from "../Firebase";
 import { collectIdsAndDocs } from "../Firebase/utilities";
 import Decimal from "decimal.js";
@@ -33,7 +33,10 @@ class CartManager {
   }
 
   requestCart = async () => {
-    const snapshot = await firestore.collection('carts').limit(1).get();
+    const snapshot = await firestore
+      .collection("carts")
+      .limit(1)
+      .get();
     let cart = snapshot.docs.map(collectIdsAndDocs);
     if (typeof cart[0] !== "undefined") {
       cart = cart[0];
@@ -58,7 +61,9 @@ class CartManager {
   };
 
   removeCartItem = itemId => {
-    const newCartItems = this.cartItems.filter(item => item.product.id !== itemId);
+    const newCartItems = this.cartItems.filter(
+      item => item.product.id !== itemId
+    );
     this.setCartItems(newCartItems);
   };
 
@@ -74,7 +79,7 @@ class CartManager {
     if (this.cartItemsAmount === 0) {
       this.setDelivery(new Decimal(0));
     }
-  }
+  };
 }
 
 export default CartManager;

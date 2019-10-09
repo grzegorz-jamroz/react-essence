@@ -1,12 +1,12 @@
-import React, {useContext} from 'react';
+import React, { useContext } from "react";
 import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
-import './SingleProduct.scss';
+import "./SingleProduct.scss";
 import ProductSlideBadge from "../ProductSlideBadge";
 import { Decimal } from "decimal.js";
 import { CartContext } from "../../context/CartContext";
 
-const SingleProduct = ({product}) => {
+const SingleProduct = ({ product }) => {
   product.previousPrice = new Decimal(product.previousPrice);
   product.unitPrice = new Decimal(product.unitPrice);
 
@@ -20,11 +20,13 @@ const SingleProduct = ({product}) => {
 
   if (product.previousPrice > product.unitPrice) {
     previousPrice = (
-      <span className="singleProduct__previousPrice">{product.currency + ' ' + product.previousPrice.toFixed(2)}</span>
+      <span className="singleProduct__previousPrice">
+        {product.currency + " " + product.previousPrice.toFixed(2)}
+      </span>
     );
   }
 
-  let badge =  "";
+  let badge = "";
 
   if (typeof product.badge === "object") {
     badge = (
@@ -41,8 +43,7 @@ const SingleProduct = ({product}) => {
   try {
     product.images[0] = require("../../../img/product/" + product.images[0]);
     product.images[1] = require("../../../img/product/" + product.images[1]);
-  } catch (e) {
-  }
+  } catch (e) {}
 
   return (
     <div className="singleProduct">
@@ -67,10 +68,16 @@ const SingleProduct = ({product}) => {
         </a>
         <p className="singleProduct__price">
           {previousPrice}
-          {product.currency}{product.unitPrice.toFixed(2)}
+          {product.currency}
+          {product.unitPrice.toFixed(2)}
         </p>
         <div className="singleProduct__actions">
-          <span className="btn essence-btn singleProduct__addToCartBtn" onClick={addItemToCart()}>Add to Cart</span>
+          <span
+            className="btn essence-btn singleProduct__addToCartBtn"
+            onClick={addItemToCart()}
+          >
+            Add to Cart
+          </span>
         </div>
       </div>
     </div>

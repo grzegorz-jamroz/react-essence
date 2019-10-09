@@ -4,17 +4,14 @@ import variables from "../../Core/Bootstrap/VariablesExport.scss";
 import "./CartItem.scss";
 import Bin from "../CartItemBin";
 import CartItemBadge from "../CartItemBadge";
-import Decimal from 'decimal.js';
+import Decimal from "decimal.js";
 
 const CartItem = props => {
-  const {
-    item,
-    cart
-  } = props;
+  const { item, cart } = props;
   const [quantity, setQuantity] = useState(item.quantity);
   const [amountValue, setAmountValue] = useState(new Decimal(item.amountValue));
   const [cartItemStyle, setCartItemStyle] = useState({});
-  const [cartItemClass, setCartItemClass] = useState('cartItem');
+  const [cartItemClass, setCartItemClass] = useState("cartItem");
   const cartItemRef = useRef(null);
 
   const increaseAmount = () => () => {
@@ -46,19 +43,26 @@ const CartItem = props => {
   };
 
   useEffect(() => {
-    setCartItemStyle({maxHeight: `${cartItemRef.current.clientHeight/16}rem`});
+    setCartItemStyle({
+      maxHeight: `${cartItemRef.current.clientHeight / 16}rem`
+    });
   }, []);
 
   return (
     <div ref={cartItemRef} style={cartItemStyle} className={cartItemClass}>
       <div className="cartItem__thumbnail">
         <div className="cartItem__badgesLeft">
-          <CartItemBadge options={{backgroundColor: variables.red}} text={quantity} />
+          <CartItemBadge
+            options={{ backgroundColor: variables.red }}
+            text={quantity}
+          />
         </div>
         <div className="cartItem__badgesRight">
           <CartItemBadge
-            options={{backgroundColor: variables.blue}}
-            text={`${item.product.unitPrice.toFixed(2)} ${item.product.currency}`}
+            options={{ backgroundColor: variables.blue }}
+            text={`${item.product.unitPrice.toFixed(2)} ${
+              item.product.currency
+            }`}
           />
         </div>
         <div className="cartItem__overlay" />
@@ -93,7 +97,9 @@ const CartItem = props => {
                 {amountValue.toFixed(2)}
               </span>
               &nbsp;
-              <span className="cartItemUnit__currency">{item.product.currency}</span>
+              <span className="cartItemUnit__currency">
+                {item.product.currency}
+              </span>
               &nbsp;
             </span>
           </div>

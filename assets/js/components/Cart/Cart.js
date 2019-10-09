@@ -7,10 +7,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import { CartContext } from "../../context/CartContext";
 
 const Cart = props => {
-  const {
-    cartOpen,
-    setCartOpen
-  } = props;
+  const { cartOpen, setCartOpen } = props;
   const cart = useContext(CartContext);
 
   useEffect(() => {
@@ -31,11 +28,15 @@ const Cart = props => {
             </div>
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">delivery</div>
-              <div className="cartSummaryColumn__right">{cart.delivery.toFixed(2)} $</div>
+              <div className="cartSummaryColumn__right">
+                {cart.delivery.toFixed(2)} $
+              </div>
             </div>
             <div className="cartSummary__column ">
               <div className="cartSummaryColumn__left">discount</div>
-              <div className="cartSummaryColumn__right">{cart.discount.toFixed(2)} $</div>
+              <div className="cartSummaryColumn__right">
+                {cart.discount.toFixed(2)} $
+              </div>
             </div>
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">total</div>
@@ -46,11 +47,7 @@ const Cart = props => {
           </div>
           <div className="cart__list">
             {cart.cartItems.map(item => (
-              <CartItem
-                key={item.product.id}
-                item={item}
-                cart={cart}
-              />
+              <CartItem key={item.product.id} item={item} cart={cart} />
             ))}
           </div>
         </div>

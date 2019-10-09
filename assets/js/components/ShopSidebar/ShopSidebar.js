@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ShopCategories from "../ShopCategories";
 import ShopColors from "../ShopColors";
 import ShopBrands from "../ShopBrands";
@@ -27,16 +27,16 @@ const ShopSidebar = () => {
               <span
                 className="ui-slider-handle ui-state-default ui-corner-all"
                 tabIndex="0"
-                style={{left: "0%"}}
+                style={{ left: "0%" }}
               />
               <span
                 className="ui-slider-handle ui-state-default ui-corner-all"
                 tabIndex="0"
-                style={{left: "100%"}}
+                style={{ left: "100%" }}
               />
               <div
                 className="ui-slider-range ui-corner-all ui-widget-header"
-                style={{left: "0%", width: "100%"}}
+                style={{ left: "0%", width: "100%" }}
               />
             </div>
             <div className="range-price">Range: $49.00 - $360.00</div>

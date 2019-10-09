@@ -1,1 +1,1 @@
-import './Fonts.scss'
+import "./Fonts.scss";

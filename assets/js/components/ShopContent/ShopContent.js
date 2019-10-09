@@ -2,7 +2,7 @@ import React from "react";
 import Pagination from "../Pagination";
 import ShopProducts from "../ShopProducts";
 import ShopSidebar from "../ShopSidebar";
-import './ShopContent.scss';
+import "./ShopContent.scss";
 
 const ShopContent = () => {
   return (

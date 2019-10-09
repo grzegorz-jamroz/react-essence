@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "../../Core/Styles";
-import './ProductsSlider.scss'
+import "./ProductsSlider.scss";
 import ProductSlide from "../ProductSlide";
-import Glide from '@glidejs/glide'
-import '../../Core/Glide';
+import Glide from "@glidejs/glide";
+import "../../Core/Glide";
 import { firestore } from "../../Firebase";
 import { collectIdsAndDocs } from "../../Firebase/utilities";
 
 const ProductsSlider = () => {
-  const [slider] = useState(new Glide('.jsProductsSlider', {
-    type: 'carousel',
-    startAt: 0,
-    perView: 4,
-    autoplay: 6000,
-    gap: 30,
-    animationDuration: 1000,
-  }));
+  const [slider] = useState(
+    new Glide(".jsProductsSlider", {
+      type: "carousel",
+      startAt: 0,
+      perView: 4,
+      autoplay: 6000,
+      gap: 30,
+      animationDuration: 1000
+    })
+  );
   const [products, setProducts] = useState([]);
 
   const requestProducts = async () => {
-    const snapshot = await firestore.collection('products').get();
+    const snapshot = await firestore.collection("products").get();
     const products = snapshot.docs.map(collectIdsAndDocs);
     setProducts(products);
   };
