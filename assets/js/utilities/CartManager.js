@@ -1,4 +1,3 @@
-import React from "react";
 import { firestore } from "../Firebase";
 import { collectIdsAndDocs } from "../Firebase/utilities";
 import Decimal from "decimal.js";
