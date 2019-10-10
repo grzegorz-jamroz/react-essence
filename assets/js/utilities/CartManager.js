@@ -77,6 +77,7 @@ class CartManager {
   removeDelivery = () => {
     if (this.cartItemsAmount === 0) {
       this.setDelivery(new Decimal(0));
+      this.setTotal(new Decimal(0));
     }
   };
 }
