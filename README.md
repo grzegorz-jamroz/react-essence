@@ -63,9 +63,11 @@ yarn install
 
 5\. Add test data for project - check: [Add fixtures to Firebase](#add-fixtures-to-firebase)
 
-6\. Run server - check: [Run server](#run-server)
+6\. Compile assets (css, js, images, fonts etc.) - check: [Compile assets once](#compile-assets-once)
 
-7\. Open in browser `http://localhost:3000`
+7\. Run server - check: [Run server](#run-server)
+
+8\. Open in browser `http://localhost:3000`
 
 ## Development
 
