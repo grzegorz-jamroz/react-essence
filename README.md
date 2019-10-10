@@ -79,7 +79,7 @@ tsc
 }
 ```
 
-8\. Add test data for project 
+8\. [Add test data for project](#add-fixtures-to-firebase)
 
 ```
 yarn run fixtures
@@ -103,6 +103,13 @@ yarn encore dev
 
 ```
 yarn encore dev --watch
+```
+
+#### Add fixtures to Firebase 
+(it removes all collection and insert fresh test data)
+
+```
+yarn run fixtures
 ```
 
 #### Prettier
