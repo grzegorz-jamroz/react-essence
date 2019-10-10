@@ -79,11 +79,7 @@ tsc
 }
 ```
 
-8\. [Add test data for project](#add-fixtures-to-firebase)
-
-```
-yarn run fixtures
-```
+8\. Add test data for project - check: [Add fixtures to Firebase ](#add-fixtures-to-firebase)
 
 ## Development
 
