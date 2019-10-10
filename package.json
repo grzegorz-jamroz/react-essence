@@ -1,13 +1,9 @@
 {
   "devDependencies": {
-    "@babel/cli": "^7.6.3",
-    "@babel/core": "^7.6.3",
-    "@babel/node": "^7.6.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "@symfony/webpack-encore": "^0.27.0",
+    "@symfony/webpack-encore": "^0.28.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
@@ -28,6 +24,8 @@
     "fixtures": "babel-node fixtures/fixtures.js --presets=@babel/preset-env"
   },
   "dependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/node": "^7.6.3",
     "@glidejs/glide": "^3.4.1",
     "@reach/router": "^1.2.1",
     "bootstrap": "^4.3.1",
