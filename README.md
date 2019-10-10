@@ -79,23 +79,11 @@ tsc
 }
 ```
 
-8\. Because I don't prepared yet script for auto fill Firebase - you have to temporary:
+8\. Add test data for project 
 
-a) replace content of `react-essence\assets\js\App.js` with
-
-```js
-import '../../fixtures/fixtures'
 ```
-
-b) [Compile assets once](#compile-assets-once)
-
-c) run server and open browser - check: [Run server](#run-server)
-
-d) revert content of `react-essence\assets\js\App.js`
-
-e) again [Compile assets once](#compile-assets-once)
-
-f) I'm sorry that it's not simplified yet :)
+yarn run fixtures
+```
 
 ## Development
 

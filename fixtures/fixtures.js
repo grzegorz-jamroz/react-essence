@@ -1,8 +1,18 @@
+const process = require('process');
 import { removeFixtures, setUpFixtures } from "./utilities";
 
-const init = async () => {
+export const init = async () => {
   await removeFixtures();
   await setUpFixtures();
 };
 
-init();
+init().then(
+  result => {
+    console.log("Fixtures has been successfully saved.");
+    process.exit();
+  },
+  reason => {
+    console.error(reason);
+    process.exit(1);
+  },
+);

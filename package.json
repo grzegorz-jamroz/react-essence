@@ -1,7 +1,11 @@
 {
   "devDependencies": {
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/node": "^7.6.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@symfony/webpack-encore": "^0.27.0",
     "babel-eslint": "^10.0.3",
@@ -20,7 +24,8 @@
   "scripts": {
     "server": "node public/index.js",
     "format": "prettier --write \"assets/js/**/*.{js, jsx}\"",
-    "lint": "eslint \"assets/js/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"assets/js/**/*.{js,jsx}\" --quiet",
+    "fixtures": "babel-node fixtures/fixtures.js --presets=@babel/preset-env"
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
