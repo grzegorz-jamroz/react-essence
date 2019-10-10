@@ -102,7 +102,7 @@ yarn encore dev --watch
 ```
 
 #### Add fixtures to Firebase 
-(it removes all collection and insert fresh test data)
+(it removes all collections and insert fresh test data)
 
 ```
 yarn run fixtures
