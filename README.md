@@ -89,7 +89,7 @@ import '../../fixtures/fixtures'
 
 b) [Compile assets once](#compile-assets-once)
 
-c) run PHP server and open browser - check: [Run PHP server](#run-php-server)
+c) run server and open browser - check: [Run server](#run-server)
 
 d) revert content of `react-essence\assets\js\App.js`
 
@@ -99,24 +99,10 @@ f) I'm sorry that it's not simplified yet :)
 
 ## Development
 
-#### Run PHP server
-
-enter to public directory:
+#### Run server
 
 ```
-cd public
-```
-
-run php server:
-
-```
-php -S 127.0.0.1:8000
-```
-
-Open browser and enter:
-
-```
-localhost:8000
+yarn run server
 ```
 
 #### Compile assets once 
