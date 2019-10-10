@@ -105,3 +105,10 @@ yarn run format
 ```
 yarn run lint
 ```
+
+#### Build mocks
+(if you change some TypeScripts inside `react-essence\assets\js\mocks\src` you can compile it with this command)
+
+```
+yarn run mocks
+```
