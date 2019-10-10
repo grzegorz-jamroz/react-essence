@@ -68,14 +68,14 @@ tsc
 
 ```json
 {
-  "apiKey": "AIzaSyC6CiPTHU4HApF09WcKpbwz4iPFynSmO_s",
-  "authDomain": "react-essence.firebaseapp.com",
-  "databaseURL": "https://react-essence.firebaseio.com",
-  "projectId": "react-essence",
-  "storageBucket": "",
-  "messagingSenderId": "628617378803",
-  "appId": "1:628617378803:web:6753c25ca3c7a500be7086",
-  "measurementId": "G-FXXQQHV9NF"
+  "apiKey": "apiKey",
+  "authDomain": "authDomain",
+  "databaseURL": "databaseURL",
+  "projectId": "projectId",
+  "storageBucket": "storageBucket",
+  "messagingSenderId": "messagingSenderId",
+  "appId": "appId",
+  "measurementId": "measurementId"
 }
 ```
 
