@@ -40,31 +40,13 @@ yarn install
 
 #### Create dummy data
 
-1\. Install TypeScript globally if you don't have it yet
+1\. Create new Firebase project [here](https://console.firebase.google.com)
 
-```
-npm install -g typescript
-```
+2\. Rename `firebaseConfig-example.json` with `firebaseConfig.json` (it is located inside `react-essence\assets\js\Firebase\firebaseConfig-example.json`)
 
-2\. enter to directory
+3\. Get your Firebase configuration (You will find it inside `Project Overview -> General -> Your apps -> Firebase SDK snippet`)
 
-```
-cd assets/js/mocks/src
-```
-
-3\. run
-
-```
-tsc
-```
-
-4\. Create new Firebase project [here](https://console.firebase.google.com)
-
-5\. Rename `firebaseConfig-example.json` with `firebaseConfig.json` (it is located inside `react-essence\assets\js\Firebase\firebaseConfig-example.json`)
-
-6\. Get your Firebase configuration (You will find it inside `Project Overview -> General -> Your apps -> Firebase SDK snippet`)
-
-7\. Replace data inside `firebaseConfig.json` with your firebaseConfig data
+4\. Replace data inside `firebaseConfig.json` with your firebaseConfig data
 
 ```json
 {
@@ -79,11 +61,11 @@ tsc
 }
 ```
 
-8\. Add test data for project - check: [Add fixtures to Firebase](#add-fixtures-to-firebase)
+5\. Add test data for project - check: [Add fixtures to Firebase](#add-fixtures-to-firebase)
 
-9\. Run server - check: [Run server](#run-server)
+6\. Run server - check: [Run server](#run-server)
 
-10\. Open in browser `http://localhost:3000`
+7\. Open in browser `http://localhost:3000`
 
 ## Development
 
