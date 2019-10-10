@@ -79,7 +79,11 @@ tsc
 }
 ```
 
-8\. Add test data for project - check: [Add fixtures to Firebase ](#add-fixtures-to-firebase)
+8\. Add test data for project - check: [Add fixtures to Firebase](#add-fixtures-to-firebase)
+
+9\. Run server - check: [Run server](#run-server)
+
+10\. Open in browser `http://localhost:3000`
 
 ## Development
 
