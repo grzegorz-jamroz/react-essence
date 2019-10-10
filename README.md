@@ -32,21 +32,19 @@ I would like to write some react components similar with Essence template.
 
 ## Installation
 
-#### Install dependencies
+1\. Install dependencies
 
 ```
 yarn install
 ```
 
-#### Create dummy data
+2\. Create new Firebase project [here](https://console.firebase.google.com)
 
-1\. Create new Firebase project [here](https://console.firebase.google.com)
+3\. Rename `firebaseConfig-example.json` with `firebaseConfig.json` (it is located inside `react-essence\assets\js\Firebase\firebaseConfig-example.json`)
 
-2\. Rename `firebaseConfig-example.json` with `firebaseConfig.json` (it is located inside `react-essence\assets\js\Firebase\firebaseConfig-example.json`)
+4\. Get your Firebase configuration (You will find it inside `Project Overview -> General -> Your apps -> Firebase SDK snippet`)
 
-3\. Get your Firebase configuration (You will find it inside `Project Overview -> General -> Your apps -> Firebase SDK snippet`)
-
-4\. Replace data inside `firebaseConfig.json` with your firebaseConfig data
+5\. Replace data inside `firebaseConfig.json` with your firebaseConfig data
 
 ```json
 {
@@ -61,13 +59,13 @@ yarn install
 }
 ```
 
-5\. Add test data for project - check: [Add fixtures to Firebase](#add-fixtures-to-firebase)
+6\. Add test data for project - check: [Add fixtures to Firebase](#add-fixtures-to-firebase)
 
-6\. Compile assets (css, js, images, fonts etc.) - check: [Compile assets once](#compile-assets-once)
+7\. Compile assets (css, js, images, fonts etc.) - check: [Compile assets once](#compile-assets-once)
 
-7\. Run server - check: [Run server](#run-server)
+8\. Run server - check: [Run server](#run-server)
 
-8\. Open in browser `http://localhost:3000`
+9\. Open in browser `http://localhost:3000`
 
 ## Development
 
