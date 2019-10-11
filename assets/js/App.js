@@ -13,7 +13,7 @@ const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
 
   return (
-    <CartProvider>
+    <>
       <Navbar
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
@@ -21,12 +21,12 @@ const App = () => {
         setCartOpen={setCartOpen}
       />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
-      <Router>
-        <HomePage path="/" />
-        <Shop path="/shop" />
-      </Router>
-    </CartProvider>
+      {/*<Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />*/}
+      {/*<Router>*/}
+      {/*  <HomePage path="/" />*/}
+      {/*  <Shop path="/shop" />*/}
+      {/*</Router>*/}
+    </>
   );
 };
 
