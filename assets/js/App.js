@@ -10,15 +10,12 @@ import { CartProvider } from "./context/CartContext";
 import { MenuOpenState } from "./states/menuOpen.state";
 
 const App = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
   return (
     <>
       <MenuOpenState>
         <Navbar
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
           cartOpen={cartOpen}
           setCartOpen={setCartOpen}
         />
