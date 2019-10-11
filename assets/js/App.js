@@ -8,24 +8,22 @@ import HomePage from "./components/HomePage";
 import Shop from "./components/Shop";
 import { CartProvider } from "./context/CartContext";
 import { MenuOpenState } from "./states/menuOpen.state";
+import { CartOpenState } from "./states/cartOpen.state";
 
 const App = () => {
-  const [cartOpen, setCartOpen] = useState(false);
-
   return (
     <>
-      <MenuOpenState>
-        <Navbar
-          cartOpen={cartOpen}
-          setCartOpen={setCartOpen}
-        />
-        <Menu/>
-        {/*<Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />*/}
-        {/*<Router>*/}
-        {/*  <HomePage path="/" />*/}
-        {/*  <Shop path="/shop" />*/}
-        {/*</Router>*/}
-      </MenuOpenState>
+      <CartOpenState>
+        <MenuOpenState>
+          <Navbar/>
+          <Menu/>
+          {/*<Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />*/}
+          {/*<Router>*/}
+          {/*  <HomePage path="/" />*/}
+          {/*  <Shop path="/shop" />*/}
+          {/*</Router>*/}
+        </MenuOpenState>
+      </CartOpenState>
     </>
   );
 };

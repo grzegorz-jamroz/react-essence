@@ -35,7 +35,7 @@ const { useStateValue, StateProvider } = createStateContext(
   initialState
 );
 
-const useMenuOpenState = useStateValue;
-const MenuOpenState = StateProvider;
+const useCartOpenState = useStateValue;
+const CartOpenState = StateProvider;
 
-export { useMenuOpenState, MenuOpenState };
+export { useCartOpenState, CartOpenState };

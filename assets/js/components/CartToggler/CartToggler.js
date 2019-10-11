@@ -3,14 +3,15 @@ import binImg from "../../../img/core-img/bag.svg";
 import "../../Core/Fonts";
 import "./CartToggler.scss";
 import { useCartItemsQuantityState } from "../../states/cartItemsAmount.state";
+import { useCartOpenState, toggle } from "../../states/cartOpen.state";
 
-const CartToggler = props => {
-  const { open, setOpen } = props;
+const CartToggler = () => {
   const [cartItemsAmount] = useCartItemsQuantityState();
+  const [, dispatch] = useCartOpenState();
 
   return (
     <div
-      onClick={() => setOpen(!open)}
+      onClick={() => dispatch(toggle())}
       className="navbarButton navbarButton--bRight"
     >
       <div className="navbarButton__cartToggler">

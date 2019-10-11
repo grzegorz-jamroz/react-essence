@@ -5,9 +5,7 @@ import MenuToggler from "../MenuToggler";
 import Logo from "../Logo";
 import CartToggler from "../CartToggler";
 
-const Navbar = props => {
-  const {cartOpen, setCartOpen } = props;
-
+const Navbar = () => {
   return (
     <React.Fragment>
       <div className="navbar">
@@ -17,7 +15,7 @@ const Navbar = props => {
               <Logo />
             </div>
             <div className="navbar__rightSite">
-              <CartToggler open={cartOpen} setOpen={setCartOpen} />
+              <CartToggler/>
               <MenuToggler/>
             </div>
           </div>
