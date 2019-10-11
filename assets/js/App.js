@@ -7,6 +7,7 @@ import Cart from "./components/Cart";
 import HomePage from "./components/HomePage";
 import Shop from "./components/Shop";
 import { CartProvider } from "./context/CartContext";
+import { MenuOpenState } from "./states/menuOpen.state";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,18 +15,20 @@ const App = () => {
 
   return (
     <>
-      <Navbar
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-        cartOpen={cartOpen}
-        setCartOpen={setCartOpen}
-      />
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      {/*<Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />*/}
-      {/*<Router>*/}
-      {/*  <HomePage path="/" />*/}
-      {/*  <Shop path="/shop" />*/}
-      {/*</Router>*/}
+      <MenuOpenState>
+        <Navbar
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          cartOpen={cartOpen}
+          setCartOpen={setCartOpen}
+        />
+        <Menu/>
+        {/*<Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />*/}
+        {/*<Router>*/}
+        {/*  <HomePage path="/" />*/}
+        {/*  <Shop path="/shop" />*/}
+        {/*</Router>*/}
+      </MenuOpenState>
     </>
   );
 };

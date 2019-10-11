@@ -1,9 +1,12 @@
 import React from "react";
 import "../NavbarButton/NavbarButton.scss";
 import "./MenuToggler.scss";
+import { useMenuOpenState, toggle } from "../../states/menuOpen.state";
 
 const MenuToggler = props => {
-  const { open, setOpen, bRight = true } = props;
+  const { bRight = true } = props;
+  const [open, dispatch] = useMenuOpenState();
+  console.log(open);
   let classes = "navbarButton__menuToggler";
   let btnClass = "";
 
@@ -16,7 +19,7 @@ const MenuToggler = props => {
   }
 
   return (
-    <div onClick={() => setOpen(!open)} className={`navbarButton${btnClass}`}>
+    <div onClick={() => {dispatch(toggle())}} className={`navbarButton${btnClass}`}>
       <span className={classes}>
         <span />
         <span />

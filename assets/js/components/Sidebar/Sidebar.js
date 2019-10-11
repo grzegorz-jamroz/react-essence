@@ -2,9 +2,10 @@ import React from "react";
 import "./Sidebar.scss";
 import Overlay from "../Overlay";
 import MenuToggler from "../MenuToggler";
+import { useMenuOpenState } from "../../states/menuOpen.state";
 
 const Sidebar = props => {
-  const { open, setOpen, children } = props;
+  const [open] = useMenuOpenState();
   let classes = "sidebar";
   let styles = { right: 0 };
 
@@ -18,12 +19,12 @@ const Sidebar = props => {
 
   return (
     <React.Fragment>
-      <Overlay open={open} />
+      <Overlay/>
       <div style={styles} className={classes}>
         <div className="sidebar__offSwitch">
-          <MenuToggler open={open} setOpen={setOpen} bRight={false} />
+          <MenuToggler bRight={false}/>
         </div>
-        {children}
+        {props.children}
       </div>
     </React.Fragment>
   );

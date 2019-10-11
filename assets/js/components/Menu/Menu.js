@@ -4,11 +4,9 @@ import "../../Core/Fonts";
 import "./Menu.scss";
 import Sidebar from "../Sidebar";
 
-const Menu = props => {
-  const { menuOpen, setMenuOpen } = props;
-
+const Menu = () => {
   return (
-    <Sidebar open={menuOpen} setOpen={setMenuOpen}>
+    <Sidebar>
       <div className="menu">
         <ul className="menu__list">
           <li className="menu__item">
