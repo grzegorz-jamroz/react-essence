@@ -18,7 +18,6 @@ const CartToggler = () => {
     <div onClick={() => dispatch(toggle())} className="navbarButton navbarButton--bRight">
       <div className="navbarButton__cartToggler">
         <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
-        {console.log(cart)}
         {status === "SUCCESS" && (
           <span className="cartToggler__counter">{cart.cartItemsAmount}</span>
         )}
