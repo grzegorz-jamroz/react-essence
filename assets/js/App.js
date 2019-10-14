@@ -9,21 +9,24 @@ import Shop from "./components/Shop";
 import { CartProvider } from "./context/CartContext";
 import { MenuOpenState } from "./states/menuOpen.state";
 import { CartOpenState } from "./states/cartOpen.state";
+import { CartState } from "./states/cart.state";
 
 const App = () => {
   return (
     <>
-      <CartOpenState>
-        <MenuOpenState>
-          <Navbar/>
-          <Menu/>
-          <Cart/>
-          {/*<Router>*/}
-          {/*  <HomePage path="/" />*/}
-          {/*  <Shop path="/shop" />*/}
-          {/*</Router>*/}
-        </MenuOpenState>
-      </CartOpenState>
+
+        <CartOpenState>
+          <MenuOpenState>
+            <Navbar/>
+            <Menu/>
+            <Cart/>
+            {/*<Router>*/}
+            {/*  <HomePage path="/" />*/}
+            {/*  <Shop path="/shop" />*/}
+            {/*</Router>*/}
+          </MenuOpenState>
+        </CartOpenState>
+
     </>
   );
 };
