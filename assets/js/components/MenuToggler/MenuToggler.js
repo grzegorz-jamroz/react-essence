@@ -3,24 +3,13 @@ import "../NavbarButton/NavbarButton.scss";
 import "./MenuToggler.scss";
 import { useMenuOpenState, toggle } from "../../states/menuOpen.state";
 
-const MenuToggler = props => {
-  const { bRight = true } = props;
+const MenuToggler = () => {
   const [open, dispatch] = useMenuOpenState();
-
-  let classes = "navbarButton__menuToggler";
-  let btnClass = "";
-
-  if (open) {
-    classes += " navbarButton__menuToggler--open";
-  }
-
-  if (bRight) {
-    btnClass = " navbarButton--bRight";
-  }
+  const openClass = open ? "navbarButton__menuToggler--open" : "";
 
   return (
-    <div onClick={() => dispatch(toggle())} className={`navbarButton${btnClass}`}>
-      <span className={classes}>
+    <div onClick={() => dispatch(toggle())} className={`navbarButton navbarButton--bRight`}>
+      <span className={`navbarButton__menuToggler ${openClass}`}>
         <span />
         <span />
         <span />

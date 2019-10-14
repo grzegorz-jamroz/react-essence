@@ -10,10 +10,7 @@ const CartToggler = () => {
   const [, dispatch] = useCartOpenState();
 
   return (
-    <div
-      onClick={() => dispatch(toggle())}
-      className="navbarButton navbarButton--bRight"
-    >
+    <div onClick={() => dispatch(toggle())} className="navbarButton navbarButton--bRight">
       <div className="navbarButton__cartToggler">
         <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
         <span className="cartToggler__counter">{cartItemsAmount}</span>
