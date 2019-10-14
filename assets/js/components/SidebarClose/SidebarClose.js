@@ -1,6 +1,6 @@
 import React from "react";
 import "../NavbarButton/NavbarButton.scss";
-import "../MenuToggler/MenuToggler.scss";
+import "../NavbarButton/MenuToggler.scss";
 
 const SidebarClose = ({handleClick}) => {
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import binImg from "../../../img/core-img/bag.svg";
 import "../../Core/Fonts";
 import "./CartToggler.scss";
+import "../NavbarButton/NavbarButton.scss";
 import { useCartItemsQuantityState } from "../../states/cartItemsAmount.state";
 import { useCartOpenState, toggle } from "../../states/cartOpen.state";
 

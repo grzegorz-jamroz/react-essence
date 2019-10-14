@@ -1,6 +1,6 @@
 import React from "react";
 import "../NavbarButton/NavbarButton.scss";
-import "./MenuToggler.scss";
+import "../NavbarButton/MenuToggler.scss";
 import { useMenuOpenState, toggle } from "../../states/menuOpen.state";
 
 const MenuToggler = () => {
