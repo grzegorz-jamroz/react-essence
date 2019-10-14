@@ -17,7 +17,7 @@ const App = () => {
         <MenuOpenState>
           <Navbar/>
           <Menu/>
-          {/*<Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />*/}
+          <Cart/>
           {/*<Router>*/}
           {/*  <HomePage path="/" />*/}
           {/*  <Shop path="/shop" />*/}

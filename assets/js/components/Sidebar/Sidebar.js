@@ -1,11 +1,10 @@
 import React from "react";
 import "./Sidebar.scss";
 import Overlay from "../Overlay";
-import MenuToggler from "../MenuToggler";
-import { useMenuOpenState } from "../../states/menuOpen.state";
+import SidebarClose from "../SidebarClose/SidebarClose";
 
 const Sidebar = props => {
-  const [open] = useMenuOpenState();
+  const {open, handleClose, children} = props;
   let classes = "sidebar";
   let styles = { right: 0 };
 
@@ -18,15 +17,15 @@ const Sidebar = props => {
   }
 
   return (
-    <React.Fragment>
-      <Overlay/>
+    <>
+      <Overlay open={open}/>
       <div style={styles} className={classes}>
         <div className="sidebar__offSwitch">
-          <MenuToggler bRight={false}/>
+          <SidebarClose handleClick={handleClose}/>
         </div>
-        {props.children}
+        {children}
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

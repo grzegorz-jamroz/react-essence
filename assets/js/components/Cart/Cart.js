@@ -5,9 +5,11 @@ import "./Cart.scss";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { CartContext } from "../../context/CartContext";
+import { useCartOpenState, close } from "../../states/cartOpen.state";
 
-const Cart = props => {
-  const { cartOpen, setCartOpen } = props;
+const Cart = () => {
+  const [open, dispatch] = useCartOpenState();
+  const cartClose = () => dispatch(close());
   const cart = useContext(CartContext);
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const Cart = props => {
   }, [cart.cartItemsAmount]);
 
   return (
-    <Sidebar open={cartOpen} setOpen={setCartOpen}>
+    <Sidebar open={open} handleClose={cartClose}>
       <PerfectScrollbar>
         <div className="cart">
           <h2 className="cart__header">Summary</h2>

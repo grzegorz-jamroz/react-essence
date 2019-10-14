@@ -1,9 +1,7 @@
 import React from "react";
 import "./Overlay.scss";
-import { useMenuOpenState } from "../../states/menuOpen.state";
 
-const Overlay = () => {
-  const [open] = useMenuOpenState();
+const Overlay = ({open}) => {
   let classes = "overlay";
 
   if (open) {
