@@ -5,12 +5,11 @@ import "./Cart.scss";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { useCartOpenState, close } from "../../states/cartOpen.state";
-
 import useCartRequest from "../../hooks/useCartRequest";
 
 const Cart = () => {
   const [open, dispatch] = useCartOpenState();
-  const [{ status, response }, requestCart] = useCartRequest();
+  const [{ status, response: cart }, requestCart] = useCartRequest();
   const cartClose = () => dispatch(close());
 
   useEffect(() => {
@@ -20,7 +19,7 @@ const Cart = () => {
   return (
     <Sidebar open={open} handleClose={cartClose}>
       {status === "FETCHING" && (<div>Fetching...</div>)}
-      {status === "ERROR" && (<div>{console.error(response)}Error</div>)}
+      {status === "ERROR" && (<div>{console.error(cart)}Error</div>)}
       {status === "SUCCESS" && (
       <PerfectScrollbar>
         <div className="cart">
@@ -29,31 +28,31 @@ const Cart = () => {
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">subtotal</div>
               <div className="cartSummaryColumn__right">
-                {response.subtotal.toFixed(2)} $
+                {cart.subtotal.toFixed(2)} $
               </div>
             </div>
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">delivery</div>
               <div className="cartSummaryColumn__right">
-                {response.delivery.toFixed(2)} $
+                {cart.delivery.toFixed(2)} $
               </div>
             </div>
             <div className="cartSummary__column ">
               <div className="cartSummaryColumn__left">discount</div>
               <div className="cartSummaryColumn__right">
-                {response.discount.toFixed(2)} $
+                {cart.discount.toFixed(2)} $
               </div>
             </div>
             <div className="cartSummary__column">
               <div className="cartSummaryColumn__left">total</div>
               <div className="cartSummaryColumn__right">
-                {response.total.toFixed(2)} $
+                {cart.total.toFixed(2)} $
               </div>
             </div>
           </div>
           <div className="cart__list">
-            {response.cartItems.map(item => (
-              <CartItem key={item.product.id} item={item} cart={response} />
+            {cart.cartItems.map(item => (
+              <CartItem key={item.product.id} item={item} cart={cart} />
             ))}
           </div>
         </div>
