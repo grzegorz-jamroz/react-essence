@@ -5,7 +5,7 @@ import {
 
 const initialState = {
   status: null,
-  response: null,
+  response: {},
   receivedAt: Date.now()
 };
 

@@ -6,7 +6,7 @@ import "../NavbarButton/NavbarButton.scss";
 import { useCartOpenState, toggle } from "../../states/cartOpen.state";
 import { connect } from "react-redux";
 
-const CartToggler = ({cart, status}) => {
+const CartToggler = ({cartItemsAmount, status}) => {
   const [, dispatch] = useCartOpenState();
 
   return (
@@ -14,17 +14,18 @@ const CartToggler = ({cart, status}) => {
       <div className="navbarButton__cartToggler">
         <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
         {status === "SUCCESS" && (
-          <span className="cartToggler__counter">{cart.cartItemsAmount}</span>
+          <span className="cartToggler__counter">{cartItemsAmount}</span>
         )}
       </div>
     </div>
   );
 };
 
-const mapStateToProps = ({cartReducer: {status, response}}) => ({
-  status: status,
-  cart: response ?? {}
-});
+const mapStateToProps = ({cartReducer: {status, response}}) => {
+  return {
+    status: status,
+    cartItemsAmount: response.cartItemsAmount ?? 0
+  }};
 
 export default connect(
   mapStateToProps

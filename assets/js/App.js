@@ -5,7 +5,7 @@ import { CartOpenState } from "./states/cartOpen.state";
 import { MenuOpenState } from "./states/menuOpen.state";
 import Navbar from "./components/Navbar";
 import Menu from "./components/Menu";
-import Cart from "./components/CartTest";
+import Cart from "./components/Cart";
 
 const App = () => {
   return (
