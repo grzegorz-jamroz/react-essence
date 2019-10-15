@@ -21,10 +21,10 @@ const CartToggler = ({cartItemsAmount, status}) => {
   );
 };
 
-const mapStateToProps = ({cartReducer: {status, response}}) => {
+const mapStateToProps = ({cartReducer: {status, cart}}) => {
   return {
     status: status,
-    cartItemsAmount: response.cartItemsAmount ?? 0
+    cartItemsAmount: cart.cartItemsAmount ?? 0
   }};
 
 export default connect(

@@ -7,8 +7,8 @@ export const SUCCESS = "SUCCESS";
 export const ERROR = "ERROR";
 
 const fetching = () => ({ type: FETCHING, receivedAt: Date.now() });
-const success = response => ({ type: SUCCESS, response, receivedAt: Date.now() });
-const error = response => ({ type: ERROR, response, receivedAt: Date.now() });
+const success = cart => ({ type: SUCCESS, cart, receivedAt: Date.now() });
+const error = cart => ({ type: ERROR, cart, receivedAt: Date.now() });
 
 export const fetchCart = () => {
   return async dispatch => {

@@ -1,23 +1,24 @@
 import {
   FETCHING,
-  SUCCESS, ERROR
+  SUCCESS,
+  ERROR
 } from "../actions/cartActions";
 
 const initialState = {
   status: null,
-  response: {},
+  cart: {},
   receivedAt: Date.now()
 };
 
 const cartReducer = (state = initialState, action) => {
-  const {response, receivedAt} = action;
+  const {cart, receivedAt} = action;
   switch (action.type) {
     case FETCHING:
       return { ...initialState, status: FETCHING, receivedAt };
     case SUCCESS:
-      return { ...state, status: SUCCESS, response, receivedAt  };
+      return { ...state, status: SUCCESS, cart, receivedAt  };
     case ERROR:
-      return { ...state, status: ERROR, response, receivedAt };
+      return { ...state, status: ERROR, cart, receivedAt };
     default:
       return state;
   }

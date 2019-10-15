@@ -62,9 +62,9 @@ const Cart = ({cart, status, fetchCart}) => {
   );
 };
 
-const mapStateToProps = ({cartReducer: {status, response}}) => ({
+const mapStateToProps = ({cartReducer: {status, cart}}) => ({
   status: status,
-  cart: response ?? {}
+  cart: cart ?? {}
 });
 
 const mapDispatchToProps = dispatch => ({
