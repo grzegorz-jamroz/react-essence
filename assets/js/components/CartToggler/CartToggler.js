@@ -4,15 +4,10 @@ import "../../Core/Fonts";
 import "./CartToggler.scss";
 import "../NavbarButton/NavbarButton.scss";
 import { useCartOpenState, toggle } from "../../states/cartOpen.state";
-import useCartRequest from "../../hooks/useCartRequest";
+import { connect } from "react-redux";
 
-const CartToggler = () => {
+const CartToggler = ({cart, status}) => {
   const [, dispatch] = useCartOpenState();
-  const [{ status, response: cart }, requestCart] = useCartRequest();
-
-  useEffect(() => {
-    requestCart();
-  }, []);
 
   return (
     <div onClick={() => dispatch(toggle())} className="navbarButton navbarButton--bRight">
@@ -26,4 +21,11 @@ const CartToggler = () => {
   );
 };
 
-export default CartToggler;
+const mapStateToProps = ({cartReducer: {status, response}}) => ({
+  status: status,
+  cart: response ?? {}
+});
+
+export default connect(
+  mapStateToProps
+)(CartToggler);

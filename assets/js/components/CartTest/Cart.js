@@ -14,7 +14,7 @@ const Cart = ({cart, status, fetchCart}) => {
   }, []);
 
   return (
-    <Sidebar open={true} handleClose={cartClose}>
+    <Sidebar open={open} handleClose={cartClose}>
       {status === "FETCHING" && (<div>Fetching...</div>)}
       {status === "ERROR" && (<div>{console.error(cart)}Error</div>)}
       {status === "SUCCESS" && (
@@ -52,9 +52,9 @@ const Cart = ({cart, status, fetchCart}) => {
   );
 };
 
-const mapStateToProps = ({cartReducer: { status, response }}) => ({
-    status: status,
-    cart: response ?? {}
+const mapStateToProps = ({cartReducer: {status, response}}) => ({
+  status: status,
+  cart: response ?? {}
 });
 
 const mapDispatchToProps = dispatch => ({
