@@ -1,34 +1,5 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { Router } from "@reach/router";
-import Navbar from "./components/Navbar";
-import Menu from "./components/Menu";
-import Cart from "./components/Cart";
-import HomePage from "./components/HomePage";
-import Shop from "./components/Shop";
-import { CartProvider } from "./context/CartContext";
-import { MenuOpenState } from "./states/menuOpen.state";
-import { CartOpenState } from "./states/cartOpen.state";
-import { CartState } from "./states/cart.state";
+import React from "react";
+import { render } from "react-dom";
+import Root from "./containers/Root";
 
-const App = () => {
-  return (
-    <>
-
-        <CartOpenState>
-          <MenuOpenState>
-            <Navbar/>
-            <Menu/>
-            <Cart/>
-            {/*<Router>*/}
-            {/*  <HomePage path="/" />*/}
-            {/*  <Shop path="/shop" />*/}
-            {/*</Router>*/}
-          </MenuOpenState>
-        </CartOpenState>
-
-    </>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById("root"));
+render(<Root />, document.getElementById("root"));
