@@ -22,6 +22,11 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   const {receivedAt, payload} = action;
   const cart = Object.assign({}, state.cart);
+
+  const itemInCart = itemId => (
+    state.cartItems.filter(item => item.product.id === itemId).length
+  );
+
   switch (action.type) {
     case FETCHING_CART:
       return { ...initialState, cartStatus: FETCHING, receivedAt };
@@ -39,6 +44,10 @@ const cartReducer = (state = initialState, action) => {
         receivedAt
       };
     case ADD_CART_ITEM:
+      if (itemInCart(payload.product.id)) {
+        return state;
+      }
+
       cart.quantity = cart.quantity + payload.quantity;
       cart.total = cart.total.plus(payload.amountValue);
       cart.subtotal = cart.subtotal.plus(payload.amountValue);
