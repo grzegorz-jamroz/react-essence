@@ -51,7 +51,7 @@ const Cart = ({cart, status, fetchCart}) => {
               </div>
             </div>
             <div className="cart__list">
-              {cart.cartItems.map(item => (
+              {cart.items.map(item => (
                 <CartItem key={item.product.id} item={item} cart={cart} />
               ))}
             </div>

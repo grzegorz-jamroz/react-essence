@@ -5,9 +5,11 @@ import "./CartItem.scss";
 import Bin from "../CartItemBin";
 import CartItemBadge from "../CartItemBadge";
 import Decimal from "decimal.js";
+import { setCartTotal } from "../../actions/cartActions";
+import { connect } from "react-redux";
 
 const CartItem = props => {
-  const { item, cart } = props;
+  const { item, cart, setCartTotal } = props;
   const [quantity, setQuantity] = useState(item.quantity);
   const [amountValue, setAmountValue] = useState(new Decimal(item.amountValue));
   const [cartItemStyle, setCartItemStyle] = useState({});
@@ -15,30 +17,30 @@ const CartItem = props => {
   const cartItemRef = useRef(null);
 
   const increaseAmount = () => () => {
-    cart.increaseCartItemsQuantity(1);
-    setAmountValue(amountValue.plus(item.product.unitPrice));
-    setQuantity(quantity + 1);
-    cart.setTotal(cart.total.plus(item.product.unitPrice));
-    cart.setSubtotal(cart.subtotal.plus(item.product.unitPrice));
+    // cart.increaseCartItemsQuantity(1);
+    // setAmountValue(amountValue.plus(item.product.unitPrice));
+    // setQuantity(quantity + 1);
+    // cart.setTotal(cart.total.plus(item.product.unitPrice));
+    // cart.setSubtotal(cart.subtotal.plus(item.product.unitPrice));
   };
 
   const decreaseAmount = () => () => {
     if (quantity > 1) {
-      cart.decreaseCartItemsQuantity(1);
-      setAmountValue(amountValue.minus(item.product.unitPrice));
-      setQuantity(quantity - 1);
-      cart.setTotal(cart.total.minus(item.product.unitPrice));
-      cart.setSubtotal(cart.subtotal.minus(item.product.unitPrice));
+      // cart.decreaseCartItemsQuantity(1);
+      // setAmountValue(amountValue.minus(item.product.unitPrice));
+      // setQuantity(quantity - 1);
+      // cart.setTotal(cart.total.minus(item.product.unitPrice));
+      // cart.setSubtotal(cart.subtotal.minus(item.product.unitPrice));
     }
   };
 
   const deleteCartItem = () => () => {
     setCartItemClass(`${cartItemClass} cartItem--deleted`);
     setTimeout(() => {
-      cart.removeCartItem(item.id);
-      cart.decreaseCartItemsQuantity(quantity);
-      cart.setTotal(cart.total.minus(amountValue));
-      cart.setSubtotal(cart.subtotal.minus(amountValue));
+      // cart.removeCartItem(item.id);
+      // cart.decreaseCartItemsQuantity(quantity);
+      // cart.setTotal(cart.total.minus(amountValue));
+      // cart.setSubtotal(cart.subtotal.minus(amountValue));
     }, 500);
   };
 
@@ -109,4 +111,17 @@ const CartItem = props => {
   );
 };
 
-export default CartItem;
+const mapStateToProps = ({cartReducer: {cart}}) => ({
+  cart: cart ?? {}
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCartTotal: total => {
+    dispatch(setCartTotal(total))
+  },
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartItem);

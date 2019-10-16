@@ -1,6 +1,7 @@
 import { firestore } from "../Firebase";
 import { collectIdsAndDocs } from "../Firebase/utilities";
-import Cart from "../domain/Cart";
+
+export const SET_CART_TOTAL = "SET_CART_TOTAL";
 
 export const FETCHING = "FETCHING";
 export const SUCCESS = "SUCCESS";
@@ -9,6 +10,8 @@ export const ERROR = "ERROR";
 const fetching = () => ({ type: FETCHING, receivedAt: Date.now() });
 const success = cart => ({ type: SUCCESS, cart, receivedAt: Date.now() });
 const error = cart => ({ type: ERROR, cart, receivedAt: Date.now() });
+
+export const setCartTotal = payload => ({ type: SET_CART_TOTAL, payload, receivedAt: Date.now() });
 
 export const fetchCart = () => {
   return async dispatch => {
@@ -20,7 +23,7 @@ export const fetchCart = () => {
         .limit(1)
         .get();
       let cart = snapshot.docs.map(collectIdsAndDocs);
-      cart = new Cart(cart[0] ?? []);
+      cart = cart[0] ?? [];
       dispatch(success(cart));
     } catch (e) {
       dispatch(error(e));
