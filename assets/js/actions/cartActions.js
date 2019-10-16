@@ -8,10 +8,6 @@ export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 
 export const UPDATE_CART = "UPDATE_CART";
 
-export const FETCHING = "FETCHING";
-export const SUCCESS = "SUCCESS";
-export const ERROR = "ERROR";
-
 export const FETCHING_CART = "FETCHING_CART";
 export const FETCHING_CART_SUCCESS = "FETCHING_CART_SUCCESS";
 export const FETCHING_CART_ERROR = "FETCHING_CART_ERROR";
