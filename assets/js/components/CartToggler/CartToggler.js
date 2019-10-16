@@ -13,7 +13,7 @@ const CartToggler = ({cartItemsQuantity, status}) => {
     <div onClick={() => dispatch(toggle())} className="navbarButton navbarButton--bRight">
       <div className="navbarButton__cartToggler">
         <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
-        {status === "SUCCESS" && (
+        {status === "FETCHING_CART_SUCCESS" && (
           <span className="cartToggler__counter">{cartItemsQuantity}</span>
         )}
       </div>

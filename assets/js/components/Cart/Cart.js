@@ -18,9 +18,9 @@ const Cart = ({cart, status, fetchCart}) => {
 
   return (
     <Sidebar open={open} handleClose={cartClose}>
-      {status === "FETCHING" && (<div>Fetching...</div>)}
-      {status === "ERROR" && (<div>{console.error(cart)}Error</div>)}
-      {status === "SUCCESS" && (
+      {status === "FETCHING_CART" && (<div>Fetching...</div>)}
+      {status === "FETCHING_CART_ERROR" && (<div>{console.error(cart)}Error</div>)}
+      {status === "FETCHING_CART_SUCCESS" && (
         <PerfectScrollbar>
           <div className="cart">
             <h2 className="cart__header">Summary</h2>
