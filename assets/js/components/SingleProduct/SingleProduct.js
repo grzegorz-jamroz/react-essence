@@ -7,7 +7,8 @@ import ProductSlideBadge from "../ProductSlideBadge";
 import { Decimal } from "decimal.js";
 import { addCartItem } from "../../actions/cartActions";
 
-const SingleProduct = ({ product, addCartItem }) => {
+const SingleProduct = props => {
+  const { product, addCartItem } = props;
   let { unitPrice, previousPrice, badge, images, name, label, currency } = product;
   unitPrice = new Decimal(unitPrice);
   previousPrice = new Decimal(previousPrice);
@@ -77,7 +78,7 @@ const SingleProduct = ({ product, addCartItem }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addCartItem: item => dispatch(addCartItem(item)),
+  addCartItem: item => dispatch(addCartItem(item))
 });
 
 export default connect(

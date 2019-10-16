@@ -119,12 +119,8 @@ const mapStateToProps = ({cartReducer: {cart}}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateCart: cart => {
-    dispatch(updateCart(cart))
-  },
-  removeCartItem: itemId => {
-    dispatch(removeCartItem(itemId));
-  },
+  updateCart: cart => dispatch(updateCart(cart)),
+  removeCartItem: itemId => dispatch(removeCartItem(itemId)),
 });
 
 export default connect(

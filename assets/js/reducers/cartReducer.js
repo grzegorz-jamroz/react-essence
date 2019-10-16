@@ -10,6 +10,7 @@ import {
   REMOVE_CART_ITEM,
   ADD_CART_ITEM
 } from "../actions/cartActions";
+import { Decimal } from "decimal.js";
 
 const initialState = {
   cart: {},
@@ -38,16 +39,25 @@ const cartReducer = (state = initialState, action) => {
         receivedAt
       };
     case ADD_CART_ITEM:
+      cart.quantity = cart.quantity + payload.quantity;
+      cart.total = cart.total.plus(payload.amountValue);
+      cart.subtotal = cart.subtotal.plus(payload.amountValue);
+      if (cart.delivery.equals(0) && cart.quantity > 0) {
+        cart.total = cart.total.plus(15);
+        cart.delivery = new Decimal(15);
+      }
+
       return {
         ...state,
         cartItems: [...state.cartItems, payload],
+        cart: cart,
         receivedAt
       };
 
     case UPDATE_CART:
       if (cart.quantity === 0) {
-        cart.total = 0;
-        cart.delivery = 0;
+        cart.total = new Decimal(0);
+        cart.delivery = new Decimal(0);
       }
       return { ...state, cart: cart, receivedAt };
 
