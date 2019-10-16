@@ -38,7 +38,7 @@ const cartReducer = (state = initialState, action) => {
       };
 
     case UPDATE_CART:
-      if (cart.quantity > 0) {
+      if (cart.quantity === 0) {
         cart.total = 0;
         cart.delivery = 0;
       }
