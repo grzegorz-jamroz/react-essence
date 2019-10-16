@@ -18,8 +18,6 @@ export { addCartItem };
  * Reducer
  */
 const reducer = (state, action) => {
-  console.log(state);
-
   switch (action.type) {
     case ADD_CART_ITEM:
       return { ...state, status: ADD_CART_ITEM };

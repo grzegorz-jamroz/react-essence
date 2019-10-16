@@ -13,7 +13,7 @@ const CartToggler = ({cartItemsQuantity, status}) => {
     <div onClick={() => dispatch(toggle())} className="navbarButton navbarButton--bRight">
       <div className="navbarButton__cartToggler">
         <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
-        {status === "FETCHING_CART_SUCCESS" && (
+        {status === "SUCCESS" && (
           <span className="cartToggler__counter">{cartItemsQuantity}</span>
         )}
       </div>
@@ -21,9 +21,9 @@ const CartToggler = ({cartItemsQuantity, status}) => {
   );
 };
 
-const mapStateToProps = ({cartReducer: {status, cart}}) => {
+const mapStateToProps = ({cartReducer: {cartStatus, cart}}) => {
   return {
-    status: status,
+    status: cartStatus,
     cartItemsQuantity: cart.quantity ?? 0
   }};
 

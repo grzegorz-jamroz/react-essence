@@ -5,16 +5,18 @@ import "./CartItem.scss";
 import Bin from "../CartItemBin";
 import CartItemBadge from "../CartItemBadge";
 import Decimal from "decimal.js";
-import { setCartTotal } from "../../actions/cartActions";
+import { updateCart } from "../../actions/cartActions";
 import { connect } from "react-redux";
+import Cart from "../../domain/Cart";
 
 const CartItem = props => {
-  const { item, cart, setCartTotal } = props;
+  const { item, cart, updateCart } = props;
   const [quantity, setQuantity] = useState(item.quantity);
   const [amountValue, setAmountValue] = useState(new Decimal(item.amountValue));
   const [cartItemStyle, setCartItemStyle] = useState({});
   const [cartItemClass, setCartItemClass] = useState("cartItem");
   const cartItemRef = useRef(null);
+  const newCart = Object.assign({}, cart);
 
   const increaseAmount = () => () => {
     // cart.increaseCartItemsQuantity(1);
@@ -22,6 +24,10 @@ const CartItem = props => {
     // setQuantity(quantity + 1);
     // cart.setTotal(cart.total.plus(item.product.unitPrice));
     // cart.setSubtotal(cart.subtotal.plus(item.product.unitPrice));
+
+
+    newCart.total = newCart.total.plus(item.product.unitPrice);
+    updateCart(newCart);
   };
 
   const decreaseAmount = () => () => {
@@ -116,8 +122,8 @@ const mapStateToProps = ({cartReducer: {cart}}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCartTotal: total => {
-    dispatch(setCartTotal(total))
+  updateCart: cart => {
+    dispatch(updateCart(cart))
   },
 });
 

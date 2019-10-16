@@ -1,42 +1,15 @@
 import Decimal from "decimal.js";
-import { setCartTotal } from "../actions/cartActions";
-import { connect } from "react-redux";
 
 class Cart {
-  constructor(props) {
-    this.props = props;
+  constructor(cart) {
+    let { quantity, total, subtotal, delivery, discount } = cart;
+
+    this.quantity = quantity ?? 0;
+    this.total = new Decimal(total ?? 0);
+    this.subtotal = new Decimal(subtotal ?? 0);
+    this.delivery = new Decimal(delivery ?? 0);
+    this.discount = new Decimal(discount ?? 0);
   }
-
-  setTotal = total => {
-    this.props.setCartTotal(total);
-  };
-
-  removeCartItem = itemId => {
-    console.log('elo');
-    this.cartItems = this.cartItems.filter(
-      item => item.product.id !== itemId
-    );
-  };
-
-  increaseCartItemsQuantity = quantity => {
-    this.cartItemsAmount = this.cartItemsAmount + quantity;
-  };
-
-  decreaseCartItemsQuantity = quantity => {
-    this.cartItemsAmount = this.cartItemsAmount - quantity;
-  };
 }
 
-const mapStateToProps = ({cartReducer: {cart}}) => ({
-  cart: cart ?? {}
-});
-
-const mapDispatchToProps = dispatch => ({
-  setCartTotal: total => dispatch(setCartTotal(total)),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Cart);
-
+export default Cart;
