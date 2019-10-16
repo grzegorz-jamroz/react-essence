@@ -5,9 +5,9 @@ import {
   FETCHING_CART,
   FETCHING_CART_SUCCESS,
   FETCHING_CART_ERROR,
-  SET_CART_TOTAL,
-  SET_CART_ITEMS,
-  UPDATE_CART
+  UPDATE_CART,
+  UPDATE_CART_ITEMS,
+  REMOVE_CART_ITEM
 } from "../actions/cartActions";
 
 const initialState = {
@@ -28,13 +28,17 @@ const cartReducer = (state = initialState, action) => {
     case FETCHING_CART_ERROR:
       return { ...state, cartStatus: ERROR, cart: payload, receivedAt };
 
-    case SET_CART_ITEMS:
+    case UPDATE_CART_ITEMS:
       return { ...state, cartItems: payload, receivedAt };
 
+    case REMOVE_CART_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(item => item.product.id !== payload),
+        receivedAt
+      };
+
     case UPDATE_CART:
-      return { ...state, cart: cart, receivedAt };
-    case SET_CART_TOTAL:
-      cart.total = payload;
       return { ...state, cart: cart, receivedAt };
 
     default:

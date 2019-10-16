@@ -5,11 +5,11 @@ import "./CartItem.scss";
 import Bin from "../CartItemBin";
 import CartItemBadge from "../CartItemBadge";
 import Decimal from "decimal.js";
-import { updateCart } from "../../actions/cartActions";
+import { removeCartItem, updateCart } from "../../actions/cartActions";
 import { connect } from "react-redux";
 
 const CartItem = props => {
-  const { item, cart, updateCart } = props;
+  const { item, cart, updateCart, removeCartItem } = props;
   const [quantity, setQuantity] = useState(item.quantity);
   const [amountValue, setAmountValue] = useState(new Decimal(item.amountValue));
   const [cartItemStyle, setCartItemStyle] = useState({});
@@ -39,11 +39,11 @@ const CartItem = props => {
   const deleteCartItem = () => () => {
     setCartItemClass(`${cartItemClass} cartItem--deleted`);
     setTimeout(() => {
-      // cart.removeCartItem(item.id);
-
       cart.quantity = cart.quantity - quantity;
       cart.total = cart.total.minus(amountValue);
       cart.subtotal = cart.subtotal.minus(amountValue);
+      updateCart(cart);
+      removeCartItem(item.product.id);
     }, 500);
   };
 
@@ -121,6 +121,9 @@ const mapStateToProps = ({cartReducer: {cart}}) => ({
 const mapDispatchToProps = dispatch => ({
   updateCart: cart => {
     dispatch(updateCart(cart))
+  },
+  removeCartItem: itemId => {
+    dispatch(removeCartItem(itemId))
   },
 });
 
