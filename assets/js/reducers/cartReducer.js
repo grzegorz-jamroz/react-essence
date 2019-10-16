@@ -30,7 +30,6 @@ const cartReducer = (state = initialState, action) => {
 
     case UPDATE_CART_ITEMS:
       return { ...state, cartItems: payload, receivedAt };
-
     case REMOVE_CART_ITEM:
       return {
         ...state,
@@ -39,6 +38,10 @@ const cartReducer = (state = initialState, action) => {
       };
 
     case UPDATE_CART:
+      if (cart.quantity > 0) {
+        cart.total = 0;
+        cart.delivery = 0;
+      }
       return { ...state, cart: cart, receivedAt };
 
     default:

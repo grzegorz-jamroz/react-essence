@@ -20,6 +20,7 @@ const fetchingCartSuccess = cart => ({ type: FETCHING_CART_SUCCESS, payload: car
 const fetchingCartError = cart => ({ type: FETCHING_CART_ERROR, payload: cart, receivedAt: Date.now() });
 
 export const updateCart = cart => ({ type: UPDATE_CART, payload: cart, receivedAt: Date.now() });
+
 export const updateCartItems = cartItems => ({ type: UPDATE_CART_ITEMS, payload: cartItems, receivedAt: Date.now() });
 export const removeCartItem = itemId => ({ type: REMOVE_CART_ITEM, payload: itemId, receivedAt: Date.now() });
 

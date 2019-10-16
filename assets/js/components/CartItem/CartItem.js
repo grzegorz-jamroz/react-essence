@@ -123,7 +123,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(updateCart(cart))
   },
   removeCartItem: itemId => {
-    dispatch(removeCartItem(itemId))
+    dispatch(removeCartItem(itemId));
   },
 });
 
