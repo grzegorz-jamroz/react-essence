@@ -7,7 +7,6 @@ import CartItemBadge from "../CartItemBadge";
 import Decimal from "decimal.js";
 import { updateCart } from "../../actions/cartActions";
 import { connect } from "react-redux";
-import Cart from "../../domain/Cart";
 
 const CartItem = props => {
   const { item, cart, updateCart } = props;
@@ -16,27 +15,24 @@ const CartItem = props => {
   const [cartItemStyle, setCartItemStyle] = useState({});
   const [cartItemClass, setCartItemClass] = useState("cartItem");
   const cartItemRef = useRef(null);
-  const newCart = Object.assign({}, cart);
 
   const increaseAmount = () => () => {
-    // cart.increaseCartItemsQuantity(1);
-    // setAmountValue(amountValue.plus(item.product.unitPrice));
-    // setQuantity(quantity + 1);
-    // cart.setTotal(cart.total.plus(item.product.unitPrice));
-    // cart.setSubtotal(cart.subtotal.plus(item.product.unitPrice));
-
-
-    newCart.total = newCart.total.plus(item.product.unitPrice);
-    updateCart(newCart);
+    setAmountValue(amountValue.plus(item.product.unitPrice));
+    setQuantity(quantity + 1);
+    cart.quantity = cart.quantity + 1;
+    cart.total = cart.total.plus(item.product.unitPrice);
+    cart.subtotal = cart.subtotal.plus(item.product.unitPrice);
+    updateCart(cart);
   };
 
   const decreaseAmount = () => () => {
     if (quantity > 1) {
-      // cart.decreaseCartItemsQuantity(1);
-      // setAmountValue(amountValue.minus(item.product.unitPrice));
-      // setQuantity(quantity - 1);
-      // cart.setTotal(cart.total.minus(item.product.unitPrice));
-      // cart.setSubtotal(cart.subtotal.minus(item.product.unitPrice));
+      setAmountValue(amountValue.minus(item.product.unitPrice));
+      setQuantity(quantity - 1);
+      cart.quantity = cart.quantity - 1;
+      cart.total = cart.total.minus(item.product.unitPrice);
+      cart.subtotal = cart.subtotal.minus(item.product.unitPrice);
+      updateCart(cart);
     }
   };
 
@@ -44,9 +40,10 @@ const CartItem = props => {
     setCartItemClass(`${cartItemClass} cartItem--deleted`);
     setTimeout(() => {
       // cart.removeCartItem(item.id);
-      // cart.decreaseCartItemsQuantity(quantity);
-      // cart.setTotal(cart.total.minus(amountValue));
-      // cart.setSubtotal(cart.subtotal.minus(amountValue));
+
+      cart.quantity = cart.quantity - quantity;
+      cart.total = cart.total.minus(amountValue);
+      cart.subtotal = cart.subtotal.minus(amountValue);
     }, 500);
   };
 

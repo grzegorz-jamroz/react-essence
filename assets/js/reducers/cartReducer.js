@@ -32,7 +32,7 @@ const cartReducer = (state = initialState, action) => {
       return { ...state, cartItems: payload, receivedAt };
 
     case UPDATE_CART:
-      return { ...state, cart: payload, receivedAt };
+      return { ...state, cart: cart, receivedAt };
     case SET_CART_TOTAL:
       cart.total = payload;
       return { ...state, cart: cart, receivedAt };
