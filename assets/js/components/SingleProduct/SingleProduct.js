@@ -1,48 +1,28 @@
-import React, { useContext } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
 import "./SingleProduct.scss";
 import ProductSlideBadge from "../ProductSlideBadge";
 import { Decimal } from "decimal.js";
-import { CartContext } from "../../context/CartContext";
+import { addCartItem } from "../../actions/cartActions";
 
-const SingleProduct = ({ product }) => {
-  product.previousPrice = new Decimal(product.previousPrice);
-  product.unitPrice = new Decimal(product.unitPrice);
+const SingleProduct = ({ product, addCartItem }) => {
+  let { unitPrice, previousPrice, badge, images, name, label, currency } = product;
+  unitPrice = new Decimal(unitPrice);
+  previousPrice = new Decimal(previousPrice);
 
-  const cart = useContext(CartContext);
-
-  const addItemToCart = () => () => {
-    cart.addCartItem(product);
+  const addItemToCart = () => {
+    addCartItem({
+      product: product,
+      quantity: 1,
+      amountValue: unitPrice.toNumber()
+    });
   };
 
-  let previousPrice = "";
-
-  if (product.previousPrice > product.unitPrice) {
-    previousPrice = (
-      <span className="singleProduct__previousPrice">
-        {product.currency + " " + product.previousPrice.toFixed(2)}
-      </span>
-    );
-  }
-
-  let badge = "";
-
-  if (typeof product.badge === "object") {
-    badge = (
-      <ProductSlideBadge
-        options={{
-          backgroundColor: product.badge.bgColor,
-          color: product.badge.color
-        }}
-        text={product.badge.text}
-      />
-    );
-  }
-
   try {
-    product.images[0] = require("../../../img/product/" + product.images[0]);
-    product.images[1] = require("../../../img/product/" + product.images[1]);
+    images[0] = require("../../../img/product/" + images[0]);
+    images[1] = require("../../../img/product/" + images[1]);
   } catch (e) {}
 
   return (
@@ -50,31 +30,43 @@ const SingleProduct = ({ product }) => {
       <div className="singleProduct__image">
         <img
           className="singleProduct__img"
-          src={product.images[0]}
-          alt={product.name}
+          src={images[0]}
+          alt={name}
         />
-        {badge}
+        {typeof badge === "object" && (
+          <ProductSlideBadge
+            options={{
+              backgroundColor: badge.bgColor,
+              color: badge.color
+            }}
+            text={badge.text}
+          />
+        )}
         <span className="singleProduct__favourite fa fa-heart" />
         <img
           className="singleProduct__img singleProduct__img--hover"
-          src={product.images[1]}
-          alt={product.name}
+          src={images[1]}
+          alt={name}
         />
       </div>
       <div className="singleProduct__description">
-        <span className="singleProduct__label">{product.label.name}</span>
+        <span className="singleProduct__label">{label.name}</span>
         <a href="#">
-          <h6 className="singleProduct__h6">{product.name}</h6>
+          <h6 className="singleProduct__h6">{name}</h6>
         </a>
         <p className="singleProduct__price">
-          {previousPrice}
-          {product.currency}
-          {product.unitPrice.toFixed(2)}
+          {previousPrice > unitPrice && (
+            <span className="singleProduct__previousPrice">
+              {currency + " " + previousPrice.toFixed(2)}
+            </span>
+          )}
+          {currency}
+          {unitPrice.toFixed(2)}
         </p>
         <div className="singleProduct__actions">
           <span
             className="btn essence-btn singleProduct__addToCartBtn"
-            onClick={addItemToCart()}
+            onClick={addItemToCart}
           >
             Add to Cart
           </span>
@@ -84,4 +76,12 @@ const SingleProduct = ({ product }) => {
   );
 };
 
-export default SingleProduct;
+const mapDispatchToProps = dispatch => ({
+  addCartItem: item => dispatch(addCartItem(item)),
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SingleProduct);
+

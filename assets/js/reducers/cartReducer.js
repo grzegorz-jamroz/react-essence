@@ -7,13 +7,14 @@ import {
   FETCHING_CART_ERROR,
   UPDATE_CART,
   UPDATE_CART_ITEMS,
-  REMOVE_CART_ITEM
+  REMOVE_CART_ITEM,
+  ADD_CART_ITEM
 } from "../actions/cartActions";
 
 const initialState = {
   cart: {},
   cartStatus: null,
-  cartItems: {},
+  cartItems: [],
   receivedAt: Date.now()
 };
 
@@ -34,6 +35,12 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: state.cartItems.filter(item => item.product.id !== payload),
+        receivedAt
+      };
+    case ADD_CART_ITEM:
+      return {
+        ...state,
+        cartItems: [...state.cartItems, payload],
         receivedAt
       };
 

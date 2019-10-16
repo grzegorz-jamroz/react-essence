@@ -3,6 +3,7 @@ import { collectIdsAndDocs } from "../Firebase/utilities";
 import Cart from "../domain/Cart";
 
 export const UPDATE_CART_ITEMS = "UPDATE_CART_ITEMS";
+export const ADD_CART_ITEM = "ADD_CART_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 
 export const UPDATE_CART = "UPDATE_CART";
@@ -23,6 +24,7 @@ export const updateCart = cart => ({ type: UPDATE_CART, payload: cart, receivedA
 
 export const updateCartItems = cartItems => ({ type: UPDATE_CART_ITEMS, payload: cartItems, receivedAt: Date.now() });
 export const removeCartItem = itemId => ({ type: REMOVE_CART_ITEM, payload: itemId, receivedAt: Date.now() });
+export const addCartItem = item => ({ type: ADD_CART_ITEM, payload: item, receivedAt: Date.now() });
 
 export const fetchCart = () => {
   return async dispatch => {
