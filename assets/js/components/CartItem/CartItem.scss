@@ -93,6 +93,8 @@
   color: $white;
   background-color: $blue;
   cursor: pointer;
+  border-radius: 0;
+  border: none;
 }
 
 .cartItemAction__decrease {

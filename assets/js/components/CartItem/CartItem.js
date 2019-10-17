@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../Core/Fonts";
 import variables from "../../Core/Bootstrap/VariablesExport.scss";
+import "../../Core/Essence";
 import "./CartItem.scss";
 import Bin from "../CartItemBin";
 import CartItemBadge from "../CartItemBadge";
@@ -72,17 +73,17 @@ const CartItem = props => {
         </div>
         <div className="cartItem__overlay" />
         <div className="cartItem__actionsLeft">
-          <div className="cartItemAction__decrease" onClick={decreaseAmount()}>
+          <button className="cartItemAction__decrease btn" onClick={decreaseAmount()}>
             -
-          </div>
-          <div className="cartItemAction__increase" onClick={increaseAmount()}>
+          </button>
+          <button className="cartItemAction__increase btn" onClick={increaseAmount()}>
             +
-          </div>
+          </button>
         </div>
         <div className="cartItem__actionsRight">
-          <div className="cartItemAction__delete" onClick={deleteCartItem()}>
+          <button className="cartItemAction__delete btn" onClick={deleteCartItem()}>
             <Bin />
-          </div>
+          </button>
         </div>
         <div
           className="cartItemThumbnail__image"

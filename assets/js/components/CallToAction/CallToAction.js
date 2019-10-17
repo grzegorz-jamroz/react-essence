@@ -20,7 +20,7 @@ const CallToAction = () => {
                 <div>
                   <h6 className="callToAction_h6">-60%</h6>
                   <h2 className="callToAction_h2">Global Sale</h2>
-                  <a href="#" className="btn essence-btn">
+                  <a href="/" className="btn essence-btn">
                     Buy Now
                   </a>
                 </div>

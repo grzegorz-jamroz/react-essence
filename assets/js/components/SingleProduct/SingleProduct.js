@@ -9,11 +9,11 @@ import { addCartItem } from "../../actions/cartActions";
 
 const SingleProduct = props => {
   const { product, addCartItem } = props;
-  let { unitPrice, previousPrice, badge, images, name, label, currency } = product;
+  let { unitPrice, previousPrice, badge, name, label, currency, images: [mainImage, hoverImage] } = product;
   unitPrice = new Decimal(unitPrice);
   previousPrice = new Decimal(previousPrice);
 
-  const addItemToCart = () => {
+  const addItemToCart = () => () => {
     addCartItem({
       product: product,
       quantity: 1,
@@ -22,16 +22,16 @@ const SingleProduct = props => {
   };
 
   try {
-    images[0] = require("../../../img/product/" + images[0]);
-    images[1] = require("../../../img/product/" + images[1]);
-  } catch (e) {}
+    mainImage = require("../../../img/product/" + mainImage);
+    hoverImage = require("../../../img/product/" + hoverImage);
+  } catch (e) { /* leave empty */ }
 
   return (
     <div className="singleProduct">
       <div className="singleProduct__image">
         <img
           className="singleProduct__img"
-          src={images[0]}
+          src={mainImage}
           alt={name}
         />
         {typeof badge === "object" && (
@@ -46,13 +46,13 @@ const SingleProduct = props => {
         <span className="singleProduct__favourite fa fa-heart" />
         <img
           className="singleProduct__img singleProduct__img--hover"
-          src={images[1]}
+          src={hoverImage}
           alt={name}
         />
       </div>
       <div className="singleProduct__description">
         <span className="singleProduct__label">{label.name}</span>
-        <a href="#">
+        <a href="/">
           <h6 className="singleProduct__h6">{name}</h6>
         </a>
         <p className="singleProduct__price">
@@ -65,12 +65,12 @@ const SingleProduct = props => {
           {unitPrice.toFixed(2)}
         </p>
         <div className="singleProduct__actions">
-          <span
+          <button
             className="btn essence-btn singleProduct__addToCartBtn"
-            onClick={addItemToCart}
+            onClick={addItemToCart()}
           >
             Add to Cart
-          </span>
+          </button>
         </div>
       </div>
     </div>

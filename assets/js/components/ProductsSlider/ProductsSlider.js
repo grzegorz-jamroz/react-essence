@@ -27,7 +27,7 @@ const ProductsSlider = () => {
   };
 
   useEffect(() => {
-    requestProducts().then(result => {
+    requestProducts().then(() => {
       slider.mount();
     });
 

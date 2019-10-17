@@ -2,21 +2,19 @@ import React from "react";
 import "../../Core/Styles";
 import "./TopCategory.scss";
 
-const TopCategory = props => {
-  const { category } = props;
-
+const TopCategory = ({ category: { name, thumbnail} }) => {
   try {
-    category.thumbnail = require("../../../img/category/" + category.thumbnail);
-  } catch (e) {}
+    thumbnail = require("../../../img/category/" + thumbnail);
+  } catch (e) { /* leave empty */ }
 
   return (
     <div className="topCategory col-12 col-md-4">
       <a
         className="topCategory__a"
-        style={{ backgroundImage: `url(${category.thumbnail})` }}
-        href="#"
+        style={{ backgroundImage: `url(${thumbnail})` }}
+        href="/"
       >
-        {category.name}
+        {name}
       </a>
     </div>
   );

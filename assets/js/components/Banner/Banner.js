@@ -10,7 +10,7 @@ const Banner = () => (
           <div className="banner__content">
             <h6 className="banner__h6">asoss</h6>
             <h2 className="banner__h2">New Collection</h2>
-            <a href="#" className="btn essence-btn">
+            <a href="/" className="btn essence-btn">
               view collection
             </a>
           </div>

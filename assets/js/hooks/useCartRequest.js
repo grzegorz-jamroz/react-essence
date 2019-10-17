@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import { firestore } from "../Firebase";
 import { collectIdsAndDocs } from "../Firebase/utilities";
 import Cart from "../domain/Cart";

@@ -8,34 +8,34 @@ const ShopColors = () => {
       <div className="shopColors__content">
         <ul className="shopColors__ul">
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--1" />
+            <span className="shopColors__color shopColors__color--1" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--2" />
+            <span className="shopColors__color shopColors__color--2" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--3" />
+            <span className="shopColors__color shopColors__color--3" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--4" />
+            <span className="shopColors__color shopColors__color--4" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--5" />
+            <span className="shopColors__color shopColors__color--5" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--6" />
+            <span className="shopColors__color shopColors__color--6" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--7" />
+            <span className="shopColors__color shopColors__color--7" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--8" />
+            <span className="shopColors__color shopColors__color--8" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--9" />
+            <span className="shopColors__color shopColors__color--9" />
           </li>
           <li className="shopColors__li">
-            <a href="#" className="shopColors__color shopColors__color--10" />
+            <span className="shopColors__color shopColors__color--10" />
           </li>
         </ul>
       </div>
