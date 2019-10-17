@@ -3,7 +3,7 @@ import "./HomePage.scss";
 import Banner from "../Banner";
 import TopCategories from "../TopCategories";
 import CallToAction from "../CallToAction";
-import ProductsSlider from "../ProductsSlider";
+import PopularProducts from "../PopularProducts";
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <Banner />
       <TopCategories />
       <CallToAction />
-      <ProductsSlider />
+      <PopularProducts/>
     </React.Fragment>
   );
 };
