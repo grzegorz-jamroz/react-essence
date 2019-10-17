@@ -6,7 +6,7 @@ import useTopCategoriesRequest from "../../hooks/useTopCategoriesRequest";
 
 const TopCategories = () => {
   const [
-    { status, categories },
+    { status, response: categories },
     requestTopCategories
   ] = useTopCategoriesRequest();
   useEffect(() => {
