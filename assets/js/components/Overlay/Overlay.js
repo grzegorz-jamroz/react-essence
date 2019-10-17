@@ -1,7 +1,7 @@
 import React from "react";
 import "./Overlay.scss";
 
-const Overlay = ({open}) => {
+const Overlay = ({ open }) => {
   let classes = "overlay";
 
   if (open) {

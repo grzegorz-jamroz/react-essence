@@ -2,10 +2,12 @@ import React from "react";
 import "../../Core/Styles";
 import "./TopCategory.scss";
 
-const TopCategory = ({ category: { name, thumbnail} }) => {
+const TopCategory = ({ category: { name, thumbnail } }) => {
   try {
     thumbnail = require("../../../img/category/" + thumbnail);
-  } catch (e) { /* leave empty */ }
+  } catch (e) {
+    /* leave empty */
+  }
 
   return (
     <div className="topCategory col-12 col-md-4">

@@ -1,5 +1,5 @@
 import { Decimal } from "decimal.js";
-import { FETCHING, SUCCESS, ERROR,} from './statuses';
+import { FETCHING, SUCCESS, ERROR } from "./statuses";
 import {
   FETCHING_CART,
   FETCHING_CART_SUCCESS,
@@ -10,7 +10,6 @@ import {
   ADD_CART_ITEM
 } from "../actions/cartActions";
 
-
 const initialState = {
   cart: {},
   cartStatus: null,
@@ -19,18 +18,17 @@ const initialState = {
 };
 
 const cartReducer = (state = initialState, action) => {
-  const {type, receivedAt, payload} = action;
+  const { type, receivedAt, payload } = action;
   const cart = Object.assign({}, state.cart);
 
-  const itemInCart = itemId => (
-    state.cartItems.filter(item => item.product.id === itemId).length
-  );
+  const itemInCart = itemId =>
+    state.cartItems.filter(item => item.product.id === itemId).length;
 
   switch (type) {
     case FETCHING_CART:
       return { ...initialState, cartStatus: FETCHING, receivedAt };
     case FETCHING_CART_SUCCESS:
-      return { ...state, cartStatus: SUCCESS, cart: payload, receivedAt  };
+      return { ...state, cartStatus: SUCCESS, cart: payload, receivedAt };
     case FETCHING_CART_ERROR:
       return { ...state, cartStatus: ERROR, cart: payload, receivedAt };
 

@@ -8,7 +8,7 @@ import { fetchCart } from "../../actions/cartActions";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
-const Cart = ({cart, cartItems, status, fetchCart}) => {
+const Cart = ({ cart, cartItems, status, fetchCart }) => {
   const [open, dispatch] = useCartOpenState();
   const cartClose = () => dispatch(close());
 
@@ -18,8 +18,8 @@ const Cart = ({cart, cartItems, status, fetchCart}) => {
 
   return (
     <Sidebar open={open} handleClose={cartClose}>
-      {status === "FETCHING" && (<div>Fetching...</div>)}
-      {status === "ERROR" && (<div>{console.error(cart)}Error</div>)}
+      {status === "FETCHING" && <div>Fetching...</div>}
+      {status === "ERROR" && <div>{console.error(cart)}Error</div>}
       {status === "SUCCESS" && (
         <PerfectScrollbar>
           <div className="cart">
@@ -62,14 +62,14 @@ const Cart = ({cart, cartItems, status, fetchCart}) => {
   );
 };
 
-const mapStateToProps = ({cartReducer: {cartStatus, cart, cartItems}}) => ({
+const mapStateToProps = ({ cartReducer: { cartStatus, cart, cartItems } }) => ({
   status: cartStatus,
   cart: cart ?? {},
   cartItems: cartItems ?? []
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCart: () => dispatch(fetchCart()),
+  fetchCart: () => dispatch(fetchCart())
 });
 
 export default connect(

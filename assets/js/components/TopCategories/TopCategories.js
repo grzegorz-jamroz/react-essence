@@ -5,7 +5,10 @@ import TopCategory from "../TopCategory";
 import useTopCategoriesRequest from "../../hooks/useTopCategoriesRequest";
 
 const TopCategories = () => {
-  const [{ status, categories }, requestTopCategories] = useTopCategoriesRequest();
+  const [
+    { status, categories },
+    requestTopCategories
+  ] = useTopCategoriesRequest();
   useEffect(() => {
     requestTopCategories().then();
   }, []);
@@ -14,14 +17,13 @@ const TopCategories = () => {
     <div className="topCategories">
       <div className="container">
         <div className="topCategories__row row">
-          {status === "FETCHING" && (<div>Fetching...</div>)}
-          {status === "SUCCESS" && (
+          {status === "FETCHING" && <div>Fetching...</div>}
+          {status === "SUCCESS" &&
             categories.map(category => {
               if (category.parentId === "") {
                 return <TopCategory key={category.id} category={category} />;
               }
-            })
-          )}
+            })}
         </div>
       </div>
     </div>

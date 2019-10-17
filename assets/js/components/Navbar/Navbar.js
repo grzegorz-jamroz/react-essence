@@ -15,8 +15,8 @@ const Navbar = () => {
               <Logo />
             </div>
             <div className="navbar__rightSite">
-              <CartToggler/>
-              <MenuToggler/>
+              <CartToggler />
+              <MenuToggler />
             </div>
           </div>
         </div>

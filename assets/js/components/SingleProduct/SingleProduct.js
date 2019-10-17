@@ -9,7 +9,15 @@ import { addCartItem } from "../../actions/cartActions";
 
 const SingleProduct = props => {
   const { product, addCartItem } = props;
-  let { unitPrice, previousPrice, badge, name, label, currency, images: [mainImage, hoverImage] } = product;
+  let {
+    unitPrice,
+    previousPrice,
+    badge,
+    name,
+    label,
+    currency,
+    images: [mainImage, hoverImage]
+  } = product;
   unitPrice = new Decimal(unitPrice);
   previousPrice = new Decimal(previousPrice);
 
@@ -24,16 +32,14 @@ const SingleProduct = props => {
   try {
     mainImage = require("../../../img/product/" + mainImage);
     hoverImage = require("../../../img/product/" + hoverImage);
-  } catch (e) { /* leave empty */ }
+  } catch (e) {
+    /* leave empty */
+  }
 
   return (
     <div className="singleProduct">
       <div className="singleProduct__image">
-        <img
-          className="singleProduct__img"
-          src={mainImage}
-          alt={name}
-        />
+        <img className="singleProduct__img" src={mainImage} alt={name} />
         {typeof badge === "object" && (
           <ProductSlideBadge
             options={{
@@ -85,4 +91,3 @@ export default connect(
   null,
   mapDispatchToProps
 )(SingleProduct);
-

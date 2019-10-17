@@ -73,15 +73,24 @@ const CartItem = props => {
         </div>
         <div className="cartItem__overlay" />
         <div className="cartItem__actionsLeft">
-          <button className="cartItemAction__decrease btn" onClick={decreaseAmount()}>
+          <button
+            className="cartItemAction__decrease btn"
+            onClick={decreaseAmount()}
+          >
             -
           </button>
-          <button className="cartItemAction__increase btn" onClick={increaseAmount()}>
+          <button
+            className="cartItemAction__increase btn"
+            onClick={increaseAmount()}
+          >
             +
           </button>
         </div>
         <div className="cartItem__actionsRight">
-          <button className="cartItemAction__delete btn" onClick={deleteCartItem()}>
+          <button
+            className="cartItemAction__delete btn"
+            onClick={deleteCartItem()}
+          >
             <Bin />
           </button>
         </div>
@@ -115,13 +124,13 @@ const CartItem = props => {
   );
 };
 
-const mapStateToProps = ({cartReducer: {cart}}) => ({
+const mapStateToProps = ({ cartReducer: { cart } }) => ({
   cart: cart ?? {}
 });
 
 const mapDispatchToProps = dispatch => ({
   updateCart: cart => dispatch(updateCart(cart)),
-  removeCartItem: itemId => dispatch(removeCartItem(itemId)),
+  removeCartItem: itemId => dispatch(removeCartItem(itemId))
 });
 
 export default connect(

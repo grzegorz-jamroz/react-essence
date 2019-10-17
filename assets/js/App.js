@@ -15,9 +15,9 @@ const App = () => {
     <Root>
       <CartOpenState>
         <MenuOpenState>
-          <Navbar/>
-          <Menu/>
-          <Cart/>
+          <Navbar />
+          <Menu />
+          <Cart />
           <Router>
             <HomePage path="/" />
             <Shop path="/shop" />

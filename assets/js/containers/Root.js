@@ -4,12 +4,8 @@ import configureStore from "../configureStore";
 
 const store = configureStore();
 
-const Root = ({children}) => {
-  return (
-    <Provider store={store}>
-      { children }
-    </Provider>
-  );
+const Root = ({ children }) => {
+  return <Provider store={store}>{children}</Provider>;
 };
 
 export default Root;

@@ -9,7 +9,10 @@ const MenuToggler = () => {
   const openClass = open ? "navbarButton__menuToggler--open" : "";
 
   return (
-    <button onClick={() => dispatch(toggle())} className="navbarButton navbarButton--bRight btn">
+    <button
+      onClick={() => dispatch(toggle())}
+      className="navbarButton navbarButton--bRight btn"
+    >
       <span className={`navbarButton__menuToggler ${openClass}`}>
         <span />
         <span />

@@ -4,7 +4,7 @@ import Overlay from "../Overlay";
 import SidebarClose from "../SidebarClose/SidebarClose";
 
 const Sidebar = props => {
-  const {open, handleClose, children} = props;
+  const { open, handleClose, children } = props;
   let classes = "sidebar";
   let styles = { right: 0 };
 
@@ -18,10 +18,10 @@ const Sidebar = props => {
 
   return (
     <>
-      <Overlay open={open}/>
+      <Overlay open={open} />
       <div style={styles} className={classes}>
         <div className="sidebar__offSwitch">
-          <SidebarClose handleClick={handleClose}/>
+          <SidebarClose handleClick={handleClose} />
         </div>
         {children}
       </div>

@@ -5,7 +5,7 @@ import { FETCHING, SUCCESS, ERROR } from "../reducers/statuses";
 
 const initialState = {
   status: null,
-  categories: [],
+  categories: []
 };
 
 /**
