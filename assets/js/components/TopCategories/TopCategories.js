@@ -1,36 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../../Core/Styles";
 import "./TopCategories.scss";
 import TopCategory from "../TopCategory";
-import { firestore } from "../../Firebase";
-import { collectIdsAndDocs } from "../../Firebase/utilities";
+import useTopCategoriesRequest from "../../hooks/useTopCategoriesRequest";
 
 const TopCategories = () => {
-  const [categories, setCategories] = useState([]);
-
-  const requestCategories = async () => {
-    const snapshot = await firestore
-      .collection("categories")
-      .where("parentId", "==", "")
-      .orderBy("name", "asc")
-      .get();
-    const categories = snapshot.docs.map(collectIdsAndDocs);
-    setCategories(categories);
-  };
-
+  const [{ status, categories }, requestTopCategories] = useTopCategoriesRequest();
   useEffect(() => {
-    requestCategories();
+    requestTopCategories().then();
   }, []);
 
   return (
     <div className="topCategories">
       <div className="container">
         <div className="topCategories__row row">
-          {categories.map(category => {
-            if (category.parentId === "") {
-              return <TopCategory key={category.id} category={category} />;
-            }
-          })}
+          {status === "FETCHING" && (<div>Fetching...</div>)}
+          {status === "SUCCESS" && (
+            categories.map(category => {
+              if (category.parentId === "") {
+                return <TopCategory key={category.id} category={category} />;
+              }
+            })
+          )}
         </div>
       </div>
     </div>
