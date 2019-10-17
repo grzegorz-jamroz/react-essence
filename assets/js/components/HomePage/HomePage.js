@@ -11,7 +11,7 @@ const HomePage = () => {
       <Banner />
       <TopCategories />
       <CallToAction />
-      <PopularProducts/>
+      <PopularProducts />
     </React.Fragment>
   );
 };

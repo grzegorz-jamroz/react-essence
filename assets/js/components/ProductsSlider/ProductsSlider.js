@@ -42,7 +42,8 @@ const ProductsSlider = () => {
             </ul>
           </div>
         </div>
-      )}</>
+      )}
+    </>
   );
 };
 
