@@ -43,11 +43,17 @@
     "workbox-webpack-plugin": "^4.3.1"
   },
   "scripts": {
-    "server": "node public/index.js",
+    "server": "npm run webpack-dev-server -- --env.mode development --hot",
     "format": "prettier --write \"assets/js/**/*.{js, jsx}\"",
     "lint": "eslint \"assets/js/**/*.{js,jsx}\" --quiet",
     "fixtures": "babel-node fixtures/fixtures.js --presets=@babel/preset-env",
-    "mocks": "tsc -p assets/js/mocks && yarn run format"
+    "mocks": "tsc -p assets/js/mocks && yarn run format",
+    "dev": "npm run webpack -- --env.mode development",
+    "prod": "npm run webpack -- --env.mode production",
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server",
+    "dev:analyze": "npm run dev -- --env.presets analyze",
+    "prod:compress": "npm run prod -- --env.presets compress"
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
