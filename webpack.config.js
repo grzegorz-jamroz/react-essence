@@ -32,7 +32,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
             use: `ts-loader`
           },
           {
-            test: /\.jpe?g$/,
+            test: /\.(jpe?g|ttf|svg)$/,
             use: "url-loader"
           },
           {
