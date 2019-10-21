@@ -6,10 +6,11 @@
   padding: $px12;
 }
 
-.cartToggler__icon {
+.cartToggler__bagIcon {
   display: inline-block;
   cursor: pointer;
   width: $spacer * 1.5;
+  fill: $body-color;
 }
 
 .cartToggler__counter {

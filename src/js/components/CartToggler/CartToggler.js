@@ -1,5 +1,5 @@
 import React from "react";
-import binImg from "../../../img/core-img/bag.svg";
+import BagIcon from '../../Core/SvgIcons/BagIcon';
 import "../../Core/Essence";
 import "../../Core/Fonts";
 import "./CartToggler.scss";
@@ -16,7 +16,7 @@ const CartToggler = ({ cartItemsQuantity, status }) => {
       className="navbarButton navbarButton--bRight btn"
     >
       <div className="navbarButton__cartToggler">
-        <img className="cartToggler__icon" src={binImg} alt="bin-icon" />
+        <BagIcon className="cartToggler__bagIcon" />
         {status === "SUCCESS" && cartItemsQuantity > 0 && (
           <span className="cartToggler__counter">{cartItemsQuantity}</span>
         )}
