@@ -17,11 +17,13 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       },
       output: {
         filename: "[name].js",
-        path: __dirname + '/public/build'
+        path: __dirname + '/dist'
       },
       plugins: [
         new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+          template: './webpack/index.ejs',
+        }),
         new MiniCssExtractPlugin(),
         new CleanWebpackPlugin()
       ],

@@ -1,6 +1,9 @@
 .idea
 design
 
+# webpack default dist folder
+dist
+
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
 /public/build/
