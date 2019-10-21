@@ -34,20 +34,23 @@
 
 .singleProduct__favourite {
   position: absolute;
-  height: $spacer * 1.5625;
+  height: $spacer * 1.625;
   width: $spacer * 2.8125;
-  font-size: $px14;
-  color: $gray-400;
   top: $spacer * 1.25;
   right: $spacer * 1.25;
   z-index: 10;
-  line-height: $spacer * 1.5625;
+  line-height: $spacer * 1.625;
   background-color: $white;
   box-shadow: 0 0 $px3 rgba(0, 0, 0, 0.15);
   text-align: center;
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
+}
+
+.singleProduct__heartIcon {
+  fill: $gray-400;
+  width: $px15;
 }
 
 .singleProduct__description {
@@ -106,8 +109,8 @@
   visibility: visible;
 }
 
-.singleProduct__favourite:hover {
-  color: $red;
+.singleProduct__favourite:hover .singleProduct__heartIcon{
+  fill: $red;
 }
 
 .singleProduct__addToCartBtn {

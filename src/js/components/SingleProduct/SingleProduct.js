@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import "../../Core/Fonts/Fontawesome";
+import Heart from '../../Core/SvgIcons/HeartIcon'
 import "../../Core/Styles";
 import "./SingleProduct.scss";
 import ProductSlideBadge from "../ProductSlideBadge";
@@ -49,7 +49,10 @@ const SingleProduct = props => {
             text={badge.text}
           />
         )}
-        <span className="singleProduct__favourite fa fa-heart" />
+        {/*<span className="singleProduct__favourite fa fa-heart" />*/}
+        <div className="singleProduct__favourite">
+          <Heart className="singleProduct__heartIcon" />
+        </div>
         <img
           className="singleProduct__img singleProduct__img--hover"
           src={hoverImage}
