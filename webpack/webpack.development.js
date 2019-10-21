@@ -22,6 +22,10 @@ module.exports = () => {
           test: /\.s[ac]ss$/,
           use: [MiniCssExtractPlugin.loader, "css-loader?sourceMap", "sass-loader?sourceMap"]
         },
+        {
+          test: /\.(jpe?g|svg|png|ttf|woff|woff2|eot)$/,
+          use: "url-loader"
+        },
       ]
     },
     plugins: [

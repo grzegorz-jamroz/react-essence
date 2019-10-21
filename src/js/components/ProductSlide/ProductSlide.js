@@ -1,5 +1,4 @@
 import React from "react";
-import "../../Core/Fonts/Fontawesome.js";
 import "../../Core/Styles";
 import SingleProduct from "../SingleProduct";
 

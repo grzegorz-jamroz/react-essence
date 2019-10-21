@@ -17,7 +17,8 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       },
       output: {
         filename: "[name].js",
-        path: __dirname + '/public/dist'
+        path: path.resolve(__dirname, 'public/dist'),
+        publicPath: '/dist/'
       },
       plugins: [
         new webpack.ProgressPlugin(),
@@ -32,17 +33,6 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
           {
             test: /\.ts$/,
             use: `ts-loader`
-          },
-          {
-            test: /\.(jpe?g|svg)$/,
-            use: "url-loader"
-          },
-          {
-            test: /\.(ttf)$/,
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            },
           },
           {
             test: /\.(js|jsx)$/,

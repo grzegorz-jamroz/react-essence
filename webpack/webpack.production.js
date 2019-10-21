@@ -15,7 +15,21 @@ module.exports = () => {
         {
           test: /\.s[ac]ss$/,
           use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-        }
+        },
+        {
+          test: /\.(ttf|woff|woff2|eot)$/,
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]',
+          },
+        },
+        {
+          test: /\.(jpe?g|svg|png)$/,
+          loader: 'file-loader',
+          options: {
+            name: 'images/[name].[ext]',
+          },
+        },
       ]
     },
     plugins: [
