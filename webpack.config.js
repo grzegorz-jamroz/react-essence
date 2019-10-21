@@ -13,7 +13,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     {
       mode,
       entry: {
-        app: './assets/js/App.js',
+        app: './src/js/App.js',
       },
       output: {
         filename: "[name].js",
@@ -39,7 +39,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
           },
           {
             test: /\.(js|jsx)$/,
-            include: [path.resolve(__dirname, 'assets')],
+            include: [path.resolve(__dirname, 'src')],
             use: {
               loader: 'babel-loader',
               options: {
