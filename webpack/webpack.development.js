@@ -1,4 +1,3 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
@@ -10,8 +9,7 @@ module.exports = () => {
   return {
     devtool: "inline-source-map",
     output: {
-      filename: "app.js",
-      path: path.resolve(__dirname, 'public/dist')
+      filename: "app.js"
     },
     devServer,
     module: {

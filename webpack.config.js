@@ -16,7 +16,8 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
         app: './src/js/App.js',
       },
       output: {
-        filename: "[name].js"
+        filename: "[name].js",
+        path: path.resolve(__dirname, 'public/dist')
       },
       plugins: [
         new webpack.ProgressPlugin(),

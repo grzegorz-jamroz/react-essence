@@ -6,7 +6,6 @@ module.exports = () => {
     devtool: "source-map",
     output: {
       filename: "[name].[hash].js",
-      path: path.resolve(__dirname, 'public/dist'),
       publicPath: '/dist/'
     },
     module: {
