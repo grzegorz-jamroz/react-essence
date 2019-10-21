@@ -4,15 +4,15 @@ const path = require('path');
 const router = express.Router();
 
 router.get('/', function(req, res){
-  res.sendFile(path.join(__dirname + '/build/index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 router.get('/shop', function(req, res){
-  res.sendFile(path.join(__dirname + '/build/index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.use('/', router);
-app.use('/build', express.static(path.join(__dirname, 'build')));
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.listen(3000);
 console.log(`listening on port 3000`);

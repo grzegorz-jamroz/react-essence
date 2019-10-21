@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = () => {
   const devServer = {
     port: 3000,
@@ -14,9 +16,16 @@ module.exports = () => {
       rules: [
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader?sourceMap"]
-        }
+          use: [MiniCssExtractPlugin.loader, "css-loader?sourceMap"]
+        },
+        {
+          test: /\.s[ac]ss$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader?sourceMap", "sass-loader?sourceMap"]
+        },
       ]
-    }
+    },
+    plugins: [
+      new MiniCssExtractPlugin(),
+    ],
   }
 };

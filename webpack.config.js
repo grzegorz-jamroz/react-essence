@@ -17,7 +17,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       },
       output: {
         filename: "[name].js",
-        path: __dirname + '/dist'
+        path: __dirname + '/public/dist'
       },
       plugins: [
         new webpack.ProgressPlugin(),
@@ -34,8 +34,15 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
             use: `ts-loader`
           },
           {
-            test: /\.(jpe?g|ttf|svg)$/,
+            test: /\.(jpe?g|svg)$/,
             use: "url-loader"
+          },
+          {
+            test: /\.(ttf)$/,
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            },
           },
           {
             test: /\.(js|jsx)$/,
@@ -53,10 +60,6 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
                 ]
               }
             }
-          },
-          {
-            test: /\.scss$/,
-            use: ["style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
           },
           {
             test: /\.VariablesExport.scss$/,
