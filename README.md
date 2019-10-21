@@ -65,50 +65,62 @@ yarn install
 
 8\. Run server - check: [Run server](#run-server)
 
-9\. Open in browser `http://localhost:3000`
+9\. Webpack should automatically open in browser [http://localhost:3000](http://localhost:3000)
 
 ## Development
 
 #### Run server
 
+- setting up the webpack dev server
+- automatically open the browser after server had been started
+- refresh the page each time we make a change
+
 ```
-yarn run server
+yarn server
 ```
 
 #### Compile assets once 
 
 ```
-yarn encore dev
+yarn dev
 ```
 
 #### Recompile assets automatically when files change
 
 ```
-yarn encore dev --watch
+yarn dev --watch
 ```
 
 #### Add fixtures to Firebase 
 (it removes all collections and insert fresh test data)
 
 ```
-yarn run fixtures
+yarn fixtures
 ```
 
 #### Prettier
 
 ```
-yarn run format
+yarn format
 ```
 
 #### ESLint
 
 ```
-yarn run lint
+yarn lint
 ```
 
 #### Build mocks
 (if you change some TypeScripts inside `react-essence\assets\js\mocks\src` you can compile it with this command)
 
 ```
-yarn run mocks
+yarn mocks
+```
+
+## Production
+
+#### Compile build for production
+
+```
+yarn prod
 ```
