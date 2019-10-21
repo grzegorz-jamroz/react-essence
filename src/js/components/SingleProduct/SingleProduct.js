@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import "../../Core/Fonts/Fontawesome.js";
+import "../../Core/Fonts/Fontawesome";
 import "../../Core/Styles";
 import "./SingleProduct.scss";
 import ProductSlideBadge from "../ProductSlideBadge";
