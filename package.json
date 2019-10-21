@@ -45,10 +45,10 @@
   "scripts": {
     "server": "npm run webpack-dev-server -- --env.mode development --hot",
     "server-express": "node public/index.js",
-    "format": "prettier --write \"assets/js/**/*.{js, jsx}\"",
-    "lint": "eslint \"assets/js/**/*.{js,jsx}\" --quiet",
+    "format": "prettier --write \"src/js/**/*.{js, jsx}\"",
+    "lint": "eslint \"src/js/**/*.{js,jsx}\" --quiet",
     "fixtures": "babel-node fixtures/fixtures.js --presets=@babel/preset-env",
-    "mocks": "tsc -p assets/js/mocks && yarn run format",
+    "mocks": "tsc -p src/js/mocks && yarn run format",
     "dev": "npm run webpack -- --env.mode development",
     "prod": "npm run webpack -- --env.mode production",
     "webpack": "webpack",
