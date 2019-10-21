@@ -1,10 +1,13 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
   return {
     devtool: "source-map",
     output: {
-      filename: "[name].[hash].js"
+      filename: "[name].[hash].js",
+      path: path.resolve(__dirname, 'public/dist'),
+      publicPath: '/dist/'
     },
     module: {
       rules: [
