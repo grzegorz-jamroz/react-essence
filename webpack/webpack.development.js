@@ -4,6 +4,7 @@ module.exports = () => {
   const devServer = {
     port: 3000,
     open: true,
+    historyApiFallback: true
   };
 
   return {
