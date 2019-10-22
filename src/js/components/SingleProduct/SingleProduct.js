@@ -77,6 +77,7 @@ const SingleProduct = props => {
           <button
             className="btn essence-btn singleProduct__addToCartBtn"
             onClick={addItemToCart()}
+            data-product_id={product.id}
           >
             Add to Cart
           </button>

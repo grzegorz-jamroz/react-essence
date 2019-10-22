@@ -3,8 +3,10 @@ import useProductsRequest from "../../hooks/useProductsRequest";
 import ProductSlide from "../ProductSlide";
 import Glide from "@glidejs/glide";
 import "../../Core/Glide";
+import { addCartItem } from "../../actions/cartActions";
+import { connect } from "react-redux";
 
-const ProductsSlider = () => {
+const ProductsSlider = ({addCartItem}) => {
   const [slider] = useState(
     new Glide(".jsProductsSlider", {
       type: "carousel",
@@ -15,6 +17,24 @@ const ProductsSlider = () => {
       animationDuration: 1000
     })
   );
+
+  const clickHandler = (e) => {
+    if (status !== "SUCCESS") {
+      return;
+    }
+
+    let product = products.filter(product => product.id === e.target.dataset.product_id);
+
+    if (e.target.matches('.singleProduct__addToCartBtn')) {
+      product = product[0];
+      const item = {
+        product: product,
+        quantity: 1,
+        amountValue: product.unitPrice
+      };
+      addCartItem(item);
+    }
+  };
 
   const [
     { status, response: products },
@@ -28,6 +48,13 @@ const ProductsSlider = () => {
 
     return () => slider.destroy();
   }, []);
+
+  if (status === "SUCCESS") {
+    slider.on(['mount.after'], () => {
+      const elements = document.querySelector('.glide__slides');
+      elements.addEventListener('click', clickHandler);
+    });
+  }
 
   return (
     <>
@@ -47,4 +74,11 @@ const ProductsSlider = () => {
   );
 };
 
-export default ProductsSlider;
+const mapDispatchToProps = dispatch => ({
+  addCartItem: item => dispatch(addCartItem(item))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ProductsSlider);
