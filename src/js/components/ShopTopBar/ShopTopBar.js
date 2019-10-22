@@ -2,11 +2,11 @@ import React from "react";
 import "./ShopTopBar.scss";
 import FilterDropdown from "../FilterDropdown";
 
-const ShopTopBar = () => {
+const ShopTopBar = ({foundNumber = 0}) => {
   return (
     <div className="shopTopBar">
       <div className="shopTopBar__found">
-        <span className="shopTopBar__foundNumber">186</span> products found
+        <span className="shopTopBar__foundNumber">{foundNumber}</span> products found
       </div>
       <FilterDropdown />
     </div>

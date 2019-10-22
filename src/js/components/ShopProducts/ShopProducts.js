@@ -22,7 +22,7 @@ const ShopProducts = () => {
     <div className="shopProducts">
       <div className="row">
         <div className="col-12">
-          <ShopTopBar />
+          <ShopTopBar foundNumber={products.length} />
         </div>
       </div>
       <div className="row">
