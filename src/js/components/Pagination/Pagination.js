@@ -1,4 +1,5 @@
 import React from "react";
+import '../../Core/Fonts/Fontawesome'
 import "./Pagination.scss";
 
 const Pagination = () => {

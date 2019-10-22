@@ -1,0 +1,8 @@
+@import "../../Core/Settings";
+
+.shopFilters__title {
+  font-size: $spacer * 1.125;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: $spacer * 1.875;
+}

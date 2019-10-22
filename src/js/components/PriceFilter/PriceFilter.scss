@@ -1,0 +1,13 @@
+@import "../../Core/Settings";
+
+.priceFilter {
+  padding-bottom: $px10;
+}
+
+.priceFilter__title {
+  text-transform: uppercase;
+  font-size: $spacer *  0.75;
+  margin-bottom: $spacer * 1.75;
+  display: block;
+  font-weight: bold;
+}
