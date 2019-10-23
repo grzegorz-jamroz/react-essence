@@ -18,35 +18,23 @@ const FilterDropdown = ({ sortBy, changeSortBy }) => {
     { value: SORT_BY_PRICE_LOW_HIGH, label: "Price: $ - $$" }
   ];
 
-  const [selectedOption, setSelectedOption] = useState(
-    options.filter(option => option.value === sortBy)
-  );
-
-  const customStyles = {
-    control: styles => ({ ...styles, border: "none", boxShadow: "none" }),
-    input: () => ({ display: "none" }),
-    singleValue: styles => ({
-      ...styles,
-      top: "auto",
-      transform: "none",
-      position: "relative",
-      maxWidth: "calc(100% - 0.25rem)"
-    })
-  };
+  const [selectedOption, setSelectedOption] = useState(options.filter(option => option.value === sortBy)[0]);
 
   const onChangeHandle = option => {
     changeSortBy(option.value);
-    return setSelectedOption(option);
+    setSelectedOption(option);
   };
 
   return (
     <div className="filterDropdown">
       <p className="filterDropdown__p">Sort by:</p>
       <Select
-        value={selectedOption}
         onChange={onChangeHandle}
         options={options}
-        styles={customStyles}
+        className="filterDropdown__container"
+        classNamePrefix="filterDropdown"
+        isSearchable={false}
+        value={selectedOption}
       />
     </div>
   );

@@ -15,3 +15,14 @@
   align-items: center;
   display: flex;
 }
+
+.filterDropdown__container {
+  font-size: $px14;
+  line-height: 1.5;
+  text-transform: uppercase;
+  width: $spacer * 10;
+}
+
+.filterDropdown__control {
+  border: none;
+}
