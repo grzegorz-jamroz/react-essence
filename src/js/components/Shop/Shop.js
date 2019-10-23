@@ -4,10 +4,10 @@ import ShopContent from "../ShopContent";
 
 const Shop = () => {
   return (
-    <React.Fragment>
+    <>
       <Breadcrumb text="Welcome in shop!" />
       <ShopContent />
-    </React.Fragment>
+    </>
   );
 };
 

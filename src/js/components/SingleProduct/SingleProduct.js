@@ -49,7 +49,6 @@ const SingleProduct = props => {
             text={badge.text}
           />
         )}
-        {/*<span className="singleProduct__favourite fa fa-heart" />*/}
         <div className="singleProduct__favourite">
           <Heart className="singleProduct__heartIcon" />
         </div>

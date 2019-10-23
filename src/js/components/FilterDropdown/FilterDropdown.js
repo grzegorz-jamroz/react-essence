@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import "./FilterDropdown.scss";
+import {
+  shopFiltersSortBy,
+  SORT_BY_NEWEST,
+  SORT_BY_HIGHEST_RATED,
+  SORT_BY_PRICE_HIGH_LOW,
+  SORT_BY_PRICE_LOW_HIGH
+} from "../../actions/shopFiltersActions";
+import { connect } from "react-redux";
 
-const FilterDropdown = () => {
+const FilterDropdown = ({ sortBy, changeSortBy }) => {
   const options = [
-    { value: "highest_rated", label: "Highest Rated" },
-    { value: "newest", label: "Newest" },
-    { value: "price_hight_low", label: "Price: $$ - $" },
-    { value: "price_low_hight", label: "Price: $ - $$" }
+    { value: SORT_BY_NEWEST, label: "Newest" },
+    { value: SORT_BY_HIGHEST_RATED, label: "Highest Rated" },
+    { value: SORT_BY_PRICE_HIGH_LOW, label: "Price: $$ - $" },
+    { value: SORT_BY_PRICE_LOW_HIGH, label: "Price: $ - $$" }
   ];
 
-  const [filterValue, setFilterValue] = useState({
-    value: "newest",
-    label: "Newest"
-  });
+  const [selectedOption, setSelectedOption] = useState(
+    options.filter(option => option.value === sortBy)
+  );
+
+  useEffect(() => {
+    changeSortBy(selectedOption.value);
+  }, [selectedOption]);
 
   const customStyles = {
     control: styles => ({ ...styles, border: "none", boxShadow: "none" }),
@@ -31,8 +42,8 @@ const FilterDropdown = () => {
     <div className="filterDropdown">
       <p className="filterDropdown__p">Sort by:</p>
       <Select
-        value={filterValue}
-        onChange={value => setFilterValue(value)}
+        value={selectedOption}
+        onChange={value => setSelectedOption(value)}
         options={options}
         styles={customStyles}
       />
@@ -40,4 +51,15 @@ const FilterDropdown = () => {
   );
 };
 
-export default FilterDropdown;
+const mapStateToProps = ({ shopFiltersReducer: { sortBy } }) => {
+  return { sortBy };
+};
+
+const mapDispatchToProps = dispatch => ({
+  changeSortBy: sortBy => dispatch(shopFiltersSortBy(sortBy)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilterDropdown);

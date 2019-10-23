@@ -7,7 +7,7 @@ import CartToggler from "../CartToggler";
 
 const Navbar = () => {
   return (
-    <React.Fragment>
+    <>
       <div className="navbar">
         <div className="navbar__container">
           <div className="navbar__row">
@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

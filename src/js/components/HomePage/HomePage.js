@@ -7,12 +7,12 @@ import PopularProducts from "../PopularProducts";
 
 const HomePage = () => {
   return (
-    <React.Fragment>
+    <>
       <Banner />
       <TopCategories />
       <CallToAction />
       <PopularProducts />
-    </React.Fragment>
+    </>
   );
 };
 

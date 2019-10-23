@@ -1,39 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { firestore } from "../../Firebase";
+import React, { useEffect } from "react";
 import "./ShopProducts.scss";
 import SingleProduct from "../SingleProduct";
-import { collectIdsAndDocs } from "../../Firebase/utilities";
 import ShopTopBar from "../ShopTopBar";
+import useProductsRequest from "../../hooks/useProductsRequest";
+import { connect } from "react-redux";
 
-const ShopProducts = () => {
-  const [products, setProducts] = useState([]);
-
-  const requestProducts = async () => {
-    const snapshot = await firestore.collection("products").get();
-    const products = snapshot.docs.map(collectIdsAndDocs);
-    setProducts(products);
-  };
+const ShopProducts = ({filters}) => {
+  const [
+    { status, response: products },
+    requestProducts
+  ] = useProductsRequest(filters);
 
   useEffect(() => {
     requestProducts();
   }, []);
 
   return (
-    <div className="shopProducts">
-      <div className="row">
-        <div className="col-12">
-          <ShopTopBar foundNumber={products.length} />
-        </div>
-      </div>
-      <div className="row">
-        {products.map(product => (
-          <div key={product.id} className="col-12 col-sm-6 col-lg-4">
-            <SingleProduct product={product} />
+    <>
+      {status === "FETCHING" && <div>Fetching...</div>}
+      {status === "SUCCESS" && (
+        <div className="shopProducts">
+          <div className="row">
+            <div className="col-12">
+              <ShopTopBar foundNumber={products.length} />
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
+          <div className="row">
+            {products.map(product => (
+              <div key={product.id} className="col-12 col-sm-6 col-lg-4">
+                <SingleProduct product={product} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
-export default ShopProducts;
+const mapStateToProps = ({ shopFiltersReducer: { sortBy } }) => {
+  console.log(sortBy);
+  return { filters: { sortBy } };
+};
+
+export default connect(mapStateToProps)(ShopProducts);
