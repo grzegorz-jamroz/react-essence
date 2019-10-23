@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { firestore } from "../Firebase";
 import { collectIdsAndDocs } from "../Firebase/utilities";
+import { convertSortBy, SORT_BY_NEWEST } from "../actions/shopFiltersActions";
 import {
   reducer,
   fetching,
@@ -8,19 +9,8 @@ import {
   error,
   initialState
 } from "../reducers/statuses";
-import { SORT_BY_PRICE_HIGH_LOW, SORT_BY_PRICE_LOW_HIGH } from "../actions/shopFiltersActions";
 
-const convertSortBy = sortBy => {
-  switch (sortBy) {
-    case SORT_BY_PRICE_HIGH_LOW:
-      return { field: "unitPrice", direction: "desc" };
-    case SORT_BY_PRICE_LOW_HIGH:
-    default:
-      return { field: "unitPrice", direction: "asc" };
-  }
-};
-
-const useProductsRequest = ({ sortBy = {} } = {}) => {
+const useProductsRequest = ({ sortBy = SORT_BY_NEWEST } = {}) => {
   sortBy = convertSortBy(sortBy);
   const [state, dispatch] = useReducer(reducer, initialState);
 

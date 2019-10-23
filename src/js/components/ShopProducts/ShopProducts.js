@@ -2,17 +2,12 @@ import React, { useEffect } from "react";
 import "./ShopProducts.scss";
 import SingleProduct from "../SingleProduct";
 import ShopTopBar from "../ShopTopBar";
-import useProductsRequest from "../../hooks/useProductsRequest";
 import { connect } from "react-redux";
+import { fetchProducts, SORT_BY_PRICE_HIGH_LOW } from "../../actions/shopFiltersActions";
 
-const ShopProducts = ({filters}) => {
-  const [
-    { status, response: products },
-    requestProducts
-  ] = useProductsRequest(filters);
-
+const ShopProducts = ({status, products, fetchProducts}) => {
   useEffect(() => {
-    requestProducts();
+    fetchProducts();
   }, []);
 
   return (
@@ -38,9 +33,18 @@ const ShopProducts = ({filters}) => {
   );
 };
 
-const mapStateToProps = ({ shopFiltersReducer: { sortBy } }) => {
-  console.log(sortBy);
-  return { filters: { sortBy } };
+const mapStateToProps = ({ shopFiltersReducer: { productsStatus, products } }) => {
+  return {
+    products,
+    status: productsStatus
+  };
 };
 
-export default connect(mapStateToProps)(ShopProducts);
+const mapDispatchToProps = dispatch => ({
+  fetchProducts: () => dispatch(fetchProducts()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShopProducts);
