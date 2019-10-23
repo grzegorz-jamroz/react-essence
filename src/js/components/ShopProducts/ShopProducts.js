@@ -3,7 +3,7 @@ import "./ShopProducts.scss";
 import SingleProduct from "../SingleProduct";
 import ShopTopBar from "../ShopTopBar";
 import { connect } from "react-redux";
-import { fetchProducts, SORT_BY_PRICE_HIGH_LOW } from "../../actions/shopFiltersActions";
+import { fetchProducts } from "../../actions/shopFiltersActions";
 
 const ShopProducts = ({status, products, fetchProducts}) => {
   useEffect(() => {

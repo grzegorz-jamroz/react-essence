@@ -44,6 +44,7 @@ export const convertSortBy = sortBy => {
 };
 
 export const fetchProducts = ({ sortBy = SORT_BY_NEWEST } = {}) => {
+  console.count("fetchProducts");
   sortBy = convertSortBy(sortBy);
 
   return async dispatch => {

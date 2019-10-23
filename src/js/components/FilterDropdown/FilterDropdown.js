@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import "./FilterDropdown.scss";
 import {
@@ -6,7 +6,7 @@ import {
   SORT_BY_NEWEST,
   SORT_BY_HIGHEST_RATED,
   SORT_BY_PRICE_HIGH_LOW,
-  SORT_BY_PRICE_LOW_HIGH
+  SORT_BY_PRICE_LOW_HIGH, fetchProducts,
 } from "../../actions/shopFiltersActions";
 import { connect } from "react-redux";
 
@@ -22,10 +22,6 @@ const FilterDropdown = ({ sortBy, changeSortBy }) => {
     options.filter(option => option.value === sortBy)
   );
 
-  useEffect(() => {
-    changeSortBy(selectedOption.value);
-  }, [selectedOption]);
-
   const customStyles = {
     control: styles => ({ ...styles, border: "none", boxShadow: "none" }),
     input: () => ({ display: "none" }),
@@ -38,12 +34,17 @@ const FilterDropdown = ({ sortBy, changeSortBy }) => {
     })
   };
 
+  const onChangeHandle = option => {
+    changeSortBy(option.value);
+    return setSelectedOption(option);
+  };
+
   return (
     <div className="filterDropdown">
       <p className="filterDropdown__p">Sort by:</p>
       <Select
         value={selectedOption}
-        onChange={value => setSelectedOption(value)}
+        onChange={onChangeHandle}
         options={options}
         styles={customStyles}
       />
@@ -56,7 +57,10 @@ const mapStateToProps = ({ shopFiltersReducer: { sortBy } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  changeSortBy: sortBy => dispatch(shopFiltersSortBy(sortBy)),
+  changeSortBy: sortBy => {
+    dispatch(shopFiltersSortBy(sortBy));
+    dispatch(fetchProducts({sortBy}));
+  },
 });
 
 export default connect(
