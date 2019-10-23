@@ -1,10 +1,10 @@
 @import "../../Core/Settings";
 
-.shopColors {
+.colorFilter {
   margin-bottom: $px10;
 }
 
-.shopColors__title {
+.colorFilter__title {
   text-transform: uppercase;
   font-size: $spacer *  0.75;
   margin-bottom: $spacer * 0.9375;
@@ -12,12 +12,12 @@
   font-weight: bold;
 }
 
-.shopColors__ul {
+.colorFilter__ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-.shopColors__li {
+.colorFilter__li {
   -moz-box-flex: 0;
   flex: 0 0 20%;
   -ms-flex: 0 0 20%;
@@ -25,7 +25,7 @@
   margin-bottom: $px15;
 }
 
-.shopColors__color {
+.colorFilter__color {
   width: $spacer * 1.875;
   height: $spacer * 1.875;
   display: block;

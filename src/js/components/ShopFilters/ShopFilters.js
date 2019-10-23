@@ -1,5 +1,5 @@
 import React from "react";
-import ShopColors from "../ShopColors";
+import ColorFilter from "../ColorFilter";
 import PriceFilter from "../PriceFilter";
 import "./ShopFilters.scss";
 import ShopBrands from "../ShopBrands";
@@ -9,7 +9,7 @@ const ShopFilters = () => {
     <div className="shopFilters">
       <h6 className="shopFilters__title">Filter by</h6>
       <PriceFilter />
-      <ShopColors />
+      <ColorFilter />
       <ShopBrands />
     </div>
   );
