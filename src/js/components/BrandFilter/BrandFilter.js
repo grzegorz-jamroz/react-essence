@@ -1,12 +1,12 @@
 import React from "react";
-import "./ShopBrands.scss";
+import "./BrandFilter.scss";
 
-const ShopBrands = () => {
+const BrandFilter = () => {
   return (
-    <div className="shopBrands">
-      <p className="shopBrands__title">Brands</p>
-      <div className="shopBrands__content">
-        <ul className="shopBrands__ul">
+    <div className="brandFilter">
+      <p className="brandFilter__title">Brands</p>
+      <div className="brandFilter__content">
+        <ul className="brandFilter__ul">
           <li>
             <a href="/" className="shopBrand__link">
               Asos
@@ -38,4 +38,4 @@ const ShopBrands = () => {
   );
 };
 
-export default ShopBrands;
+export default BrandFilter;

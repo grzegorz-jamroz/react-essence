@@ -2,7 +2,7 @@ import React from "react";
 import ColorFilter from "../ColorFilter";
 import PriceFilter from "../PriceFilter";
 import "./ShopFilters.scss";
-import ShopBrands from "../ShopBrands";
+import BrandFilter from "../BrandFilter";
 
 const ShopFilters = () => {
   return (
@@ -10,7 +10,7 @@ const ShopFilters = () => {
       <h6 className="shopFilters__title">Filter by</h6>
       <PriceFilter />
       <ColorFilter />
-      <ShopBrands />
+      <BrandFilter />
     </div>
   );
 };

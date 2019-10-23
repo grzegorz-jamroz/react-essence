@@ -1,12 +1,12 @@
 @import "../../Core/Settings";
 
-.shopBrands {
+.brandFilter {
   position: relative;
   z-index: 1;
   margin-bottom: $px10;
 }
 
-.shopBrands__title {
+.brandFilter__title {
   text-transform: uppercase;
   font-size: $px12;
   margin-bottom: $px15;
@@ -14,11 +14,11 @@
   font-weight: bold;
 }
 
-.shopBrands__content {
+.brandFilter__content {
   font-family: $font-family-poppins;
 }
 
-.shopBrands__ul {
+.brandFilter__ul {
   margin-left: $px15;
   margin-bottom: $px15;
 }
